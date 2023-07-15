@@ -1,0 +1,31 @@
+{
+  "name": "genz",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "sass": "sass --watch public/assets/scss/style.scss:public/assets/css/style.css"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0",
+    "bootstrap-icons": "^1.10.5",
+    "eslint": "8.28.0",
+    "eslint-config-next": "13.0.4",
+    "i18next": "^23.2.11",
+    "i18next-browser-languagedetector": "^7.1.0",
+    "i18react": "^0.1.2",
+    "next": "^13.0.4",
+    "next-i18next": "^14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "18.2.0",
+    "react-i18next": "^13.0.2",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "swiper": "^8.4.7",
+    "typewriter-effect": "^2.19.0",
+    "wowjs": "^1.1.3"
+  }
+}

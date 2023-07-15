@@ -1,0 +1,74 @@
+{
+    "H_title" : "Biz barcha turdagi biznesga yordam berish uchun keng ko'lamli raqamli echimlarni taklif qilamiz.",
+    "N_about" : "BIZ HAQIMIZDA",
+    "N_services" : "XIZMATLAR",
+    "N_portfolio" : "PORTFOLIO",
+    "N_vacancies" : "VAKANSIYA",
+    "N_blog" : "BLOG",
+    "N_contact" : "ALOQA",
+
+    "N_Frontend_Development" : "Frontend Development",
+    "N_Backend_Web_Development" : "Backend Web Development",
+    "N_CRM_Systems" : "CRM Systems",
+    "N_design" :"UX / UI Design",
+    "N_AWS_Serverless" : "AWS Serverless",
+    "N_Mobile_apps" : " Mobile apps",
+    "N_Cybersecurity" : "Cybersecurity",
+    "N_Branding" : "Branding",
+
+
+    "I_our_services" : "Bizning xizmatlar",
+    "I_frontend_development" : "Frontend Development",
+    "I_front_desc" : " Biz mahsulotni boshidan qurishimiz yoki mijozlarimizning biznes talablarini tushunish va ular bilan ishlash uchun mavjud yechimni qo'llab-quvvatlashimiz mumkin.",
+    "I_design" : "UX / UI Design",
+    "I_design_desc" : "Mahsulotingizni sotish, jalb qilish va ulardan foydalanish oson bo'lishi uchun dizayn qiling",
+    "I_backend" : "Backend Web Development",
+    "I_backend_desc" : " Bizning mutaxassisligimiz ishonchli backend va sifatli frontend bilan bir qatorda oltin standart echimlarni ishlab chiqishdir",
+    "I_AWS_serverless" : " AWS Serverless",
+    "I_AWS_serverless_desc" : "Bizning malakali mutaxassislarimiz sizning so'rovlaringiz asosida mustahkam yechim yaratishi mumkin",
+    "I_portfolio" : "Portfolio",
+    "F_desc" : "Biz butun dunyo bo'ylab mijozlarimiz uchun samarali veb-ilovalar, botlar va onlayn-do'konlarni ishlab chiqamiz. Keling gaplashamiz!",
+    "F_address" : "Manzil",
+    "F_address_uzb" : "Uzbekistan",
+    "F_address_full" : "8/1 Bunyodkor Avenue, Tashkent 100115",
+    "F_categories" : "Kategoriyalar",
+    "F_contact" : "Aloqa",
+    "F_placholder_name" : "Ismingiz",
+    "F_placholder_number" : "Raqamingiz",
+    "F_subscribe" : "Obuna boʻling",
+    "A_desc" : "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... Нет никого, кто любил бы боль саму по себе, кто искал бы её и кто хотел бы иметь её просто потому, что это боль..",
+    "A_projects" : "Loyihalar",
+    "A_partners" : "Biz hamkorlarimiz",
+    "A_about" : "Biz haqimizda",
+
+    "V_Hello_Everyone" : "Hammaga salom!",
+    "V_no" : "Ayni paytda bizda bo'sh ish o'rinlari yo'q (",
+    "V_vacancies" : "Vakansiyalar",
+
+    "B_title" : "Blog",
+    "B_no_data" : "Ma'lumot yo'q",
+
+    "C_title" : "Biz bilan bog'lanish",
+    "C_contact" : "Aloqa",
+    "C_desc" : "Biz AliThemes, ijodiy va bag'ishlangan shaxslar guruhimiz, ular veb-ishlab chiqishni deyarli mijozlarimizni yaxshi ko'rganimiz kabi yaxshi ko'radilar. Biz veb-dizaynda mukammallikka erishish missiyasi bilan ishtiyoqli jamoamiz. Barcha dizaynlar pikselli mukammal dizayn va mukammal kodlash sifati bilan muhabbat bilan yaratilgan. Tezlik, xavfsizlik va SEOga do'st har doim bizning ongimizda.",
+    "C_Drop_Us_a_Line" : "Bizga xabar qoldiring",
+    "C_required" : "Majburiy maydonlar belgilangan",
+
+    "C_placholder_name" : "Ismingiz*",
+    "C_placholder_number" : "Raqamingiz *",
+    "C_placholder_message" : "Xabar *",
+    "C_Send_Message" : "Xabar yuborish",
+
+    "S_Services" : "Xizmatlar",
+    "S_PROBLEM" : "MUAMMO BORMI?",
+    "S_What_solution" : "Qanday yechimni xohlaysiz?",
+  
+
+    "P_portfolio" : "Portfolio",
+
+    "Id_Used_tools" : "Foydalanilgan vositalar",
+    "Id_desc_header" : "Sizning biznesingizni boshlashingizga yordam beradigan raqamli dizayn" ,
+    "Id_Home" : "Bosh sahifa",
+    "Id_Go_the" : " Saytga o'ting"
+
+}

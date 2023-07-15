@@ -1,0 +1,77 @@
+{
+    "H_title" : "We offer a wide range of digital solutions to help businesses of all sizes.",
+    "N_about" : "ABOUT US",
+    "N_services" : "SERVICES",
+    "N_portfolio" : "PORTFOLIO",
+    "N_vacancies" : "VACANCIES",
+    "N_blog" : "BLOG",
+    "N_contact" : "CONTACT",
+
+
+    "N_Frontend_Development" : "Frontend Development",
+    "N_Backend_Web_Development" : "Backend Web Development",
+    "N_CRM_Systems" : "CRM Systems",
+    "N_design" :"UX / UI Design",
+    "N_AWS_Serverless" : "AWS Serverless",
+    "N_Mobile_apps" : " Mobile apps",
+    "N_Cybersecurity" : "Cybersecurity",
+    "N_Branding" : "Branding",
+
+
+    "I_our_services" : "Our Services",
+    "I_frontend_development" : "Frontend Development",
+    "I_front_desc" : "  We can build a product from the ground up, or supportan existing solution to understand and work with our clients' business demands.",
+    "I_design" : "UX / UI Design",
+    "I_design_desc" : " Design your product to sell, attract, and to be easy-to-use",
+    "I_backend" : "Backend Web Development",
+    "I_backend_desc" : " Our specialty is to develop gold-standard solutions, alongside reliable backend and qualitative frontend basement",
+    "I_AWS_serverless" : " AWS Serverless",
+    "I_AWS_serverless_desc" : "Our qualified specialists can create a solid solution based on your requests",
+    "I_portfolio" : "Portfolio",
+    "F_desc" : " When an We develop efficient web applications, bots and online  stores for our clients all over the world. Let’s talk!",
+    "F_address" : "Address",
+    "F_address_uzb" : "Uzbekistan",
+    "F_address_full" : "8/1 Bunyodkor Avenue, Tashkent 100115",
+    "F_categories" : "Categories",
+    "F_contact" : "Contact",
+    "F_placholder_name" : "Your name",
+    "F_placholder_number" : "Your number",
+    "F_subscribe" : "Subscribe",
+    "A_desc" : "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... Нет никого, кто любил бы боль саму по себе, кто искал бы её и кто хотел бы иметь её просто потому, что это боль..",
+    "A_projects" : "Projects",
+    "A_partners" : "Our Partners",
+    "A_about" : "About",
+
+
+    "V_Hello_Everyone" : "Hello Everyone!",
+    "V_no" : "We have no vacancies at the moment",
+    "V_vacancies" : "Vacancies",
+
+    "B_title" : "Blog",
+    "B_no_data" : "No data",
+
+    "C_title" : "Contact Us",
+    "C_contact" : "Contact",
+    "C_desc" : " We are AliThemes , a creative and dedicated group of individuals who love web development  almost as much as we love our customers. We are passionate team with the mission for   achieving the perfection in web design. All designs are made by love with pixel perfect design and excellent coding quality. Speed, security and SEO friendly alway in our mind.",
+    "C_Drop_Us_a_Line" : "Drop Us a Line",
+    "C_required" : "Required fields are marked",
+
+    "C_placholder_name" : "Your Name*",
+    "C_placholder_number" : "Phone number *",
+    "C_placholder_message" : "Message *",
+    "C_Send_Message" : "Send Message",
+
+    "S_Services" : "Services",
+    "S_PROBLEM" : "IS THERE A PROBLEM?",
+    "S_What_solution" : "What solution do you want?",
+
+  
+    "P_portfolio" : "Portfolio",
+
+    "Id_Used_tools" : "Used tools",
+    "Id_desc_header" : "Digital Design That Will Help You Start Your Business" ,
+    "Id_Home" : "Home",
+    "Id_Go_the" : " Go to the site"
+
+
+}
