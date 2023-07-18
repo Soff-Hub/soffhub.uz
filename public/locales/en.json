@@ -37,11 +37,14 @@
     "F_placholder_name" : "Your name",
     "F_placholder_number" : "Your number",
     "F_subscribe" : "Subscribe",
-    "A_desc" : "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit... Нет никого, кто любил бы боль саму по себе, кто искал бы её и кто хотел бы иметь её просто потому, что это боль..",
     "A_projects" : "Projects",
     "A_partners" : "Our Partners",
-    "A_about" : "About",
-
+    "A_about1" : "Customer service",
+    "A_about2" : "Innovation",
+    "A_about3" : "Teamwork",
+    "A_desc1" : "Customer service: We are committed to providing our clients with the highest level of customer service. We understand that your IT needs are important, and we will work with you to ensure that you are satisfied with our services.",
+    "A_desc2" : "We are always looking for new ways to improve our services and stay ahead of the curve. We believe that innovation is essential to success in the IT industry, and we are always striving to find new ways to help our clients.",
+    "A_desc3" : "We believe that teamwork is essential to success, and we are proud of our collaborative culture. We work together to provide our clients with the best possible service, and we are always willing to go the extra mile to help them succeed.",
 
     "V_Hello_Everyone" : "Hello Everyone!",
     "V_no" : "We have no vacancies at the moment",

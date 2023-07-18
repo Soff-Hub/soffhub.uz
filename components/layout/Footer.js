@@ -1,9 +1,26 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import GetData from '../../repository/getData-repository'
 
 const Footer = () => {
   const {t} = useTranslation()
+
+  // const [social_links, setSocial_links ] = useState([])
+
+  // const getSocial_links = async () => {
+  //   const servicesPromise = await GetData.getPromise('social_link/')
+  //   if (servicesPromise) {
+  //     setSocial_links(servicesPromise.data.results)
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   getSocial_links()
+  // },[])
+
+  // console.log("links", social_links);
+
   return (
     <>
       <footer className="footer">
@@ -72,40 +89,7 @@ const Footer = () => {
                       </li>
                     </ul>
                   </div>
-                  {/* <div className="col-6">
-                    <ul className="menu-footer">
-                      <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
-                          Animal
-                        </Link>
-                      </li>
-                      <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
-                          Dental
-                        </Link>
-                      </li>
-                      <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
-                          Biology
-                        </Link>
-                      </li>
-                      <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
-                          Design
-                        </Link>
-                      </li>
-                      <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
-                          Breakfast
-                        </Link>
-                      </li>
-                      <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
-                          Dessert
-                        </Link>
-                      </li>
-                    </ul>
-                  </div> */}
+                  
                 </div>
               </div>
               <div className="col-lg-4 mb-30">
@@ -143,17 +127,23 @@ const Footer = () => {
               <div className="row">
                 <div className="col-lg-12 text-center text-lg-end">
                   <div className="box-socials">
-                    <div
-                      className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
-                      data-wow-delay=".0s"
-                    >
-                      <Link
-                        className="icon-socials icon-twitter color-gray-500"
-                        href="https://twitter.com"
-                      >
-                        Twitter
-                      </Link>
-                    </div>
+                   
+                    {
+                      // social_links.length> 0 && social_links.map((item, i) => {
+                      //   return  <div
+                      //   key={item.id}
+                      //   className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
+                      //   data-wow-delay=".0s"
+                      // >
+                      //   <Link
+                      //     className={`${item.icon} icon-socials color-gray-500`}
+                      //     href={`${item.url}`}
+                      //   >
+                      //     Twitter 
+                      //   </Link>
+                      // </div>
+                      // })
+                    }
                     <div
                       className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
                       data-wow-delay=".2s"

@@ -3,9 +3,25 @@ import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import data from "../util/blogData";
 import { useTranslation } from "react-i18next";
+// import GetData from '../repository/getData-repository'
+// import { useEffect, useState } from "react";
 
 export default function Home() {
   const {t} = useTranslation()
+  // const [servicesApi, setServicesApi] = useState([])
+
+  // const getServices = async () => {
+  //   const servicesPromise = await GetData.getPromise('service/')
+  //   if (servicesPromise) {
+  //     setServicesApi(servicesPromise.data.results)
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   getServices()
+  // },[])
+
+console.log('service api' ,data);
   return (
     <>
       <Head>
@@ -29,7 +45,7 @@ export default function Home() {
                 </div>
                 <div className="mt-50 mb-50">
                   <div className="row mt-50 mb-10">
-                    {data.map((item, i) => (
+                    {  data.map((item, i) => (
                       <div className="col-lg-6 col-md-6" key={i}>
                         <div
                           className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"

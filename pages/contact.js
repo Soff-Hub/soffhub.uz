@@ -19,23 +19,22 @@ export default function Home() {
                   <h1 className="color-linear d-inline-block mb-30">
                     {t("C_title")}
                   </h1>
-                  <p className="text-xl color-gray-500">
-                   {t("C_desc")}
-                  </p>
+                  <p className="text-xl color-gray-500">{t("C_desc")}</p>
                 </div>
-                <div className="text-center d-flex justify-content-center align-content-center mt-30">
+                <div className="text-center d-flex justify-content-center align-content-center mt-30 flex-wrap">
                   <div className="d-inline-block  text-center support text-center">
-                  
-                   
-                  <span className="d-inline-block mt-2">(90) 930-35-54</span>
+                    <span className="d-inline-block mt-2">(90) 930-35-54</span>
                   </div>
                   <div className="d-inline-block location text-start">
-                  8/1 Bunyodkor Avenue,
-                  <br/>
-Tashkent 100115
+                    8/1 Bunyodkor Avenue,
+                    <br />
+                    Tashkent 100115
                   </div>
                   <div className="d-inline-block plane text-start">
-                 <span className="d-inline-block mt-2"> zufarbek.abdurakhmonov@gmail.com</span>
+                    <span className="d-inline-block mt-2">
+                      {" "}
+                      zufarbek.abdurakhmonov@gmail.com
+                    </span>
                   </div>
                 </div>
                 <div className="box-map mt-70 mb-50">
@@ -56,7 +55,7 @@ Tashkent 100115
                     </h3>
                     <p className="text-xs color-gray-500">
                       {" "}
-                     {t("C_required")} *
+                      {t("C_required")} *
                     </p>
                   </div>
                   <div className="row mt-50">

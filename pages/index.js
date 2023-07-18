@@ -4,9 +4,11 @@ import Layout from "../components/layout/Layout";
 import { useTranslation } from "react-i18next";
 import data from "../util/blogData";
 import PortfolioFilter from "../components/elements/PortfolioFilter";
+import AboutHeader from "../components/elements/about-header";
 
 export default function Home() {
   const { t } = useTranslation();
+
 
   return (
     <>
@@ -17,7 +19,7 @@ export default function Home() {
         <div className="cover-home1">
           <div className="container">
             <div className="row">
-              <div className="col-xl-1" />
+              {/* <div className="col-xl-1" /> */}
               <div className="col-xl-12 col-lg-12">
                 <div className="banner mb-5">
                   <div className="row mb-5 align-items-end">
@@ -32,9 +34,8 @@ export default function Home() {
                     <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12 text-center mb-5">
                       <div className="banner-img position-relative wow animate__animated animate__fadeIn">
                         <img
-                          width="400px"
                           src="/assets/imgs/page/about/soffhub-removebg-preview.png"
-                          alt="soff"
+                          alt="soff banner image"
                           className="mb-70 mt-sm-5 soff-img-header"
                         />
                         <div className="pattern-1">
@@ -67,7 +68,6 @@ export default function Home() {
                 </div>
 
                 <div className="row text-center mt-70  mb-50">
-                  {/* <div className="col-xl-12 col-lg-6 col-md-6 col-sm-4 col-2"> */}
                   {/* yo'nalishlar tillar */}
                   <div className="text-center  mt-50">
                     <ul className="list-tags-col-5 list-tags-col-md-4 col-xl-12 col-lg-6 col-md-6 col-sm-4 col-2  mb-50 text-center d-flex">
@@ -253,10 +253,9 @@ export default function Home() {
                       </li>
                     </ul>
                   </div>
-                  {/* </div> */}
                 </div>
-
-                <div className="row align-items-end">
+                {/* about */}
+                {/* <div className="row align-items-end">
                   <div className="col-lg-6 text-center ">
                     <div className="banner-img position-relative wow animate__animated animate__fadeIn">
                       <div className="row mb-70">
@@ -314,491 +313,31 @@ export default function Home() {
                       {t("A_desc")}
                     </p>
                   </div>
-                </div>
+                </div> */}
 
+              
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+     <AboutHeader/>
+
+
+        <div className="cover-hover1">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-12 col-lg-12">
                 <div className="row mt-70  wow animate__animated animate__fadeIn hover-up">
                   <h2 className="color-linear d-inline-block mb-10">
                     {t("I_portfolio")}
                   </h2>
-                  {/* <div className="row">
-                    <div className="col-lg-7 col-md-7 col-sm-12">
-                      <div
-                        className="row-card card-image wow animate__animated animate__fadeIn"
-                        width="100%"
-                      >
-                        <div className="portfolio-image middle">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/about/zhontaisolar.png"
-                              alt="soff portfolio"
-                              
-                            />
-                          </Link>
-                          <div className="portfolio-info card-bg-2">
-                            <div className="portfolio-info-bottom">
-                              <h4 className="color-white">zhontaisolar.com</h4>
-                              <p className="text-sm">Website</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-5 col-md-5 col-sm-12 port-media-card col-xs-12 ">
-                      <div
-                        className="row-card  card-image wow animate__animated animate__fadeIn"
-                        width="100%"
-                      >
-                        <div className="portfolio-image">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/portfolio/kvant.jpg"
-                              alt="kvant portfolio"
-                              height="100%"
-                            />
-                          </Link>
-                          <div className="portfolio-info card-bg-2">
-                            <div className="portfolio-info-bottom">
-                              <h4 className="color-white">Kvant.uz</h4>
-                              <p className="text-sm">Online Store</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        className="row-card  card-image wow animate__animated animate__fadeIn"
-                        width="100%"
-                      >
-                        <div className="portfolio-image">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/about/boomirang.png"
-                              alt="boomerang"
-                              height="100%"
-                            />
-                          </Link>
-                          <div className="portfolio-info card-bg-2">
-                            <div className="portfolio-info-bottom">
-                              <h4 className="color-white">Boomirang</h4>
-                              <p className="text-sm">Website</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="col-lg-8 col-md-12">
-                      <div className="row-card">
-                        <div className="col-6">
-                          <div
-                            className="card-image wow animate__animated animate__fadeIn"
-                            width="100%"
-                          >
-                            <div className="portfolio-image middle">
-                              <Link href="/single-sidebar">
-                                <img
-                                  src="assets/imgs/page/about/soff-parwaz-group-com.png"
-                                  alt="parwaz portfolio img"
-                                  height="100%"
-                                />
-                              </Link>
-                              <div className="portfolio-info card-bg-2">
-                                <div className="portfolio-info-bottom">
-                                  <h4 className="color-white">
-                                    Parwaz-group.com
-                                  </h4>
-                                  <p className="text-sm">Online Store</p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="col-6">
-                          <div className="row-card">
-                            <div
-                              className="card-image wow animate__animated animate__fadeIn"
-                              width="100%"
-                            >
-                              <div className="portfolio-image">
-                                <Link href="/single-sidebar">
-                                  <img
-                                    src="assets/imgs/page/about/greenbox.jpg"
-                                    alt="green box"
-                                    height="100%"
-                                  />
-                                </Link>
-                                <div className="portfolio-info card-bg-2">
-                                  <div className="portfolio-info-bottom">
-                                    <h4 className="color-white">Green box</h4>
-                                    <p className="text-sm">Website</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="row-card">
-                            <div
-                              className="card-image wow animate__animated animate__fadeIn"
-                              width="100%"
-                            >
-                              <div className="portfolio-image small-img">
-                                <Link href="/single-sidebar">
-                                  <img
-                                    src="assets/imgs/page/about/all-data.jpg"
-                                    alt="all data"
-                                    height="100%"
-                                  />
-                                </Link>
-                                <div className="portfolio-info card-bg-2">
-                                  <div className="portfolio-info-bottom">
-                                    <h4 className="color-white">All data</h4>
-                                    <p className="text-sm">Online Store</p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-lg-4 col-md-12">
-                      <div
-                        className="row-card card-image wow animate__animated animate__fadeIn"
-                        width="100%"
-                      >
-                        <div className="portfolio-image middle">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/about/emuni.png"
-                              alt="Genz"
-                            />
-                          </Link>
-                          <div className="portfolio-info card-bg-2">
-                            <div className="portfolio-info-bottom">
-                              <h4 className="color-white">Emuni.uz</h4>
-                              <p className="text-sm">Website</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> */}
 
+                  {/* Portfolio componenta */}
+                  <PortfolioFilter />
 
-                  <PortfolioFilter/>
-
-
-                
-                  <div className="col-lg-12">
-                    {/* <p className="text-lg color-gray-500">
-                      Don't miss the latest trends
-                    </p> */}
-                    {/* <div className="box-list-posts mt-70">
-                      <div className="card-list-posts wow animate__animated animate__fadeIn">
-                        <div className="card-image hover-up">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/homepage1/img-news-1.jpg"
-                              alt="Genz"
-                            />
-                          </Link>
-                        </div>
-                        <div className="card-info">
-                          <Link
-                            className="btn btn-tag bg-gray-800 hover-up"
-                            href="/blog-archive"
-                          >
-                            Working Tips
-                          </Link>
-                          <Link href="/single-sidebar">
-                            <h4 className="mt-15 mb-20 color-white">
-                              Helpful Tips for Working from Home as a Freelancer
-                            </h4>
-                          </Link>
-                          <p className="color-gray-500">
-                            Gosh jaguar ostrich quail one excited dear hello and
-                            bound and the and bland moral misheard roadrunner
-                            flapped lynx far that and jeepers giggled far and
-                            far
-                          </p>
-                          <div className="row mt-20">
-                            <div className="col-7">
-                              <Link
-                                className="color-gray-700 text-sm mr-15"
-                                href="/blog-archive"
-                              >
-                                # Travel
-                              </Link>
-                              <Link
-                                className="color-gray-700 text-sm"
-                                href="/blog-archive"
-                              >
-                                # Lifestyle
-                              </Link>
-                            </div>
-                            <div className="col-5 text-end">
-                              <span className="color-gray-700 text-sm timeread">
-                                3 mins read
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card-list-posts wow animate__animated animate__fadeIn">
-                        <div className="card-image hover-up">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/homepage1/img-news-2.jpg"
-                              alt="Genz"
-                            />
-                          </Link>
-                        </div>
-                        <div className="card-info">
-                          <Link
-                            className="btn btn-tag bg-gray-800 hover-up"
-                            href="/blog-archive"
-                          >
-                            Working Tips
-                          </Link>
-                          <Link href="/single-sidebar">
-                            <h4 className="mt-15 mb-20 color-white">
-                              Helpful Tips for Working from Home as a Freelancer
-                            </h4>
-                          </Link>
-                          <p className="color-gray-500">
-                            Gosh jaguar ostrich quail one excited dear hello and
-                            bound and the and bland moral misheard roadrunner
-                            flapped lynx far that and jeepers giggled far and
-                            far
-                          </p>
-                          <div className="row mt-20">
-                            <div className="col-7">
-                              <Link
-                                className="color-gray-700 text-sm mr-15"
-                                href="/blog-archive"
-                              >
-                                # Travel
-                              </Link>
-                              <Link
-                                className="color-gray-700 text-sm"
-                                href="/blog-archive"
-                              >
-                                # Lifestyle
-                              </Link>
-                            </div>
-                            <div className="col-5 text-end">
-                              <span className="color-gray-700 text-sm timeread">
-                                3 mins read
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card-list-posts wow animate__animated animate__fadeIn">
-                        <div className="card-image hover-up">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/homepage1/img-news-3.jpg"
-                              alt="Genz"
-                            />
-                          </Link>
-                        </div>
-                        <div className="card-info">
-                          <Link
-                            className="btn btn-tag bg-gray-800 hover-up"
-                            href="/blog-archive"
-                          >
-                            Working Tips
-                          </Link>
-                          <Link href="/single-sidebar">
-                            <h4 className="mt-15 mb-20 color-white">
-                              Helpful Tips for Working from Home as a Freelancer
-                            </h4>
-                          </Link>
-                          <p className="color-gray-500">
-                            Gosh jaguar ostrich quail one excited dear hello and
-                            bound and the and bland moral misheard roadrunner
-                            flapped lynx far that and jeepers giggled far and
-                            far
-                          </p>
-                          <div className="row mt-20">
-                            <div className="col-7">
-                              <Link
-                                className="color-gray-700 text-sm mr-15"
-                                href="/blog-archive"
-                              >
-                                # Travel
-                              </Link>
-                              <Link
-                                className="color-gray-700 text-sm"
-                                href="/blog-archive"
-                              >
-                                # Lifestyle
-                              </Link>
-                            </div>
-                            <div className="col-5 text-end">
-                              <span className="color-gray-700 text-sm timeread">
-                                3 mins read
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card-list-posts wow animate__animated animate__fadeIn">
-                        <div className="card-image hover-up">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/homepage1/img-news-4.jpg"
-                              alt="Genz"
-                            />
-                          </Link>
-                        </div>
-                        <div className="card-info">
-                          <Link
-                            className="btn btn-tag bg-gray-800 hover-up"
-                            href="/blog-archive"
-                          >
-                            Working Tips
-                          </Link>
-                          <Link href="/single-sidebar">
-                            <h4 className="mt-15 mb-20 color-white">
-                              Helpful Tips for Working from Home as a Freelancer
-                            </h4>
-                          </Link>
-                          <p className="color-gray-500">
-                            Gosh jaguar ostrich quail one excited dear hello and
-                            bound and the and bland moral misheard roadrunner
-                            flapped lynx far that and jeepers giggled far and
-                            far
-                          </p>
-                          <div className="row mt-20">
-                            <div className="col-7">
-                              <Link
-                                className="color-gray-700 text-sm mr-15"
-                                href="/blog-archive"
-                              >
-                                # Travel
-                              </Link>
-                              <Link
-                                className="color-gray-700 text-sm"
-                                href="/blog-archive"
-                              >
-                                # Lifestyle
-                              </Link>
-                            </div>
-                            <div className="col-5 text-end">
-                              <span className="color-gray-700 text-sm timeread">
-                                3 mins read
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="card-list-posts wow animate__animated animate__fadeIn">
-                        <div className="card-image hover-up">
-                          <Link href="/single-sidebar">
-                            <img
-                              src="assets/imgs/page/homepage1/img-news-5.jpg"
-                              alt="Genz"
-                            />
-                          </Link>
-                        </div>
-                        <div className="card-info">
-                          <Link
-                            className="btn btn-tag bg-gray-800 hover-up"
-                            href="/blog-archive"
-                          >
-                            Working Tips
-                          </Link>
-                          <Link href="/single-sidebar">
-                            <h4 className="mt-15 mb-20 color-white">
-                              Helpful Tips for Working from Home as a Freelancer
-                            </h4>
-                          </Link>
-                          <p className="color-gray-500">
-                            Gosh jaguar ostrich quail one excited dear hello and
-                            bound and the and bland moral misheard roadrunner
-                            flapped lynx far that and jeepers giggled far and
-                            far
-                          </p>
-                          <div className="row mt-20">
-                            <div className="col-7">
-                              <Link
-                                className="color-gray-700 text-sm mr-15"
-                                href="/blog-archive"
-                              >
-                                # Travel
-                              </Link>
-                              <Link
-                                className="color-gray-700 text-sm"
-                                href="/blog-archive"
-                              >
-                                # Lifestyle
-                              </Link>
-                            </div>
-                            <div className="col-5 text-end">
-                              <span className="color-gray-700 text-sm timeread">
-                                3 mins read
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
-                    {/* <nav className="mb-50">
-                      <ul className="pagination">
-                        <li
-                          className="page-item wow animate__animated animate__fadeIn"
-                          data-wow-delay=".0s"
-                        >
-                          <Link className="page-link page-prev" href="#">
-                            <i className="fi-rr-arrow-small-left" />
-                          </Link>
-                        </li>
-                        <li
-                          className="page-item wow animate__animated animate__fadeIn"
-                          data-wow-delay=".1s"
-                        >
-                          <Link className="page-link" href="#">
-                            1
-                          </Link>
-                        </li>
-                        <li
-                          className="page-item wow animate__animated animate__fadeIn"
-                          data-wow-delay=".2s"
-                        >
-                          <Link className="page-link active" href="#">
-                            2
-                          </Link>
-                        </li>
-                        <li
-                          className="page-item wow animate__animated animate__fadeIn"
-                          data-wow-delay=".3s"
-                        >
-                          <Link className="page-link" href="#">
-                            3
-                          </Link>
-                        </li>
-                        <li
-                          className="page-item wow animate__animated animate__fadeIn"
-                          data-wow-delay=".4s"
-                        >
-                          <Link className="page-link" href="#">
-                            ...
-                          </Link>
-                        </li>
-                        <li
-                          className="page-item wow animate__animated animate__fadeIn"
-                          data-wow-delay=".5s"
-                        >
-                          <Link className="page-link page-next" href="#">
-                            <i className="fi-rr-arrow-small-right" />
-                          </Link>
-                        </li>
-                      </ul>
-                    </nav> */}
-                  </div>
-                  
+                  <div className="col-lg-12"></div>
                 </div>
                 {/* sevices */}
                 <div className="row mt-70 mb-50 border-gray-800  ">
@@ -807,7 +346,10 @@ export default function Home() {
                   </h2>
                   <div className="row mt-50 mb-10">
                     {data.map((item, i) => (
-                      <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12 " key={i}>
+                      <div
+                        className="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
+                        key={i}
+                      >
                         <div
                           className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"
                           data-wow-delay="0s"

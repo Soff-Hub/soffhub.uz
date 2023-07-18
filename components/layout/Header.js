@@ -275,7 +275,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                   <Link
                     onClick={() => changeLanguage("uz")}
                     href="#"
-                    className="color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
+                    className="color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear "
                   >
                     uz
                   </Link>

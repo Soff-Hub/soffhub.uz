@@ -23,7 +23,7 @@ const BlogDetails = () => {
     setBlogPost(portfolio.find((data) => data.id == id));
   }, [id]);
 
-  console.log(blogPost);
+  // console.log(blogPost);
   return (
     <>
       <Layout>
@@ -52,7 +52,7 @@ const BlogDetails = () => {
                       </div>
                     </div>
                     <div className="row mt-50 position-relative">
-                      <div className="col-lg-4 col-md-8">
+                      <div className="col-lg-4 col-md-8 col-sm-6 col-6">
                         <div className="mb-20 d-flex flex-column justify-content-end mb-2">
                           <div className="d-flex aligin-content-center my-3 justify-content-start flex-column">
                             <Link target="blank" href={`${blogPost.link}`}>
@@ -71,22 +71,22 @@ const BlogDetails = () => {
                           <div className="author-info mt-5"></div>
                         </div>
                       </div>
-                      <div className="col-lg-8 d-flex justify-content-end align-content-center col-md-4 ">
+                      <div className="col-lg-8 col-md-2 col-sm-6 col-6 d-flex justify-content-end align-content-center col-md-4 ">
                         <div className="bg-gray border-gray-800 d-flex justify-content-end align-content-center ">
                           <Link
                             className="d-inline-block mt-4"
                             target="blank"
                             href={`${blogPost.link}`}
                           >
-                            <h6 className="d-inline-block  color-gray-500  card-style-2 px-3 py-3 hover-up  hover-neon wow animate__animated animate__fadeInUp">
+                            <h6  className="d-inline-block go-to-the-site color-gray-500  card-style-2 px-md-2 px-lg-3 py-lg-3 hover-up  hover-neon wow animate__animated animate__fadeInUp">
                               {t("Id_Go_the")}
                             </h6>
                           </Link>
                         </div>
                       </div>
                       <div className="row  portfolio-technology hover-up    hover-neon wow animate__animated animate__fadeInUp">
-                        <div className="col-12 d-flex aligin-content-center justify-content-start">
-                          <h5 className="color-white d-flex align-content-center justify-content-center py-3">
+                        <div className="col-12 d-flex aligin-content-center justify-content-start flex-wrap">
+                          <h5 className=" tools color-white d-flex align-content-center justify-content-center py-3">
                             {" "}
                             {t("Id_Used_tools")} :
                           </h5>
@@ -99,8 +99,8 @@ const BlogDetails = () => {
                                 >
                                   <Link href="#">
                                     <img
-                                      className="d-inline-block mx-2 "
-                                      width={90}
+                                      className="d-inline-block id-logo-image "
+                
                                       src={`/assets/imgs/page/about/${item}`}
                                       alt="logo"
                                     />

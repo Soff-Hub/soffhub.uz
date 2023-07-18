@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from 'swiper';
+// import getDataRepository from '../../repository/getData-repository';
 
 SwiperCore.use([Autoplay, Navigation]);
 const Brand = () => {
+    // const [partner, setPartner] = useState([])
 
     const data = [
         {
@@ -23,6 +25,20 @@ const Brand = () => {
             img: "emu_logo.png",
         },
     ];
+
+
+    // const brands = async () => {
+    //     const brandPromise = await getDataRepository.getPromise('partner/')
+    //     if (brandPromise) {
+    //         setPartner(brandPromise.data.results)
+    //     }
+    // }
+
+    // useEffect(() => {
+    //     brands()
+    // },[])
+
+    console.log('partners', data);
 
     return (
         <>
@@ -70,9 +86,11 @@ const Brand = () => {
                 modules={[Pagination]}
                 className="swiper-wrapper pt-5 text-center"
             >
-                {data.map((item, i) => (
-                    <SwiperSlide key={i} className="swiper-slide text-center"  key={i}>
-                        <a style={{height: '100%', display: 'flex', alignItems: 'center'}} href="#"><img className='text-center partners-about-img'  src={`assets/imgs/page/about/${item.img}`} alt="Genz" /></a>
+                { 
+                
+                data.map((item, i) => (
+                    <SwiperSlide key={i} className="swiper-slide text-center"  >
+                        <a style={{height: '100%', display: 'flex', alignItems: 'center'}} href={'#'}><img className='text-center partners-about-img'  src={`/assets/imgs/page/about/${item.img}`} alt="soff hub partner" /></a>
                     </SwiperSlide>
                 ))}
             </Swiper>
