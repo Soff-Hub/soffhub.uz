@@ -7,7 +7,7 @@ export default function AboutHeader() {
     const {t} = useTranslation()
   return (
     <div className="cover-home" style={{ position: "relative", top: "20px" }}>
-      <video
+      {/* <video
         controls=""
         autoplay=""
         loop="true"
@@ -16,10 +16,14 @@ export default function AboutHeader() {
         name="media"
       >
         <source
-          src="http://localhost:3000/assets/imgs/page/blog/vedio1.mp4"
+          src="http://localhost:3000/assets/imgs/page/blog/vedio2.gif"
           type="video/mp4"
         />
-      </video>
+      </video> */}
+
+      <img
+      style={{ width: "100%"}}
+      src="/assets/imgs/page/blog/vedio3.gif" alt="giff soff hub team work" />
 
       <div className="about-header">
         <div className="about-text-group">
@@ -57,7 +61,7 @@ export default function AboutHeader() {
           >
             {t("A_about1")}
           </p>
-          <i class="fa-solid fa-angles-right mt-5 pt-5"></i>
+          <i class="fa-solid fa-angles-right mt-5 pt-5 icon-rightt"></i>
           <p
             className={`about-header-button-group--button about-header-button-group--button2 ${
               text === 2 ? "active-btnn" : ""

@@ -60,7 +60,7 @@ const BlogDetails = () => {
                                 className="d-inline-block me-3 mb-2"
                                 src={`/assets/imgs/page/about/${blogPost.logo}`}
                                 alt={`${blogPost.logo}`}
-                                style={{ maxWidth: "150px", width: "100%" }}
+                                style={{ maxWidth: "130px", width: "100%" }}
                               />
                             </Link>
                             <span className="d-inline-block">
@@ -85,7 +85,7 @@ const BlogDetails = () => {
                         </div>
                       </div>
                       <div className="row  portfolio-technology hover-up    hover-neon wow animate__animated animate__fadeInUp">
-                        <div className="col-12 d-flex aligin-content-center justify-content-start flex-wrap">
+                        <div className="col-12 d-flex aligin-content-center justify-content-start flex-wrap ">
                           <h5 className=" tools color-white d-flex align-content-center justify-content-center py-3">
                             {" "}
                             {t("Id_Used_tools")} :

@@ -92,10 +92,11 @@ export default function Home() {
                     <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2">
                       <img
                         className="about-imgs hover-up   wow animate__animated animate__fadeIn "
-                        src="assets/imgs/page/about/soff - japan - 5.png"
+                        src="assets/imgs/page/about/soff - japan - 2.png"
                         alt="soff"
                       />
                     </div>
+                    
                   </div>
                 </div>
 

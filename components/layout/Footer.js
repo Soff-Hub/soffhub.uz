@@ -6,20 +6,20 @@ import GetData from '../../repository/getData-repository'
 const Footer = () => {
   const {t} = useTranslation()
 
-  // const [social_links, setSocial_links ] = useState([])
+  const [social_links, setSocial_links ] = useState([])
 
-  // const getSocial_links = async () => {
-  //   const servicesPromise = await GetData.getPromise('social_link/')
-  //   if (servicesPromise) {
-  //     setSocial_links(servicesPromise.data.results)
-  //   }
-  // }
+  const getSocial_links = async () => {
+    const servicesPromise = await GetData.getPromise('social_link/')
+    if (servicesPromise) {
+      setSocial_links(servicesPromise.data.results)
+    }
+  }
 
-  // useEffect(() => {
-  //   getSocial_links()
-  // },[])
+  useEffect(() => {
+    getSocial_links()
+  },[])
 
-  // console.log("links", social_links);
+  console.log("links", social_links);
 
   return (
     <>
@@ -33,7 +33,7 @@ const Footer = () => {
                   href="/"
                 >
                   <img
-                    src="/assets/imgs/page/logo/Soff Study white logo.png"
+                    src="/assets/imgs/page/about/soffhub-removebg-preview.png"
                     width="150px"
                     alt="Soff white logo"
                   />
@@ -129,22 +129,22 @@ const Footer = () => {
                   <div className="box-socials">
                    
                     {
-                      // social_links.length> 0 && social_links.map((item, i) => {
-                      //   return  <div
-                      //   key={item.id}
-                      //   className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
-                      //   data-wow-delay=".0s"
-                      // >
-                      //   <Link
-                      //     className={`${item.icon} icon-socials color-gray-500`}
-                      //     href={`${item.url}`}
-                      //   >
-                      //     Twitter 
-                      //   </Link>
-                      // </div>
-                      // })
+                      social_links.length> 0 && social_links.map((item, i) => {
+                        return  <div
+                        key={item.id}
+                        className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
+                        data-wow-delay=".0s"
+                      >
+                        <Link
+                          className={`${item.icon} icon-socials color-gray-500`}
+                          href={`${item.url}`}
+                        >
+                          Twitter 
+                        </Link>
+                      </div>
+                      })
                     }
-                    <div
+                    {/* <div
                       className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
                       data-wow-delay=".2s"
                     >
@@ -165,7 +165,7 @@ const Footer = () => {
                       >
                         Instagram
                       </Link>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
