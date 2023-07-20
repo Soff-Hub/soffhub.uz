@@ -10,6 +10,8 @@ import BootstrapCarousel from "../../components/slider/carousel-portfolio";
 import Carousel from "../../components/slider/carousel-portfolio";
 import FullscreenImage from "../../components/slider/carousel-full-screen";
 import Header from "../../components/layout/Header";
+import getDataRepository from "../../repository/getData-repository";
+import { useSelector } from "react-redux";
 
 const BlogDetails = () => {
   let Router = useRouter();
@@ -19,9 +21,24 @@ const BlogDetails = () => {
 
   const { id } = Router.query;
 
+  const languageData = useSelector((state) => state.translations.data);
+
+
+  const idPortfolioData = async () => {
+    const idPortfolioPromise = await getDataRepository.getPromise(`/portfolio/${id}`, `${languageData.language}`)
+    if (idPortfolioPromise) {
+      setBlogPost(idPortfolioPromise.data)
+    }
+  }
+
   useEffect(() => {
-    setBlogPost(portfolio.find((data) => data.id == id));
+    // setBlogPost(portfolio.find((data) => data.id == id));
+    idPortfolioData()
   }, [id]);
+
+  useEffect(() => {
+    idPortfolioData()
+  },[languageData.language])
 
   // console.log(blogPost);
   return (
@@ -46,7 +63,7 @@ const BlogDetails = () => {
                             <Link href="/portfolio">{t("P_portfolio")}</Link>
                           </li>
                           <li>
-                            <span>{blogPost.name}</span>
+                            <span>{blogPost.title}</span>
                           </li>
                         </ul>
                       </div>
@@ -55,17 +72,17 @@ const BlogDetails = () => {
                       <div className="col-lg-4 col-md-8 col-sm-6 col-6">
                         <div className="mb-20 d-flex flex-column justify-content-end mb-2">
                           <div className="d-flex aligin-content-center my-3 justify-content-start flex-column">
-                            <Link target="blank" href={`${blogPost.link}`}>
+                            <Link target="blank" href={`${blogPost.demo_link}`}>
                               <img
                                 className="d-inline-block me-3 mb-2"
-                                src={`/assets/imgs/page/about/${blogPost.logo}`}
-                                alt={`${blogPost.logo}`}
+                                src={`${blogPost.logo_detail}`}
+                                alt={`${blogPost.logo_detail}`}
                                 style={{ maxWidth: "130px", width: "100%" }}
                               />
                             </Link>
                             <span className="d-inline-block">
                               {" "}
-                              - {blogPost.type}
+                              - {blogPost.category}
                             </span>
                           </div>
                           <div className="author-info mt-5"></div>
@@ -76,7 +93,7 @@ const BlogDetails = () => {
                           <Link
                             className="d-inline-block mt-4"
                             target="blank"
-                            href={`${blogPost.link}`}
+                            href={`${blogPost.demo_link}`}
                           >
                             <h6  className="d-inline-block go-to-the-site color-gray-500  card-style-2 px-md-2 px-lg-3 py-lg-3 hover-up  hover-neon wow animate__animated animate__fadeInUp">
                               {t("Id_Go_the")}
@@ -90,8 +107,8 @@ const BlogDetails = () => {
                             {" "}
                             {t("Id_Used_tools")} :
                           </h5>
-                          {blogPost.icons &&
-                            blogPost.icons.map((item, i) => {
+                          {blogPost.tools &&
+                            blogPost.tools.map((item, i) => {
                               return (
                                 <div
                                   key={i}
@@ -101,7 +118,7 @@ const BlogDetails = () => {
                                     <img
                                       className="d-inline-block id-logo-image "
                 
-                                      src={`/assets/imgs/page/about/${item}`}
+                                      src={`${item.image}`}
                                       alt="logo"
                                     />
                                   </Link>
@@ -116,8 +133,8 @@ const BlogDetails = () => {
                       <div className="col-xl-12  card-style-1 hover-up p-3 hover-neon mt-5 wow animate__animated animate__fadeInUp">
                         <img
                           className="border-radius-5"
-                          src={`/assets/imgs/page/about/${blogPost.img_screen}`}
-                          alt={`${blogPost.img_screen}`}
+                          src={`${blogPost.image_detail}`}
+                          alt={`${blogPost.image_detail}`}
                         />
                       </div>
                       <h5 className="color-gray-500 my-5">
@@ -128,12 +145,12 @@ const BlogDetails = () => {
                       <div className="col-12 my-70">
 
                         <div className="row ">
-                          {blogPost.scren_group.map((item, index) => {
+                          {blogPost.image.map((item, index) => {
                             return (
                               <div className="col-3 my-2 ">
                                 {" "}
                                 <FullscreenImage
-                                  src={`/assets/imgs/page/about/${item}`}
+                                  src={`${item.image}`}
                                 />
                               </div>
                             );

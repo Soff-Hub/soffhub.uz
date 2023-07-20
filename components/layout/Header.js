@@ -4,16 +4,33 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import getDataRepository from "../../repository/getData-repository";
+import { useDispatch, useSelector } from "react-redux";
+import { setLanguageData } from "../../store/translationSlice";
+
 
 const Header = ({ handleOpen, handleRemove, openClass }) => {
   const { t } = useTranslation();
   const router = useRouter();
   const { i18n } = useTranslation();
-
+  const dispatch = useDispatch();
   const [servicesApi, setServicesApi] = useState([]);
 
+  const languageData = useSelector((state) => state.translations.data);
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+    if (language == "en") {
+      dispatch(setLanguageData("en"));
+    } else if (language == "uz") {
+      dispatch(setLanguageData("uz"));
+    }
+  };
+
   const getServices = async () => {
-    const servicesPromise = await getDataRepository.getPromise("service/");
+    const servicesPromise = await getDataRepository.getPromise(
+      "service/",
+      `${languageData.language}`
+    );
     if (servicesPromise) {
       setServicesApi(servicesPromise.data.results);
     }
@@ -21,11 +38,8 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
 
   useEffect(() => {
     getServices();
-  }, []);
+  }, [languageData.language]);
 
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
   const [scroll, setScroll] = useState(0);
   const [isToggled, setToggled] = useState(false);
   const toggleTrueFalse = () => setToggled(!isToggled);
@@ -91,6 +105,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
   function coloring5(params) {}
   function coloring6(params) {}
   console.log("header services", servicesApi);
+
   return (
     <div className="position-relative">
       <header

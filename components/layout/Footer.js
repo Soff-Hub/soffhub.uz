@@ -9,7 +9,7 @@ const Footer = () => {
   const [social_links, setSocial_links ] = useState([])
 
   const getSocial_links = async () => {
-    const servicesPromise = await GetData.getPromise('social_link/')
+    const servicesPromise = await GetData.getPromise('social_link/','en')
     if (servicesPromise) {
       setSocial_links(servicesPromise.data.results)
     }

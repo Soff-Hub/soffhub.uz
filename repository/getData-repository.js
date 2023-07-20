@@ -1,10 +1,32 @@
+
 import clinet, { baseDomain } from "./repository";
 
+
 class GetData {
-  getPromise(value) {
+  getPromise(value, language) {
+ 
     const endPoint = `${value}`;
+    const url = baseDomain + endPoint
+console.log('language', language);
+    const headers = {
+      "Accept-Language" : `${language}`
+    }
+
     const data = clinet
-      .get(baseDomain + endPoint)
+      .get( url, { headers } )
+      .then((ress) => {
+        return ress;
+      })
+      .catch((err) => {
+        return err;
+      });
+    return data;
+  }
+  gallery(value) {
+    const endPoint = `${value}`;
+
+    const data = clinet
+      .get( baseDomain + endPoint )
       .then((ress) => {
         return ress;
       })

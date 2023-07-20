@@ -1,18 +1,29 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import portfolio from "../../util/portfolio";
+import getDataRepository from "../../repository/getData-repository";
+import { useSelector } from "react-redux";
 
 const PortfolioFilter = ({ col, show }) => {
   const [scroll, setScroll] = useState(0);
+  const [portfolioData, setPortfolioData] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const languageData = useSelector((state) => state.translations.data);
 
+
+  const handleScroll = () => {
+    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 10) {
+      setOffset((offset) => offset + 3);
+    }
+  };
+  console.log("offset", offset);
   useEffect(() => {
-    document.addEventListener("scroll", () => {
-      const scrollCheck = window.scrollY > 1000;
-      if (scrollCheck !== scroll) {
-        setScroll(scrollCheck);
-        console.log('salom');
-      }
-    });
+    getPortfoliosData();
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const [filter, setFilter] = useState("all");
@@ -21,6 +32,18 @@ const PortfolioFilter = ({ col, show }) => {
   useEffect(() => {
     setProjects(portfolio);
   }, []);
+
+
+  const getPortfoliosData = async () => {
+    const portfolioPromise = await getDataRepository.getPromise(
+      `portfolio/`,
+      // `portfolio/?limit=3&offset=${offset}`,
+      `${languageData.language}`
+    );
+    if (portfolioPromise) {
+      setPortfolioData(portfolioPromise.data.results);
+    }
+  };
 
   useEffect(() => {
     setProjects([]);
@@ -33,10 +56,12 @@ const PortfolioFilter = ({ col, show }) => {
   }, [filter]);
 
   const newArray = [];
-  for (let i = 0; i < projects.length; i += 3) {
-    newArray.push(projects.slice(i, i + 3));
+  for (let i = 0; i < portfolioData.length; i += 3) {
+    newArray.push(portfolioData.slice(i, i + 3));
   }
-console.log(newArray, 'new');
+  console.log(newArray, "new");
+  console.log("portfolios", portfolioData);
+
   return (
     <>
       {/* portfilo select */}
@@ -64,8 +89,6 @@ console.log(newArray, 'new');
                 </div>
             </div> */}
 
-
-      
       <div className="mt-70 mb-50">
         <div className="">
           {newArray.length > 0 &&
@@ -74,18 +97,17 @@ console.log(newArray, 'new');
                 <div
                   key={i}
                   className={
-                    (i + 2) % 2 === 0 
+                    (i + 2) % 2 === 0
                       ? "portfolio-grid-container grid-left-true"
                       : "portfolio-grid-container grid-left-false"
                   }
                 >
                   {el.map((item, i) =>
-                    item.filtered === true ? (
+                    true ? (
                       <Link
-                      
                         href={`/blog/${item.id}`}
                         className={"portfolio-card" + i}
-                        key={item.name}
+                        key={item.id}
                         style={{ objectFit: "cover" }}
                       >
                         <div className="project " data-category="web motion">
@@ -100,17 +122,17 @@ console.log(newArray, 'new');
                                   href={`/blog/${item.id}`}
                                 >
                                   <img
-                                    src={`/assets/imgs/page/about/${item.img}`}
+                                    src={`${item.gallery}`}
                                     alt="Genz"
                                     className={`portfolio-card-img-${i} portfolio-img`}
                                   />
                                   <div className="portfolio-info card-bg-2">
                                     <div className="portfolio-info-bottom">
                                       <h4 className="color-white ">
-                                        {item.name}
+                                        {item.title}
                                       </h4>
                                       <p className="color-gray-500 text-sm">
-                                        {item.type}
+                                        {item.category}
                                       </p>
                                     </div>
                                   </div>

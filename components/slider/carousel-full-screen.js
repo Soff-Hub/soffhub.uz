@@ -14,7 +14,7 @@ const FullscreenImage = ({ src }) => {
   };
 
   return (
-    <div>
+    <div className='text-center' style={{height: '100%'}}>
       <img src={src} onClick={showFullscreenImage}  className="about-imgs hover-up   wow animate__animated animate__fadeIn " />
 
       {isFullscreen && (
@@ -46,7 +46,7 @@ const FullscreenImage = ({ src }) => {
 
         .fullscreen-image {
           max-width: 100%;
-        //   width: 600px;
+        /* //   width: 600px; */
           max-height: 100%;
           display: block;
           margin: 0 auto;

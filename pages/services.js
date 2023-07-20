@@ -5,13 +5,17 @@ import data from "../util/blogData";
 import { useTranslation } from "react-i18next";
 import GetData from '../repository/getData-repository'
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Home() {
   const {t} = useTranslation()
   const [servicesApi, setServicesApi] = useState([])
 
+     const select = useSelector(state => state.translations.data)
+    console.log('select', select.language);
+
   const getServices = async () => {
-    const servicesPromise = await GetData.getPromise('service/')
+    const servicesPromise = await GetData.getPromise('service/', `${select.language}`)
     if (servicesPromise) {
       setServicesApi(servicesPromise.data.results)
     }
@@ -19,7 +23,7 @@ export default function Home() {
 
   useEffect(() => {
     getServices()
-  },[])
+  },[select.language])
 
 console.log('service api' ,servicesApi);
   return (

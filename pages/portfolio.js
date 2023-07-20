@@ -27,7 +27,7 @@ const Portfolio = () => {
               
                 <div className="list-logos mt-50 mb-30">
                   <div className="container">
-                    <div className="row">
+                    <div className="row mt-70">
                       <h3 className="color-linear partners-bottom">{t("A_partners")}</h3>
                       <div className="swiper-container swiper-group-1">
                         <Brand />

@@ -11,24 +11,37 @@ import GetData from "../repository/getData-repository";
 import { useEffect, useState } from "react";
 import AboutHeader from "../components/elements/about-header";
 import FullscreenImage from "../components/slider/carousel-full-screen";
-// import vedio from '/assets/imgs/page/blog/vedio.mp4'
+
 
 export default function Home() {
   const { t } = useTranslation();
   const [gallery, setGalley] = useState([]);
 
-  const getGallery = async () => {
-    const galleryPromise = await GetData.getPromise("gallery/");
-    if (galleryPromise) {
-      setGalley(galleryPromise.data.results);
-    }
-  };
+  const data = [
+    {
+      image : 'assets/imgs/page/about/soff - japan - 4.png'
+    },
+    {
+      image : 'assets/imgs/page/about/soff - japan - 5.png'
+    },
+    {
+      image : 'assets/imgs/page/about/soff - japan - 2.png'
+    },
+  ]
+
+  // const getGallery = async () => {
+  //   const galleryPromise = await GetData.gallery("gallery/");
+  //   if (galleryPromise) {
+  //     setGalley(galleryPromise.data);
+  //   }
+  // };
 
 
-  useEffect(() => {
-    getGallery();
-  }, []);
+  // useEffect(() => {
+  //   getGallery();
+  // }, []);
 
+  
 
   console.log('gallery', gallery);
 
@@ -59,8 +72,8 @@ export default function Home() {
                 <div className="banner">
                  
                   <div className="row mt-100">
-                    {gallery.length > 0 &&
-                      gallery.map((item, i) => {
+                    {gallery &&
+                      data.map((item, i) => {
                         return (
                           <div
                             key={i}

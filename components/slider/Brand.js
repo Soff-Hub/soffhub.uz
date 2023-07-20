@@ -29,7 +29,7 @@ const Brand = () => {
 
 
     const brands = async () => {
-        const brandPromise = await getDataRepository.getPromise('partner/')
+        const brandPromise = await getDataRepository.getPromise('partner/', 'en')
         if (brandPromise) {
             setPartner(brandPromise.data.results)
         }
