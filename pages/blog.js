@@ -86,7 +86,7 @@ export default function Home() {
                             key={i}
                           >
                             <div className="card-image hover-up">
-                              <Link href={`/blog/${item.id}blog`}>
+                              <Link href={`#`}>
                                 <img
                                   src={`/assets/imgs/page/healthy/${item.img}`}
                                   alt="Genz"
@@ -96,11 +96,11 @@ export default function Home() {
                             <div className="card-info">
                               <Link
                                 className="btn btn-tag bg-gray-800 hover-up"
-                                href="/blog-archive"
+                                href="#"
                               >
                                 {item.category}
                               </Link>
-                              <Link href={`/blog/${item.id}blog`}>
+                              <Link href={`#`}>
                                 <h4 className="mt-15 mb-20 color-white">
                                   {item.title}
                                 </h4>
@@ -116,7 +116,7 @@ export default function Home() {
                                       return (
                                         <Link
                                         className="color-gray-700 text-sm mr-15"
-                                        href="/blog-archive"
+                                        href="#"
                                       >
                                         # {item.name}
                                       </Link>
