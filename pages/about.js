@@ -10,12 +10,12 @@ import { useTranslation } from "react-i18next";
 import GetData from "../repository/getData-repository";
 import { useEffect, useState } from "react";
 import AboutHeader from "../components/elements/about-header";
+import FullscreenImage from "../components/slider/carousel-full-screen";
 // import vedio from '/assets/imgs/page/blog/vedio.mp4'
 
 export default function Home() {
   const { t } = useTranslation();
   const [gallery, setGalley] = useState([]);
-  const [text, setText] = useState(1);
 
   const getGallery = async () => {
     const galleryPromise = await GetData.getPromise("gallery/");
@@ -24,12 +24,13 @@ export default function Home() {
     }
   };
 
-  const vedio = "/assets/imgs/page/blog/vedio.mp4";
 
   useEffect(() => {
-    // getGallery();
-    console.log(text);
-  }, [text]);
+    getGallery();
+  }, []);
+
+
+  console.log('gallery', gallery);
 
   return (
     <>
@@ -58,23 +59,24 @@ export default function Home() {
                 <div className="banner">
                  
                   <div className="row mt-100">
-                    {/* {gallery.length > 0 &&
+                    {gallery.length > 0 &&
                       gallery.map((item, i) => {
                         return (
                           <div
                             key={i}
                             className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2"
                           >
-                            <img
+                            {/* <img
                               className="about-imgs hover-up   wow animate__animated animate__fadeIn "
                               src={item.image}
                               alt="soff"
-                            />
+                            /> */}
+                            <FullscreenImage  src={item.image} />
                           </div>
                         );
-                      })} */}
+                      })}
 
-                    <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2 position-relative">
+                    {/* <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2 position-relative">
                       <img
                         className="about-imgs hover-up   wow animate__animated animate__fadeIn "
                         src="assets/imgs/page/about/soff - japan - 4.png"
@@ -95,7 +97,7 @@ export default function Home() {
                         src="assets/imgs/page/about/soff - japan - 2.png"
                         alt="soff"
                       />
-                    </div>
+                    </div> */}
                     
                   </div>
                 </div>

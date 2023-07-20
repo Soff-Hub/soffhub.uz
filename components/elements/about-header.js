@@ -12,8 +12,9 @@ export default function AboutHeader() {
         autoplay=""
         loop="true"
         muted="false"
-        style={{ width: "100%", clipRule: "evenodd" }}
+        style={{ width: "100%", height: '550px', objectFit:'cover' , backgroundImage: 'cover' , clipRule: "evenodd" }}
         name="media"
+        className="about-vedio"
       >
         <source
           src="/assets/imgs/page/blog/vedio1.mp4"

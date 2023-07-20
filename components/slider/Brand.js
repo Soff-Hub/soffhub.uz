@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import SwiperCore, { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from 'swiper';
-// import getDataRepository from '../../repository/getData-repository';
+import getDataRepository from '../../repository/getData-repository';
+import Link from 'next/link';
 
 SwiperCore.use([Autoplay, Navigation]);
 const Brand = () => {
-    // const [partner, setPartner] = useState([])
+    const [partner, setPartner] = useState([])
 
     const data = [
         {
@@ -27,18 +28,18 @@ const Brand = () => {
     ];
 
 
-    // const brands = async () => {
-    //     const brandPromise = await getDataRepository.getPromise('partner/')
-    //     if (brandPromise) {
-    //         setPartner(brandPromise.data.results)
-    //     }
-    // }
+    const brands = async () => {
+        const brandPromise = await getDataRepository.getPromise('partner/')
+        if (brandPromise) {
+            setPartner(brandPromise.data.results)
+        }
+    }
 
-    // useEffect(() => {
-    //     brands()
-    // },[])
+    useEffect(() => {
+        brands()
+    },[])
 
-    console.log('partners', data);
+    console.log('partners', partner);
 
     return (
         <>
@@ -87,10 +88,13 @@ const Brand = () => {
                 className="swiper-wrapper pt-5 text-center"
             >
                 { 
-                
-                data.map((item, i) => (
+                partner.length > 0 &&
+                partner.map((item, i) => (
                     <SwiperSlide key={i} className="swiper-slide text-center"  >
-                        <a style={{height: '100%', display: 'flex', alignItems: 'center'}} href={'#'}><img className='text-center partners-about-img'  src={`/assets/imgs/page/about/${item.img}`} alt="soff hub partner" /></a>
+                        <Link target="blank" style={{height: '100%', display: 'flex', alignItems: 'center'}} href={`${item.url}`}>
+                            <img className='text-center partners-about-img'  src={`${item.logo}`} alt="soff hub partner" />
+                          
+                            </Link>
                     </SwiperSlide>
                 ))}
             </Swiper>

@@ -5,7 +5,7 @@ const portfolio = [
     category: ["all"],
     img: "zhontaisolar.png",
     type: "Website",
-    description: "Lorem ipsum dolar ...",
+    description: "",
     // icons: ["react-icon.png", "node-js.png", "next.png", "python-icon.png"],
     icons: ["react-icon.png", "node-js.png"],
     logo: "zhontaisolar-logo.png",
@@ -66,7 +66,7 @@ const portfolio = [
     category: ["all"],
     img: "soff-parwaz-group-com.png",
     type: "Website",
-    description: "Lorem ipsum",
+    description: "",
     icons: [ "react-icon.png" ,"node-js.png"],
     logo: "parwaz-logo.png",
     link: "https://parvaz-group.com/",
@@ -85,7 +85,7 @@ const portfolio = [
     category: ["all"],
     img: "soff-study-uz.jpg",
     type: "Website",
-    description: "Lorem ipsum dolor",
+    description: "",
     icons: ["next.png", "python-icon.png"],
     logo: "Soff Study white logo.png",
     link: "http://soffstudy.uz/",
@@ -98,13 +98,14 @@ const portfolio = [
     ],
     col: "7"
   },
+
   {
     id: "6",
     name: "All data",
     category: ["all"],
     img: "all-data.jpg",
     type: "Website",
-    description: "Lorem ipsum dolor",
+    description: "",
     icons: ["react-icon.png", "node-js.png"],
     logo: "alldata-logo.png",
     link: "https://alldata.uz/",
@@ -117,22 +118,162 @@ const portfolio = [
     ],
     col:"5"
   },
+
+
+  
   // {
-  //   id: "7",
-  //   name: "Logo design",
-  //   category: ["all", "web", "graphic"],
+  //   id: "6",
+  //   name: "All data",
+  //   category: ["all"],
   //   img: "all-data.jpg",
   //   type: "Website",
-  //   col: "5"
+  //   description: "Lorem ipsum dolor",
+  //   icons: ["react-icon.png", "node-js.png"],
+  //   logo: "alldata-logo.png",
+  //   link: "https://alldata.uz/",
+  //   img_screen: "alldata-screen.png",
+  //   scren_group: [
+  //       "alldata-screen.png",
+  //       "alldata-screen1.png",
+  //       "alldata-screen3.png",
+  //       "alldata-screen2.png",
+  //   ],
+  //   col:"5"
+  // },
+
+  // {
+  //   id: "6",
+  //   name: "All data",
+  //   category: ["all"],
+  //   img: "all-data.jpg",
+  //   type: "Website",
+  //   description: "Lorem ipsum dolor",
+  //   icons: ["react-icon.png", "node-js.png"],
+  //   logo: "alldata-logo.png",
+  //   link: "https://alldata.uz/",
+  //   img_screen: "alldata-screen.png",
+  //   scren_group: [
+  //       "alldata-screen.png",
+  //       "alldata-screen1.png",
+  //       "alldata-screen3.png",
+  //       "alldata-screen2.png",
+  //   ],
+  //   col:"5"
   // },
   // {
-  //   id: "8",
-  //   name: "Animal pattern",
-  //   category: ["all", "mobile"],
-  //   img:  "all-data.jpg",
+  //   id: "6",
+  //   name: "All data",
+  //   category: ["all"],
+  //   img: "all-data.jpg",
   //   type: "Website",
-  //   col: "7"
+  //   description: "Lorem ipsum dolor",
+  //   icons: ["react-icon.png", "node-js.png"],
+  //   logo: "alldata-logo.png",
+  //   link: "https://alldata.uz/",
+  //   img_screen: "alldata-screen.png",
+  //   scren_group: [
+  //       "alldata-screen.png",
+  //       "alldata-screen1.png",
+  //       "alldata-screen3.png",
+  //       "alldata-screen2.png",
+  //   ],
+  //   col:"5"
   // },
-];
+  // {
+  //   id: "6",
+  //   name: "All data",
+  //   category: ["all"],
+  //   img: "all-data.jpg",
+  //   type: "Website",
+  //   description: "Lorem ipsum dolor",
+  //   icons: ["react-icon.png", "node-js.png"],
+  //   logo: "alldata-logo.png",
+  //   link: "https://alldata.uz/",
+  //   img_screen: "alldata-screen.png",
+  //   scren_group: [
+  //       "alldata-screen.png",
+  //       "alldata-screen1.png",
+  //       "alldata-screen3.png",
+  //       "alldata-screen2.png",
+  //   ],
+  //   col:"5"
+  // },
+  // {
+  //   id: "6",
+  //   name: "All data",
+  //   category: ["all"],
+  //   img: "all-data.jpg",
+  //   type: "Website",
+  //   description: "Lorem ipsum dolor",
+  //   icons: ["react-icon.png", "node-js.png"],
+  //   logo: "alldata-logo.png",
+  //   link: "https://alldata.uz/",
+  //   img_screen: "alldata-screen.png",
+  //   scren_group: [
+  //       "alldata-screen.png",
+  //       "alldata-screen1.png",
+  //       "alldata-screen3.png",
+  //       "alldata-screen2.png",
+  //   ],
+  //   col:"5"
+  // },
+  // {
+  //   id: "6",
+  //   name: "All data",
+  //   category: ["all"],
+  //   img: "all-data.jpg",
+  //   type: "Website",
+  //   description: "Lorem ipsum dolor",
+  //   icons: ["react-icon.png", "node-js.png"],
+  //   logo: "alldata-logo.png",
+  //   link: "https://alldata.uz/",
+  //   img_screen: "alldata-screen.png",
+  //   scren_group: [
+  //       "alldata-screen.png",
+  //       "alldata-screen1.png",
+  //       "alldata-screen3.png",
+  //       "alldata-screen2.png",
+  //   ],
+  //   col:"5"
+  // },
+  // {
+  //   id: "6",
+  //   name: "All data",
+  //   category: ["all"],
+  //   img: "all-data.jpg",
+  //   type: "Website",
+  //   description: "Lorem ipsum dolor",
+  //   icons: ["react-icon.png", "node-js.png"],
+  //   logo: "alldata-logo.png",
+  //   link: "https://alldata.uz/",
+  //   img_screen: "alldata-screen.png",
+  //   scren_group: [
+  //       "alldata-screen.png",
+  //       "alldata-screen1.png",
+  //       "alldata-screen3.png",
+  //       "alldata-screen2.png",
+  //   ],
+  //   col:"5"
+  // },
+  // {
+  //   id: "6",
+  //   name: "All data",
+  //   category: ["all"],
+  //   img: "all-data.jpg",
+  //   type: "Website",
+  //   description: "Lorem ipsum dolor",
+  //   icons: ["react-icon.png", "node-js.png"],
+  //   logo: "alldata-logo.png",
+  //   link: "https://alldata.uz/",
+  //   img_screen: "alldata-screen.png",
+  //   scren_group: [
+  //       "alldata-screen.png",
+  //       "alldata-screen1.png",
+  //       "alldata-screen3.png",
+  //       "alldata-screen2.png",
+  //   ],
+  //   col:"5"
+  // },
+]
 
 export default portfolio;

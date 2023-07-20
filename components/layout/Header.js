@@ -3,11 +3,25 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
+import getDataRepository from "../../repository/getData-repository";
 
 const Header = ({ handleOpen, handleRemove, openClass }) => {
   const { t } = useTranslation();
   const router = useRouter();
   const { i18n } = useTranslation();
+
+  const [servicesApi, setServicesApi] = useState([]);
+
+  const getServices = async () => {
+    const servicesPromise = await getDataRepository.getPromise("service/");
+    if (servicesPromise) {
+      setServicesApi(servicesPromise.data.results);
+    }
+  };
+
+  useEffect(() => {
+    getServices();
+  }, []);
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
@@ -76,7 +90,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
   function coloring4(params) {}
   function coloring5(params) {}
   function coloring6(params) {}
-
+  console.log("header services", servicesApi);
   return (
     <div className="position-relative">
       <header
@@ -135,7 +149,17 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                           </div>
                           <div className="col-xl-9 col-lg-8">
                             <div className="row">
-                              <div className="col-4">
+                              {servicesApi.length > 0 &&
+                                servicesApi.map((item, i) => {
+                                  return (
+                                    <div className="col-4">
+                                      <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
+                                        {item.title}
+                                      </h5>
+                                    </div>
+                                  );
+                                })}
+                              {/* <div className="col-4">
                                 <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
                                   {t("N_Frontend_Development")}
                                 </h5>
@@ -174,7 +198,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                                 <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
                                   {t("N_Branding")}
                                 </h5>
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         </div>

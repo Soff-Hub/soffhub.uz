@@ -126,7 +126,6 @@ const BlogDetails = () => {
                     </div>
                     <div className="row">
                       <div className="col-12 my-70">
-                        {/* <PortfolioCarousel /> */}
 
                         <div className="row ">
                           {blogPost.scren_group.map((item, index) => {
@@ -140,6 +139,7 @@ const BlogDetails = () => {
                             );
                           })}
                         </div>
+                        
                       </div>
                     </div>
                   </div>

@@ -15,7 +15,7 @@ const FullscreenImage = ({ src }) => {
 
   return (
     <div>
-      <img src={src} onClick={showFullscreenImage} />
+      <img src={src} onClick={showFullscreenImage}  className="about-imgs hover-up   wow animate__animated animate__fadeIn " />
 
       {isFullscreen && (
         <div className="fullscreen-overlay" onClick={hideFullscreenImage}>

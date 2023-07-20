@@ -3,7 +3,17 @@ import React, { useState, useEffect } from "react";
 import portfolio from "../../util/portfolio";
 
 const PortfolioFilter = ({ col, show }) => {
-  // const [nextData, setNextData] = useState([]);
+  const [scroll, setScroll] = useState(0);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      const scrollCheck = window.scrollY > 1000;
+      if (scrollCheck !== scroll) {
+        setScroll(scrollCheck);
+        console.log('salom');
+      }
+    });
+  }, []);
 
   const [filter, setFilter] = useState("all");
   const [projects, setProjects] = useState([]);
@@ -26,7 +36,7 @@ const PortfolioFilter = ({ col, show }) => {
   for (let i = 0; i < projects.length; i += 3) {
     newArray.push(projects.slice(i, i + 3));
   }
-
+console.log(newArray, 'new');
   return (
     <>
       {/* portfilo select */}
@@ -54,6 +64,7 @@ const PortfolioFilter = ({ col, show }) => {
                 </div>
             </div> */}
 
+
       
       <div className="mt-70 mb-50">
         <div className="">
@@ -63,7 +74,7 @@ const PortfolioFilter = ({ col, show }) => {
                 <div
                   key={i}
                   className={
-                    (i + 2) % 2 === 0
+                    (i + 2) % 2 === 0 
                       ? "portfolio-grid-container grid-left-true"
                       : "portfolio-grid-container grid-left-false"
                   }

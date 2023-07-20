@@ -3,25 +3,25 @@ import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import data from "../util/blogData";
 import { useTranslation } from "react-i18next";
-// import GetData from '../repository/getData-repository'
-// import { useEffect, useState } from "react";
+import GetData from '../repository/getData-repository'
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const {t} = useTranslation()
-  // const [servicesApi, setServicesApi] = useState([])
+  const [servicesApi, setServicesApi] = useState([])
 
-  // const getServices = async () => {
-  //   const servicesPromise = await GetData.getPromise('service/')
-  //   if (servicesPromise) {
-  //     setServicesApi(servicesPromise.data.results)
-  //   }
-  // }
+  const getServices = async () => {
+    const servicesPromise = await GetData.getPromise('service/')
+    if (servicesPromise) {
+      setServicesApi(servicesPromise.data.results)
+    }
+  }
 
-  // useEffect(() => {
-  //   getServices()
-  // },[])
+  useEffect(() => {
+    getServices()
+  },[])
 
-console.log('service api' ,data);
+console.log('service api' ,servicesApi);
   return (
     <>
       <Head>
@@ -45,7 +45,8 @@ console.log('service api' ,data);
                 </div>
                 <div className="mt-50 mb-50">
                   <div className="row mt-50 mb-10">
-                    {  data.map((item, i) => (
+                    { servicesApi.length > 0 && 
+                     servicesApi.map((item, i) => (
                       <div className="col-lg-6 col-md-6" key={i}>
                         <div
                           className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"
@@ -61,7 +62,7 @@ console.log('service api' ,data);
                           </div>
                           <div className="ms-1">
                             <div className="item-icon bg-gray-950 " >
-                            <i class={`${item.iconClass}`}></i>
+                            <i class={`${item.icon}`}></i>
                             </div>
                           </div>
                         </div>
