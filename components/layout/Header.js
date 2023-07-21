@@ -23,6 +23,8 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
       dispatch(setLanguageData("en"));
     } else if (language == "uz") {
       dispatch(setLanguageData("uz"));
+    }else if(language == "ru"){
+      dispatch(setLanguageData("ru"));
     }
   };
 
@@ -307,7 +309,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                   href="#"
                   className=" color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
                 >
-                  <i class="fa-solid fa-earth-americas"></i>
+                 en
                 </Link>
 
                 <div className="language-items">
@@ -326,6 +328,13 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                   >
                     en
                   </Link>
+                  {/* <Link
+                    onClick={() => changeLanguage("ru")}
+                    href="#"
+                    className="color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
+                  >
+                    ru
+                  </Link> */}
                 </div>
               </div>
             </div>

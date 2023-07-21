@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import data from "../util/blogData";
 import PortfolioFilter from "../components/elements/PortfolioFilter";
 import AboutHeader from "../components/elements/about-header";
+import HomePagePortfolio from "../components/elements/homePage-portfolio";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -330,12 +331,12 @@ export default function Home() {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="row mt-70  wow animate__animated animate__fadeIn hover-up">
-                  <h2 className="color-linear d-inline-block mb-10">
+                  <h2 className="color-linear d-inline-block mb-2">
                     {t("I_portfolio")}
                   </h2>
 
                   {/* Portfolio componenta */}
-                  <PortfolioFilter />
+                  <HomePagePortfolio/> 
 
                   <div className="col-lg-12"></div>
                 </div>
