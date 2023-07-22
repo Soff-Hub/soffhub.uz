@@ -60,8 +60,11 @@ const BlogID = () => {
                 <div className="card-blog-1 card-blog-2 hover-up wow animate__animated animate__fadeIn">
                   <div className="card-image mb-20">
                     <Link className="post-type" href="#" />
-                    <Link href="/single-sidebar">
+                    <Link href="#">
+                     {
+                      blogId && 
                       <img src={`${blogId.image}`} alt={`${blogId.title}`} />
+                     }
                     </Link>
                   </div>
                   <div className="card-info">
@@ -69,9 +72,7 @@ const BlogID = () => {
                       <h4 className="color-white mt-30">{`${blogId.title}`}</h4>
                     </Link>
                     <p className="mt-25 text-lg color-gray-700">
-                      Gosh jaguar ostrich quail one excited dear hello and bound
-                      and the and bland moral misheard roadrunner flapped lynx
-                      far that and jeepers giggled far and far
+                      {blogId.body}
                     </p>
                     <div className="row align-items-center mt-45">
                       <div className="col-7">
@@ -81,7 +82,7 @@ const BlogID = () => {
                             alt={`${blogId.title}`}
                           />
                           <div className="author-info">
-                            <h6 className="color-gray-700">Joseph</h6>
+                            <h6 className="color-gray-700">{blogId.title}</h6>
                             <span className="color-gray-700 text-sm">
                               {`${blogId.created_at}`}
                             </span>
@@ -91,9 +92,9 @@ const BlogID = () => {
                       <div className="col-5 text-end">
                         <Link
                           className="readmore color-gray-500 text-sm"
-                          href="/single-sidebar"
+                          href="/blog"
                         >
-                          <span>Read more</span>
+                          <span>Blog</span>
                         </Link>
                       </div>
                     </div>

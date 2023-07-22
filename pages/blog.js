@@ -5,26 +5,43 @@ import getDataRepository from "../repository/getData-repository";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import { BallTriangle, Triangle } from "react-loader-spinner";
 
 export default function Home() {
   const { t } = useTranslation();
   const [blog, setBlog] = useState([]);
+  const [limit, setLimit] = useState(3);
   const languageData = useSelector((state) => state.translations.data);
 
-
-
   const getBlog = async () => {
-    const blogPromise = await getDataRepository.getPromise("blog/", `${languageData.language}`);
+    const blogPromise = await getDataRepository.getPromise(
+      `blog/?limit=${limit}&offset=0`,
+      `${languageData.language}`
+    );
     if (blogPromise) {
       setBlog(blogPromise.data.results);
     }
   };
 
+  const handleScroll = () => {
+    const { scrollHeight, scrollTop, clientHeight, scrollY } =
+      document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight - 640) {
+      setLimit((limit) => limit + 3);
+    }
+  };
+
   useEffect(() => {
     getBlog();
-  }, [languageData.language]);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [limit]);
 
   console.log("blog api", blog);
+  console.log("limit", limit);
 
   return (
     <>
@@ -37,28 +54,56 @@ export default function Home() {
             <div className="row">
               <div className="col-xl-1" />
               <div className="col-xl-10 col-lg-12">
-                <div className="row align-items-end mt-50">
-                  <div className="col-lg-12 text-center">
-                    <div className="blog-page d-inline-block position-relative">
-                      <h1 className="color-white mb-10 color-linear wow animate__animated animate__fadeIn">
-                        {t("B_title")}
-                      </h1>
-                    </div>
-                  </div>
-                </div>
                 {blog.length <= 0 ? (
                   <div className="row">
-                    <div className="col-lg-12">
-                      <p className="color-white text base fs-5  wow animate__animated animate__fadeIn">
-                        {t("B_no_data")}
-                      </p>
-                      <div className="border-bottom border-gray-800 mt-30 mb-30" />
+                    <div className="col-lg-12 text-center">
+                      <div className="blogSpinner">
+                          <Triangle
+                          height="80"
+                          width="80"
+                          color="#0EA5EA"
+                          ariaLabel="triangle-loading"
+                          wrapperStyle={{}}
+                          wrapperClassName=""
+                          visible={true}
+                        />
+                      </div>
                     </div>
                   </div>
+                ) : blog.length === 0 ? (
+                  <>
+                    <div className="row align-items-end mt-50">
+                      <div className="col-lg-12 text-center">
+                        <div className="blog-page d-inline-block position-relative">
+                          <h1 className="color-white mb-10 color-linear wow animate__animated animate__fadeIn">
+                            {t("B_title")}
+                          </h1>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row">
+                      <div className="col-lg-12">
+                        <p className="color-white text base fs-5  wow animate__animated animate__fadeIn">
+                          {t("B_no_data")}
+                        </p>
+                        <div className="border-bottom border-gray-800 mt-30 mb-30" />
+                      </div>
+                    </div>
+                  </>
                 ) : (
-                  <div className="row mt-70">
-                    <div className="col-xl-12 col-lg-12 col-12">
-                      {/* <div className="card-blog-1 card-blog-2 hover-up wow animate__animated animate__fadeIn">
+                  <>
+                    <div className="row align-items-end mt-50">
+                      <div className="col-lg-12 text-center">
+                        <div className="blog-page d-inline-block position-relative">
+                          <h1 className="color-white mb-10 color-linear wow animate__animated animate__fadeIn">
+                            {t("B_title")}
+                          </h1>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="row mt-70">
+                      <div className="col-xl-12 col-lg-12 col-12">
+                        {/* <div className="card-blog-1 card-blog-2 hover-up wow animate__animated animate__fadeIn">
                                                 <div className="card-image mb-20"><Link className="post-type" href="#" /><Link href="/single-sidebar"><img src="assets/imgs/page/homepage4/img5.jpg" alt="Genz" /></Link></div>
                                                 <div className="card-info"><Link href="/single-sidebar">
                                                     <h4 className="color-white mt-30">I work best when my space is filled with
@@ -79,79 +124,74 @@ export default function Home() {
                                                     </div>
                                                 </div>
                                             </div> */}
-                      <div className="box-list-posts mt-30">
-                        {blog.slice(0, 5).map((item, i) => (
-                          <div
-                            className="card-list-posts wow animate__animated animate__fadeIn"
-                            key={i}
-                          >
-                            <div className="card-image hover-up">
-                              <Link href={`blogId/${item.id}`}>
-                                <img
-                                  src={`/assets/imgs/page/healthy/${item.img}`}
-                                  alt="Genz"
-                                />
-                              </Link>
-                            </div>
-                            <div className="card-info">
-                              <Link
-                                className="btn btn-tag bg-gray-800 hover-up"
-                                href={`blogId/${item.id}`}
-                              >
-                                {item.category}
-                              </Link>
-                              <Link href={`blogId/${item.id}`}>
-                                <h4 className="mt-15 mb-20 color-white">
-                                  {item.title}
-                                </h4>
-                              </Link>
-                              <p className="color-gray-500">
-                                {item.description}
-                              </p>
-                              <div className="row mt-20">
-                                <div className="col-7">
-
-                                  {
-                                    item.tags.map((item, i) => {
+                        <div className="box-list-posts mt-30">
+                          {blog.slice(0, 5).map((item, i) => (
+                            <div
+                              className="card-list-posts  wow animate__animated animate__fadeIn"
+                              style={{ minHeight: "170px" }}
+                              key={i}
+                            >
+                              <div className=" card-image hover-up">
+                                <Link href={`blogId/${item.id}`}>
+                                  <img src={`${item.image}`} alt="Genz" />
+                                </Link>
+                              </div>
+                              <div className="  card-info">
+                                <Link
+                                  className="btn btn-tag bg-gray-800 hover-up"
+                                  href={`blogId/${item.id}`}
+                                >
+                                  {item.category}
+                                </Link>
+                                <Link href={`blogId/${item.id}`}>
+                                  <h4 className="mt-15 mb-20 color-white">
+                                    {item.title}
+                                  </h4>
+                                </Link>
+                                <p className="color-gray-500">
+                                  {item.description}
+                                </p>
+                                <div className="row mt-20">
+                                  <div className="col-7">
+                                    {item.tags.map((item, i) => {
                                       return (
                                         <Link
-                                        className="color-gray-700 text-sm mr-15"
-                                        href={`blogId/${item.id}`}
-                                      >
-                                        # {item.name}
-                                      </Link>
-                                      )
-                                    })
-                                  }
-                                  {/* <Link
+                                          className="color-gray-700 text-sm mr-15"
+                                          href={`blogId/${item.id}`}
+                                        >
+                                          # {item.name}
+                                        </Link>
+                                      );
+                                    })}
+                                    {/* <Link
                                     className="color-gray-700 text-sm mr-15"
                                     href="/blog-archive"
                                   >
                                     # Travel
                                   </Link> */}
-                                  {/* <Link
+                                    {/* <Link
                                     className="color-gray-700 text-sm"
                                     href="/blog-archive"
                                   >
                                     # Lifestyle
                                   </Link> */}
-                                </div>
-                                <div className="col-5 text-end">
-                                  <span className="color-gray-700 text-sm timeread">
-                                   {item.created_at}
-                                  </span>
+                                  </div>
+                                  <div className="col-5 text-end">
+                                    <span className="color-gray-700 text-sm timeread">
+                                      {item.created_at}
+                                    </span>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
-                            {/* <div className="row">
+                              {/* <div className="row">
                                   <div className="col-12">
                                       {item.body}
                                   </div>
                             </div> */}
-                          </div>
-                        ))}
-                      </div>
-                      {/* <nav className="mb-50">
+                            </div>
+                          ))}
+                        </div>
+                        {/* <nav className="mb-50">
                         <ul className="pagination">
                           <li
                             className="page-item wow animate__animated animate__fadeIn"
@@ -203,8 +243,9 @@ export default function Home() {
                           </li>
                         </ul>
                       </nav> */}
+                      </div>
                     </div>
-                  </div>
+                  </>
                 )}
               </div>
             </div>

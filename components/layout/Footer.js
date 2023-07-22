@@ -1,23 +1,23 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import GetData from '../../repository/getData-repository'
+import GetData from "../../repository/getData-repository";
 
 const Footer = () => {
-  const {t} = useTranslation()
+  const { t } = useTranslation();
 
-  const [social_links, setSocial_links ] = useState([])
+  const [social_links, setSocial_links] = useState([]);
 
   const getSocial_links = async () => {
-    const servicesPromise = await GetData.getPromise('social_link/','en')
+    const servicesPromise = await GetData.getPromise("social_link/", "en");
     if (servicesPromise) {
-      setSocial_links(servicesPromise.data.results)
+      setSocial_links(servicesPromise.data.results);
     }
-  }
+  };
 
   useEffect(() => {
-    getSocial_links()
-  },[])
+    getSocial_links();
+  }, []);
 
   console.log("links", social_links);
 
@@ -27,7 +27,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-1 bg-gray-850 border-gray-800">
             <div className="row">
-              <div className="col-lg-4 mb-30">
+              <div className="col-lg-8 mb-30">
                 <Link
                   className="wow animate__animated animate__fadeInUp"
                   href="/"
@@ -39,10 +39,9 @@ const Footer = () => {
                   />
                 </Link>
                 <p className="mb-20 mt-20 text-sm color-gray-500 wow animate__animated animate__fadeInUp">
-                 {t("F_desc")}
+                  {t("F_desc")}
                 </p>
                 <h6 className="color-white mb-5 wow animate__animated animate__fadeInUp">
-                  
                   {t("F_address")}
                 </h6>
                 <p className="text-sm color-gray-500 wow animate__animated animate__fadeInUp">
@@ -50,7 +49,7 @@ const Footer = () => {
                   {t("F_address_full")}
                 </p>
               </div>
-              <div className="col-lg-4   mb-30">
+              <div className="col-lg-4 text-end   mb-30">
                 <h6 className="text-lg mb-30 color-white wow animate__animated animate__fadeInUp">
                   {t("F_categories")}
                 </h6>
@@ -58,43 +57,48 @@ const Footer = () => {
                   <div className="col-6">
                     <ul className="menu-footer">
                       <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
+                        <Link className="color-gray-500" href="/about">
                           {t("N_about")}
                         </Link>
                       </li>
                       <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
+                        <Link className="color-gray-500" href="/services">
                           {t("N_services")}
                         </Link>
                       </li>
                       <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
+                        <Link className="color-gray-500" href="/portfolio">
                           {t("N_portfolio")}
                         </Link>
                       </li>
-                      <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
+                     
+                    </ul>
+                  </div>
+                  <div className="col-6">
+                    <ul className="menu-footer" >
+                    <li className="wow animate__animated animate__fadeInUp">
+                        <Link className="color-gray-500" href="/vacancies">
                           {t("N_vacancies")}
                         </Link>
                       </li>
                       <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
+                        <Link className="color-gray-500" href="/blog">
                           {t("N_blog")}
                         </Link>
                       </li>
                       <li className="wow animate__animated animate__fadeInUp">
-                        <Link className="color-gray-500" href="/blog-archive">
+                        <Link className="color-gray-500" href="/contact">
                           {t("N_contact")}
                         </Link>
                       </li>
+
                     </ul>
                   </div>
-                  
                 </div>
               </div>
-              <div className="col-lg-4 mb-30">
+              {/* <div className="col-lg-4 mb-30">
                 <h4 className="text-lg mb-30 color-white wow animate__animated animate__fadeInUp">
-                 {t("F_contact")}
+                  {t("F_contact")}
                 </h4>
 
                 <div className="form-newsletters mt-15 wow animate__animated animate__fadeInUp">
@@ -121,51 +125,32 @@ const Footer = () => {
                     </div>
                   </form>
                 </div>
-              </div>
+              </div> */}
             </div>
+
+
             <div className="footer-bottom border-gray-800">
               <div className="row">
                 <div className="col-lg-12 text-center text-lg-end">
                   <div className="box-socials">
-                   
-                    {
-                      social_links.length> 0 && social_links.map((item, i) => {
-                        return  <div
-                        key={item.id}
-                        className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
-                        data-wow-delay=".0s"
-                      >
-                        <Link
-                          className={`${item.icon} icon-socials color-gray-500`}
-                          href={`${item.url}`}
-                        >
-                          Twitter 
-                        </Link>
-                      </div>
-                      })
-                    }
-                    {/* <div
-                      className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
-                      data-wow-delay=".2s"
-                    >
-                      <Link
-                        className="icon-socials icon-linked color-gray-500"
-                        href="https://www.linkedin.com"
-                      >
-                        LinkedIn
-                      </Link>
-                    </div>
-                    <div
-                      className="d-inline-block wow animate__animated animate__fadeIn"
-                      data-wow-delay=".4s"
-                    >
-                      <Link
-                        className="icon-socials icon-insta color-gray-500"
-                        href="https://www.instagram.com"
-                      >
-                        Instagram
-                      </Link>
-                    </div> */}
+                    {social_links.length > 0 &&
+                      social_links.map((item, i) => {
+                        return (
+                          <div
+                            key={item.id}
+                            className="d-inline-block mr-30 wow animate__animated animate__fadeIn"
+                            data-wow-delay=".0s"
+                          >
+                            <Link
+                              target="blank"
+                              className={`${item.icon} icon-socials color-gray-500`}
+                              href={`${item.url}`}
+                            >
+                              {item.name}
+                            </Link>
+                          </div>
+                        );
+                      })}
                   </div>
                 </div>
               </div>

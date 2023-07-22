@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const baseDomain = "https://soffhubbackend01.pythonanywhere.com/api/v1/";
+export const baseDomain = "http://3.88.192.131/api/v1/";
 
 
 const clinet = axios.create({

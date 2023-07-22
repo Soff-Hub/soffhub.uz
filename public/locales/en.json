@@ -62,7 +62,7 @@
 
     "C_placholder_name" : "Your Name*",
     "C_placholder_number" : "Phone number *",
-    "C_placholder_message" : "Message *",
+    "C_placholder_message" : "Message ",
     "C_Send_Message" : "Send Message",
 
     "S_Services" : "Services",

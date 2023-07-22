@@ -6,7 +6,8 @@ import { useRouter } from "next/router";
 import getDataRepository from "../../repository/getData-repository";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguageData } from "../../store/translationSlice";
-
+import SelectLanguage from "../elements/select-language";
+import { Select, Space } from "antd";
 
 const Header = ({ handleOpen, handleRemove, openClass }) => {
   const { t } = useTranslation();
@@ -14,19 +15,21 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
   const { i18n } = useTranslation();
   const dispatch = useDispatch();
   const [servicesApi, setServicesApi] = useState([]);
+  const [lan, setLan] = useState("en");
 
   const languageData = useSelector((state) => state.translations.data);
 
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-    if (language == "en") {
-      dispatch(setLanguageData("en"));
-    } else if (language == "uz") {
-      dispatch(setLanguageData("uz"));
-    }else if(language == "ru"){
-      dispatch(setLanguageData("ru"));
-    }
-  };
+  // const changeLanguage = (language) => {
+  //   i18n.changeLanguage(language);
+  //   // setLan(language)
+  //   if (language === "en") {
+  //     dispatch(setLanguageData("en"));
+  //   } else if (language === "uz") {
+  //     dispatch(setLanguageData("uz"));
+  //   } else if (language === "ru") {
+  //     dispatch(setLanguageData("ru"));
+  //   }
+  // };
 
   const getServices = async () => {
     const servicesPromise = await getDataRepository.getPromise(
@@ -35,6 +38,19 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
     );
     if (servicesPromise) {
       setServicesApi(servicesPromise.data.results);
+    }
+  };
+
+  const handleChange = (language) => {
+    console.log(`selected ${language}`);
+    i18n.changeLanguage(language);
+    // setLan(language)
+    if (language === "en") {
+      dispatch(setLanguageData("en"));
+    } else if (language === "uz") {
+      dispatch(setLanguageData("uz"));
+    } else if (language === "ru") {
+      dispatch(setLanguageData("ru"));
     }
   };
 
@@ -107,7 +123,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
   function coloring5(params) {}
   function coloring6(params) {}
   console.log("header services", servicesApi);
-
+  console.log("lan", lan);
   return (
     <div className="position-relative">
       <header
@@ -283,7 +299,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                 <span className="burger-icon-bottom" />
               </div>
             </div>
-            <div className="header-right position-relative d-flex justify-content-end ">
+            <div className="header-right position-relative d-flex justify-content-center ">
               <p className="tel_nomer color-white">(90) 930-35-54 </p>
 
               <div>
@@ -303,7 +319,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                   </svg>
                 </Link>
               </div>
-              <div className="language-div">
+              {/* <div className="language-div">
                 <Link
                   onClick={() => changeLanguage("en")}
                   href="#"
@@ -328,14 +344,78 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                   >
                     en
                   </Link>
-                  {/* <Link
+                  <Link
                     onClick={() => changeLanguage("ru")}
                     href="#"
                     className="color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
                   >
                     ru
-                  </Link> */}
+                  </Link>
                 </div>
+              </div> */}
+              <div className="language-div1">
+                {/* <Link
+                  onClick={() => changeLanguage("en")}
+                  href="#"
+                  className=" color-white text-center hover-lan  d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
+                >
+                 en
+                </Link> */}
+                {/* 
+                <ul className="language-items">
+                  <Link
+                    // onClick={() => changeLanguage("en")}
+                    href="#"
+                    id="en"
+                    className="color-white text-center lan d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
+                  >
+                    {lan}
+                  </Link>
+                  <li>
+                    <Link
+                      onClick={() => changeLanguage("uz")}
+                      href="#"
+                      id="uz"
+                      className="color-white text-center lan  d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear "
+                    >
+                      uz
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onClick={() => changeLanguage("en")}
+                      href="#"
+                      id="uz"
+                      className="color-white text-center lan  d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear "
+                    >
+                      en
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      onClick={() => changeLanguage("ru")}
+                      href="#"
+                      id="ru"
+                      className="color-white text-center lan  d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
+                    >
+                      ru
+                    </Link>
+                  </li>
+                </ul> */}
+
+                <Space wrap>
+                  <Select
+                    defaultValue="en"
+                    style={{ width: 50, backgroundColor: "#000", borderRadius:'10px', position:'relative' , zIndex: '99999999999999' }}
+                    onChange={handleChange}
+                    options={[
+                      { value: "en", label: "en", style:{color: '#b5b4b4' , backgroundColor:"#0F172A", boxShadow:' 1px 1px 3px rgb(91, 238, 130,.2)' , position:'relative' , zIndex: '999999 !important' } },
+                      { value: "uz", label: "uz" , style:{color: '#b5b4b4' , backgroundColor:"#0F172A", marginTop: '3px', marginBottom: '3px',  boxShadow:' 1px 1px 3px rgb(91, 238, 130, .2)'  , position:'relative' , zIndex: '999999'  }  },
+                      { value: "ru", label: "ru" , style:{color: '#b5b4b4' , backgroundColor:"#0F172A",  boxShadow:' 1px 1px 3px rgb(91, 238, 130)'  , position:'relative' , zIndex: '999999' }  },
+                    ]
+                  }
+                  />
+                </Space>
               </div>
             </div>
           </div>

@@ -37,7 +37,7 @@
     "F_placholder_number" : "Raqamingiz",
     "F_subscribe" : "Obuna boʻling",
     "A_projects" : "Loyihalar",
-    "A_partners" : "Biz hamkorlarimiz",
+    "A_partners" : "Bizning hamkorlarimiz",
     "A_about": "Biz haqimizda",
     "A_about1" : "Mijozlarga xizmat ko'rsatish",
     "A_about2" : "Innovatsiya",
@@ -62,7 +62,7 @@
 
     "C_placholder_name" : "Ismingiz*",
     "C_placholder_number" : "Raqamingiz *",
-    "C_placholder_message" : "Xabar *",
+    "C_placholder_message" : "Xabar",
     "C_Send_Message" : "Xabar yuborish",
 
     "S_Services" : "Xizmatlar",

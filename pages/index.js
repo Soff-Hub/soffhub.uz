@@ -6,10 +6,28 @@ import data from "../util/blogData";
 import PortfolioFilter from "../components/elements/PortfolioFilter";
 import AboutHeader from "../components/elements/about-header";
 import HomePagePortfolio from "../components/elements/homePage-portfolio";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import getDataRepository from "../repository/getData-repository";
 
 export default function Home() {
   const { t } = useTranslation();
 
+  const [servicesApi, setServicesApi] = useState([])
+
+  const select = useSelector(state => state.translations.data)
+ console.log('select', select.language);
+
+const getServices = async () => {
+ const servicesPromise = await getDataRepository.getPromise('service/', `${select.language}`)
+ if (servicesPromise) {
+   setServicesApi(servicesPromise.data.results)
+ }
+}
+
+useEffect(() => {
+ getServices()
+},[select.language])
 
   return (
     <>
@@ -346,7 +364,7 @@ export default function Home() {
                     {t("I_our_services")}
                   </h2>
                   <div className="row mt-50 mb-10">
-                    {data.map((item, i) => (
+                    {servicesApi.length > 0 &&  servicesApi.slice(0,6).map((item, i) => (
                       <div
                         className="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
                         key={i}
@@ -365,7 +383,7 @@ export default function Home() {
                           </div>
                           <div className="ms-1">
                             <div className="item-icon bg-gray-950 ">
-                              <i class={`${item.iconClass}`}></i>
+                              <i class={`${item.icon}`}></i>
                             </div>
                           </div>
                         </div>

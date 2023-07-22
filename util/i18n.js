@@ -6,6 +6,7 @@ import { initReactI18next } from 'react-i18next';
 // Translations
 import translationEN from '../public/locales/en.json'; // English translation file
 import translationUz from '../public/locales/uz.json'; // French translation file
+import translationRu from '../public/locales/ru.json'; // French translation file
 
 
 // Add your i18next configuration options here
@@ -16,6 +17,9 @@ const options = {
     },
     uz: {
       translation: translationUz
+    },
+    ru: {
+      translation: translationRu
     },
   },
   fallbackLng: 'en',

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import portfolio from "../../util/portfolio";
 import getDataRepository from "../../repository/getData-repository";
 import { useSelector } from "react-redux";
 
@@ -36,17 +35,19 @@ const HomePagePortfolio = ({ col, show }) => {
     getPortfoliosData2();
   }, []);
 
-  const newArray = [];
-  for (let i = 0; i < portfolioData.length; i += 3) {
-    newArray.push(portfolioData.slice(i, i + 3));
-  }
+  const newArray = portfolioData;
+  // for (let i = 0; i < portfolioData.length; i += 3) {
+  //   newArray.push(portfolioData.slice(i, i + 3));
+  // }
+
   console.log(portfolioData5);
 
   return (
     <>
       <div className="mt-70 mb-50">
         <div className="">
-          {newArray.length > 0 &&
+
+          {/* {newArray.length > 0 &&
             newArray.map((el, i) => {
               return (
                 <div
@@ -57,7 +58,7 @@ const HomePagePortfolio = ({ col, show }) => {
                       : "portfolio-grid-container grid-left-false"
                   }
                 >
-                  {el.map((item, i) =>
+                  {newArray.map((item, i) =>
                     true ? (
                       <Link
                         href={`/blog/${item.id}`}
@@ -101,8 +102,62 @@ const HomePagePortfolio = ({ col, show }) => {
                   )}
                 </div>
               );
-            })}
-          {/* <div className="home-portfolio-grid">
+            })} */}
+            
+            <div
+                  // key={i}
+                  className={
+                    // (i + 2) % 2 === 0
+                      "portfolio-grid-container grid-left-true"
+                      // : "portfolio-grid-container grid-left-false"
+                  }
+                >
+                  {newArray.map((item, i) =>
+                    true ? (
+                      <Link
+                        href={`/blog/${item.id}`}
+                        className={"portfolio-card" + i}
+                        key={item.id}
+                        style={{ objectFit: "cover" }}
+                      >
+                        <div className="project " data-category="web motion">
+                          <div className="item-content">
+                            <div
+                              className=" card-style-1 hover-up mb-30"
+                              data-wow-delay=".0s"
+                            >
+                              <div className={` portfolio-image-style my-2`}>
+                                <Link
+                                  className="link-post"
+                                  href={`/blog/${item.id}`}
+                                >
+                                  <img
+                                    src={`${item.gallery}`}
+                                    alt="soff portfolio"
+                                    className={`portfolio-card-img-${i} portfolio-img`}
+                                  />
+                                  <div className="portfolio-info card-bg-2">
+                                    <div className="portfolio-info-bottom">
+                                      <h4 className="color-white ">
+                                        {item.title}
+                                      </h4>
+                                      <p className="color-gray-500 text-sm">
+                                        {item.category}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    ) : null
+                  )}
+                </div>
+
+
+          <div className="home-portfolio-grid">
             {portfolioData5.length > 0 &&
               portfolioData5.map((item, i) => (
                 <Link
@@ -138,7 +193,8 @@ const HomePagePortfolio = ({ col, show }) => {
                   </div>
                 </Link>
               ))}
-          </div> */}
+          </div>
+
         </div>
       </div>
     </>
