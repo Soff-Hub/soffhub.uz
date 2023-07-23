@@ -1,7 +1,6 @@
 import axios from "axios";
 
-export const baseDomain = "http://3.88.192.131/api/v1/";
-
+export const baseDomain = process.env.BASE_URL;
 
 const clinet = axios.create({
   baseURL: baseDomain,
