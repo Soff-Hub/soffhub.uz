@@ -19,7 +19,7 @@ const FullscreenImage = ({ src }) => {
 
       {isFullscreen && (
         <div className="fullscreen-overlay" onClick={hideFullscreenImage}>
-          <span className="close-icon">&times;</span>
+          <span className="close-icon" style={{zIndex:'99999999999999999999'}}>&times;</span>
           <img className="fullscreen-image" src={src} />
         </div>
       )}
@@ -39,20 +39,13 @@ const FullscreenImage = ({ src }) => {
           color: #fff;
           font-size: 30px;
           position: absolute;
-          top: 20px;
-          right: 20px;
+          top: 1px;
+          right: 3px;
           cursor: pointer;
+          z-index: 99999999999 !important;
         }
 
-        .fullscreen-image {
-          max-width: 100%;
-        /* //   width: 600px; */
-          max-height: 100%;
-          display: block;
-          margin: 0 auto;
-          padding: 20px;
-          z-index: 9999;
-        }
+     
       `}</style>
     </div>
   );

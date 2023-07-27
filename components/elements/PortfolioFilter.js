@@ -39,41 +39,17 @@ const PortfolioFilter = ({ col, show }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-
-    // document.addEventListener("scroll", () => {
-    //   const scrollCheck = window.scrollY > 100;
-    //   if (scrollCheck !== scroll) {
-    //     setScroll(scrollCheck);
-    //   }
-    // });
   }, [limit]);
-
-  // const [filter, setFilter] = useState("all");
-  // const [projects, setProjects] = useState([]);
-
-  // useEffect(() => {
-  //   setProjects(portfolio);
-  // }, []);
-
-  // useEffect(() => {
-  //   setProjects([]);
-
-  //   const filtered = portfolio.map((p) => ({
-  //     ...p,
-  //     filtered: p.category.includes(filter),
-  //   }));
-  //   setProjects(filtered);
-  // }, [filter]);
 
   const newArray = [];
   for (let i = 0; i < portfolioData.length; i += 3) {
     newArray.push(portfolioData.slice(i, i + 3));
   }
 
-  console.log("new", newArray);
-  console.log("portfolios", portfolioData);
-  console.log("offset", offset);
-  console.log("limit", limit);
+  // console.log("new", newArray);
+  // console.log("portfolios", portfolioData);
+  // console.log("offset", offset);
+  // console.log("limit", limit);
   return (
     <>
       {/* portfilo select */}
@@ -119,7 +95,7 @@ const PortfolioFilter = ({ col, show }) => {
                       <Link
                         href={`/blog/${item.id}`}
                         className={"portfolio-card" + i}
-                        key={item.id}
+                        key={i}
                         style={{ objectFit: "cover" }}
                       >
                         <div className="project " data-category="web motion">

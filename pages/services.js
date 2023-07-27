@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
-import data from "../util/blogData";
 import { useTranslation } from "react-i18next";
 import GetData from '../repository/getData-repository'
 import { useEffect, useState } from "react";
@@ -12,7 +11,7 @@ export default function Home() {
   const [servicesApi, setServicesApi] = useState([])
 
      const select = useSelector(state => state.translations.data)
-    console.log('select', select.language);
+    // console.log('select', select.language);
 
   const getServices = async () => {
     const servicesPromise = await GetData.getPromise('service/', `${select.language}`)
@@ -25,7 +24,7 @@ export default function Home() {
     getServices()
   },[select.language])
 
-console.log('service api' ,servicesApi);
+// console.log('service api' ,servicesApi);
   return (
     <>
       <Head>
@@ -66,7 +65,7 @@ console.log('service api' ,servicesApi);
                           </div>
                           <div className="ms-1">
                             <div className="item-icon bg-gray-950 " >
-                            <i class={`${item.icon}`}></i>
+                            <i className={`${item.icon}`}></i>
                             </div>
                           </div>
                         </div>

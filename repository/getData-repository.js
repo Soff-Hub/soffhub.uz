@@ -7,7 +7,7 @@ class GetData {
  
     const endPoint = `${value}`;
     const url = baseDomain + endPoint
-console.log('language', language);
+// console.log('language', language);
     const headers = {
       "Accept-Language" : `${language}`
     }

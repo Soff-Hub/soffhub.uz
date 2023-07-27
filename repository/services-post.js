@@ -17,6 +17,24 @@ class PostApplication {
       });
     return Massage;
   }
+
+  postVacansy(data, language){
+    const endPoint = 'application/';
+    const Vacansy = clinet ({
+      url: baseDomain + endPoint,
+      method:"Post",
+      headers: {"Accept-Language": `${language}` ,
+      'Content-Type': 'multipart/formdata',},
+      data : data,
+    })
+    .then((ress) => {
+      return ress;
+    })
+    .catch((err) => {
+      return err;
+    });
+  return Vacansy;
+  }
 }
 
 export default new PostApplication();

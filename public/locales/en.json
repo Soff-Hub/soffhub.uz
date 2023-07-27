@@ -3,9 +3,9 @@
     "N_about" : "ABOUT US",
     "N_services" : "SERVICES",
     "N_portfolio" : "PORTFOLIO",
-    "N_vacancies" : "VACANCIES",
+    "N_vacancies" : "CAREERS",
     "N_blog" : "BLOG",
-    "N_contact" : "CONTACT",
+    "N_contact" : "CONTACT US",
 
 
     "N_Frontend_Development" : "Frontend Development",
@@ -28,7 +28,7 @@
     "I_AWS_serverless" : " AWS Serverless",
     "I_AWS_serverless_desc" : "Our qualified specialists can create a solid solution based on your requests",
     "I_portfolio" : "Portfolio",
-    "F_desc" : " When an We develop efficient web applications, bots and online  stores for our clients all over the world. Let’s talk!",
+    "F_desc" : "We are the future of technology. We are the ones who will shape the way the world works. Let's make it a better place.",
     "F_address" : "Address",
     "F_address_uzb" : "Uzbekistan",
     "F_address_full" : "8/1 Bunyodkor Avenue, Tashkent 100115",
@@ -54,16 +54,19 @@
     "B_title" : "Blog",
     "B_no_data" : "No data",
 
-    "C_title" : "Contact Us",
+    "C_title" : "How to contact with us ?",
     "C_contact" : "Contact",
     "C_desc" : " We are AliThemes , a creative and dedicated group of individuals who love web development  almost as much as we love our customers. We are passionate team with the mission for   achieving the perfection in web design. All designs are made by love with pixel perfect design and excellent coding quality. Speed, security and SEO friendly alway in our mind.",
-    "C_Drop_Us_a_Line" : "Drop Us a Line",
+    "C_Drop_Us_a_Line1" : "How can we help you?  You’re welcome to email us ",
+    "C_Drop_Us_a_Line2": " soffhub.hr@gmail.com",
+    "C_Drop_Us_a_Line3" : " any time you like, or use the contact form below. Either way, we’ll get back to you as soon as possible.",
     "C_required" : "Required fields are marked",
 
-    "C_placholder_name" : "Your Name*",
+    "C_placholder_name" : "Your Name *",
     "C_placholder_number" : "Phone number *",
     "C_placholder_message" : "Message ",
     "C_Send_Message" : "Send Message",
+    "C_Company_name" : "Company name *",
 
     "S_Services" : "Services",
     "S_PROBLEM" : "IS THERE A PROBLEM?",
@@ -75,7 +78,23 @@
     "Id_Used_tools" : "Used tools",
     "Id_desc_header" : "Digital Design That Will Help You Start Your Business" ,
     "Id_Home" : "Home",
-    "Id_Go_the" : " Go to the site"
+    "Id_Go_the" : " Go to the site",
+
+    "View_more" : "View more"   ,
+    "Ariza_topshirish" : "Submit an application",
+    "b_Vakansiya_uchun" : "Submitting an application for a vacancy",
+    "b_Full_name" : "Full name",
+    "b_Phone_nuber" : "Phone nuber",
+    "b_Vacancies" : "Vacancies",
+    "b_Resume" : "CV",
+    "b_Send_a_file" : "file selection",
+    "b_Submit" : "Submit",
+    "b_name_placholder" : "Enter your name",
+
+    "p_Projects" : "Projects",
+    "p_Happy_clients" : "Happy clients",
+    "p_Employes" : "Employes"
+
 
 
 }

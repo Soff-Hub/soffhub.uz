@@ -19,7 +19,7 @@ const Footer = () => {
     getSocial_links();
   }, []);
 
-  console.log("links", social_links);
+  // console.log("links", social_links);
 
   return (
     <>
@@ -49,7 +49,7 @@ const Footer = () => {
                   {t("F_address_full")}
                 </p>
               </div>
-              <div className="col-lg-4 text-end   mb-30">
+              <div className="col-lg-4 text-cenetr   mb-30">
                 <h6 className="text-lg mb-30 color-white wow animate__animated animate__fadeInUp">
                   {t("F_categories")}
                 </h6>
@@ -143,10 +143,12 @@ const Footer = () => {
                           >
                             <Link
                               target="blank"
-                              className={`${item.icon} icon-socials color-gray-500`}
+                              className={`d-felx align-content-center color-gray-500`}
                               href={`${item.url}`}
                             >
-                              {item.name}
+                              <i className={`${item.icon} icon-socials color-gray-500`}></i>
+                             
+                            <p> {item.name}</p>
                             </Link>
                           </div>
                         );

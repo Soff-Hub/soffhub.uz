@@ -22,7 +22,7 @@ const HomePagePortfolio = ({ col, show }) => {
   };
   const getPortfoliosData2 = async () => {
     const portfolioPromise = await getDataRepository.getPromise(
-      `portfolio/?limit=5&offset=1`,
+      `portfolio/?limit=5&offset=4`,
       `${languageData.language}`
     );
     if (portfolioPromise) {
@@ -40,72 +40,15 @@ const HomePagePortfolio = ({ col, show }) => {
   //   newArray.push(portfolioData.slice(i, i + 3));
   // }
 
-  console.log(portfolioData5);
+  // console.log(portfolioData5);
 
   return (
     <>
       <div className="mt-70 mb-50">
-        <div className="">
-
-          {/* {newArray.length > 0 &&
-            newArray.map((el, i) => {
-              return (
-                <div
-                  key={i}
-                  className={
-                    (i + 2) % 2 === 0
-                      ? "portfolio-grid-container grid-left-true"
-                      : "portfolio-grid-container grid-left-false"
-                  }
-                >
-                  {newArray.map((item, i) =>
-                    true ? (
-                      <Link
-                        href={`/blog/${item.id}`}
-                        className={"portfolio-card" + i}
-                        key={item.id}
-                        style={{ objectFit: "cover" }}
-                      >
-                        <div className="project " data-category="web motion">
-                          <div className="item-content">
-                            <div
-                              className=" card-style-1 hover-up mb-30"
-                              data-wow-delay=".0s"
-                            >
-                              <div className={` portfolio-image-style my-2`}>
-                                <Link
-                                  className="link-post"
-                                  href={`/blog/${item.id}`}
-                                >
-                                  <img
-                                    src={`${item.gallery}`}
-                                    alt="soff portfolio"
-                                    className={`portfolio-card-img-${i} portfolio-img`}
-                                  />
-                                  <div className="portfolio-info card-bg-2">
-                                    <div className="portfolio-info-bottom">
-                                      <h4 className="color-white ">
-                                        {item.title}
-                                      </h4>
-                                      <p className="color-gray-500 text-sm">
-                                        {item.category}
-                                      </p>
-                                    </div>
-                                  </div>
-                                </Link>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    ) : null
-                  )}
-                </div>
-              );
-            })} */}
+        <div>
             
             <div
-                  // key={i}
+                
                   className={
                     // (i + 2) % 2 === 0
                       "portfolio-grid-container grid-left-true"

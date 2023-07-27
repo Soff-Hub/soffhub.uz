@@ -1,13 +1,7 @@
-import Link from "next/link";
 import Head from "next/head";
-import Accordion from "../components/elements/Accordion";
-import PortfolioFilter from "../components/elements/PortfolioFilter";
 import Layout from "../components/layout/Layout";
 import Brand from "../components/slider/Brand";
-import Testimonial from "../components/slider/Testimonial";
-import Typewriter from "typewriter-effect";
 import { useTranslation } from "react-i18next";
-import GetData from "../repository/getData-repository";
 import { useEffect, useState } from "react";
 import AboutHeader from "../components/elements/about-header";
 import FullscreenImage from "../components/slider/carousel-full-screen";
@@ -43,7 +37,7 @@ export default function Home() {
 
   
 
-  console.log('gallery', gallery);
+  // console.log('gallery', gallery);
 
   return (
     <>
@@ -79,44 +73,18 @@ export default function Home() {
                             key={i}
                             className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2"
                           >
-                            {/* <img
-                              className="about-imgs hover-up   wow animate__animated animate__fadeIn "
-                              src={item.image}
-                              alt="soff"
-                            /> */}
+                           
                             <FullscreenImage  src={item.image} />
                           </div>
                         );
                       })}
 
-                    {/* <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2 position-relative">
-                      <img
-                        className="about-imgs hover-up   wow animate__animated animate__fadeIn "
-                        src="assets/imgs/page/about/soff - japan - 4.png"
-                        alt="soff"
-                      />
-                      <div className="bg"></div>
-                    </div>
-                    <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2">
-                      <img
-                        className="about-imgs hover-up   wow animate__animated animate__fadeIn "
-                        src="assets/imgs/page/about/soff - japan - 5.png"
-                        alt="soff"
-                      />
-                    </div>
-                    <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2">
-                      <img
-                        className="about-imgs hover-up   wow animate__animated animate__fadeIn "
-                        src="assets/imgs/page/about/soff - japan - 2.png"
-                        alt="soff"
-                      />
-                    </div> */}
+                 
                     
                   </div>
                 </div>
 
                 <div className="text-center mt-70 ">
-                  {/* <p className="text-lg color-gray-500 wow animate__animated animate__fadeInUp">The convention is the main event of the year for professionals in<br className="d-none d-lg-block" />the world of design and architecture.</p> */}
                 </div>
 
                 <div className="row align-items-end mt-30">

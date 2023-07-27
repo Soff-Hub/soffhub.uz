@@ -41,7 +41,7 @@ export default function Home() {
   }, [limit]);
 
   console.log("blog api", blog);
-  console.log("limit", limit);
+  // console.log("limit", limit);
 
   return (
     <>
@@ -58,7 +58,7 @@ export default function Home() {
                   <div className="row">
                     <div className="col-lg-12 text-center">
                       <div className="blogSpinner">
-                          <Triangle
+                        <Triangle
                           height="80"
                           width="80"
                           color="#0EA5EA"
@@ -74,10 +74,11 @@ export default function Home() {
                   <>
                     <div className="row align-items-end mt-50">
                       <div className="col-lg-12 text-center">
-                        <div className="blog-page d-inline-block position-relative">
-                          <h1 className="color-white mb-10 color-linear wow animate__animated animate__fadeIn">
+                        <div className="text-start mt-5">
+                          <span className="project-style me-3"></span>{" "}
+                          <h3 className="color-linear d-inline-block  animate__animated animate__fadeInUp ">
                             {t("B_title")}
-                          </h1>
+                          </h3>
                         </div>
                       </div>
                     </div>
@@ -94,36 +95,16 @@ export default function Home() {
                   <>
                     <div className="row align-items-end mt-50">
                       <div className="col-lg-12 text-center">
-                        <div className="blog-page d-inline-block position-relative">
-                          <h1 className="color-white mb-10 color-linear wow animate__animated animate__fadeIn">
+                        <div className="text-start mt-5 ">
+                          <span className="project-style me-3"></span>{" "}
+                          <h3 className="color-linear d-inline-block  animate__animated animate__fadeInUp ">
                             {t("B_title")}
-                          </h1>
+                          </h3>
                         </div>
                       </div>
                     </div>
-                    <div className="row mt-70">
-                      <div className="col-xl-12 col-lg-12 col-12">
-                        {/* <div className="card-blog-1 card-blog-2 hover-up wow animate__animated animate__fadeIn">
-                                                <div className="card-image mb-20"><Link className="post-type" href="#" /><Link href="/single-sidebar"><img src="assets/imgs/page/homepage4/img5.jpg" alt="Genz" /></Link></div>
-                                                <div className="card-info"><Link href="/single-sidebar">
-                                                    <h4 className="color-white mt-30">I work best when my space is filled with
-                                                        inspiration</h4>
-                                                </Link>
-                                                    <p className="mt-25 text-lg color-gray-700">Gosh jaguar ostrich quail one
-                                                        excited dear hello and bound and the and bland moral misheard roadrunner
-                                                        flapped lynx far that and jeepers giggled far and far</p>
-                                                    <div className="row align-items-center mt-45">
-                                                        <div className="col-7">
-                                                            <div className="box-author"><img src="assets/imgs/page/homepage1/author.jpg" alt="Genz" />
-                                                                <div className="author-info">
-                                                                    <h6 className="color-gray-700">Joseph</h6><span className="color-gray-700 text-sm">25 April 2022</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-5 text-end"><Link className="readmore color-gray-500 text-sm" href="/single-sidebar"><span>Read more</span></Link></div>
-                                                    </div>
-                                                </div>
-                                            </div> */}
+                    <div className="row mt-50">
+                      {/* <div className="col-xl-12 col-lg-12 col-12">
                         <div className="box-list-posts mt-30">
                           {blog.slice(0, 5).map((item, i) => (
                             <div
@@ -131,9 +112,13 @@ export default function Home() {
                               style={{ minHeight: "170px" }}
                               key={i}
                             >
-                              <div className=" card-image hover-up">
+                              <div className=" card-image card-image-- hover-up">
                                 <Link href={`blogId/${item.id}`}>
-                                  <img src={`${item.image}`} alt="Genz" />
+                                  <img
+                                    className="blog-image"
+                                    src={`${item.image}`}
+                                    alt="Genz"
+                                  />
                                 </Link>
                               </div>
                               <div className="  card-info">
@@ -156,6 +141,7 @@ export default function Home() {
                                     {item.tags.map((item, i) => {
                                       return (
                                         <Link
+                                          key={item.id}
                                           className="color-gray-700 text-sm mr-15"
                                           href={`blogId/${item.id}`}
                                         >
@@ -163,18 +149,6 @@ export default function Home() {
                                         </Link>
                                       );
                                     })}
-                                    {/* <Link
-                                    className="color-gray-700 text-sm mr-15"
-                                    href="/blog-archive"
-                                  >
-                                    # Travel
-                                  </Link> */}
-                                    {/* <Link
-                                    className="color-gray-700 text-sm"
-                                    href="/blog-archive"
-                                  >
-                                    # Lifestyle
-                                  </Link> */}
                                   </div>
                                   <div className="col-5 text-end">
                                     <span className="color-gray-700 text-sm timeread">
@@ -183,67 +157,38 @@ export default function Home() {
                                   </div>
                                 </div>
                               </div>
-                              {/* <div className="row">
-                                  <div className="col-12">
-                                      {item.body}
-                                  </div>
-                            </div> */}
                             </div>
                           ))}
                         </div>
-                        {/* <nav className="mb-50">
-                        <ul className="pagination">
-                          <li
-                            className="page-item wow animate__animated animate__fadeIn"
-                            data-wow-delay=".0s"
-                          >
-                            <Link className="page-link page-prev" href="#">
-                              <i className="fi-rr-arrow-small-left" />
-                            </Link>
-                          </li>
-                          <li
-                            className="page-item wow animate__animated animate__fadeIn"
-                            data-wow-delay=".1s"
-                          >
-                            <Link className="page-link" href="#">
-                              1
-                            </Link>
-                          </li>
-                          <li
-                            className="page-item wow animate__animated animate__fadeIn"
-                            data-wow-delay=".2s"
-                          >
-                            <Link className="page-link active" href="#">
-                              2
-                            </Link>
-                          </li>
-                          <li
-                            className="page-item wow animate__animated animate__fadeIn"
-                            data-wow-delay=".3s"
-                          >
-                            <Link className="page-link" href="#">
-                              3
-                            </Link>
-                          </li>
-                          <li
-                            className="page-item wow animate__animated animate__fadeIn"
-                            data-wow-delay=".4s"
-                          >
-                            <Link className="page-link" href="#">
-                              ...
-                            </Link>
-                          </li>
-                          <li
-                            className="page-item wow animate__animated animate__fadeIn"
-                            data-wow-delay=".5s"
-                          >
-                            <Link className="page-link page-next" href="#">
-                              <i className="fi-rr-arrow-small-right" />
-                            </Link>
-                          </li>
-                        </ul>
-                      </nav> */}
-                      </div>
+                      </div> */}
+                      {blog.slice(0, 5).map((item, i) => (
+                        <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 text-center">
+                          <div className="blog-content ">
+                          <h5 className="blog-content--title">
+                              {item.title}
+                            </h5>
+                          <div className="blog-thumbnail">
+                            <img src={`${item.image}`} alt={`${item.title}`} />
+                          </div>
+
+                            <div className="blog-info position-relative">
+                              <p>{item.description}</p>
+                              {/* <p>{item.created_at}</p> */}
+                             
+                              <Link
+                                className="blog-detail-link text-center d-inline-block text-aligin-center"
+                                href={`blogId/${item.id}`}
+                              >
+                                Ko'proq
+                                <i class="fa-solid fa-angles-right fa-fade ms-2"></i>
+                              </Link>
+
+                              <span className="blog-btn-hover"></span>
+                           
+                            </div>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </>
                 )}

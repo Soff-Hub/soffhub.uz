@@ -6,8 +6,6 @@ import { useRouter } from "next/router";
 import getDataRepository from "../../repository/getData-repository";
 import { useDispatch, useSelector } from "react-redux";
 import { setLanguageData } from "../../store/translationSlice";
-import SelectLanguage from "../elements/select-language";
-import { Select, Space } from "antd";
 
 const Header = ({ handleOpen, handleRemove, openClass }) => {
   const { t } = useTranslation();
@@ -18,18 +16,6 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
   const [lan, setLan] = useState("en");
 
   const languageData = useSelector((state) => state.translations.data);
-
-  // const changeLanguage = (language) => {
-  //   i18n.changeLanguage(language);
-  //   // setLan(language)
-  //   if (language === "en") {
-  //     dispatch(setLanguageData("en"));
-  //   } else if (language === "uz") {
-  //     dispatch(setLanguageData("uz"));
-  //   } else if (language === "ru") {
-  //     dispatch(setLanguageData("ru"));
-  //   }
-  // };
 
   const getServices = async () => {
     const servicesPromise = await getDataRepository.getPromise(
@@ -42,14 +28,13 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
   };
 
   const handleChange = (language) => {
-    console.log(`selected ${language}`);
-    i18n.changeLanguage(language);
-    // setLan(language)
-    if (language === "en") {
+   console.log('lague', language.target.value);
+    i18n.changeLanguage(language.target.value);
+    if (language.target.value === "en") {
       dispatch(setLanguageData("en"));
-    } else if (language === "uz") {
+    } else if (language.target.value === "uz") {
       dispatch(setLanguageData("uz"));
-    } else if (language === "ru") {
+    } else if (language.target.value === "ru") {
       dispatch(setLanguageData("ru"));
     }
   };
@@ -70,12 +55,15 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
 
   useEffect(() => {
     document.addEventListener("scroll", () => {
-      const scrollCheck = window.scrollY > 100;
+      const scrollCheck = window.scrollY > 200;
       if (scrollCheck !== scroll) {
         setScroll(scrollCheck);
       }
     });
   }, []);
+
+
+
 
   function coloring1(params) {
     setcoloring1Usestate("active color-linear");
@@ -122,8 +110,8 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
   function coloring4(params) {}
   function coloring5(params) {}
   function coloring6(params) {}
-  console.log("header services", servicesApi);
-  console.log("lan", lan);
+  // console.log("header services", servicesApi);
+  // console.log("lannnnn", languageData.language);
   return (
     <div className="position-relative">
       <header
@@ -155,7 +143,9 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                         router.asPath === "/about" ? "color-linear" : "reset"
                       }`}
                       href="/about"
-                    >
+                      
+                      >
+                    
                       {t("N_about")}
                     </Link>
                   </li>
@@ -300,11 +290,11 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
               </div>
             </div>
             <div className="header-right position-relative d-flex justify-content-center ">
-              <p className="tel_nomer color-white">(90) 930-35-54 </p>
+              <p className="tel_nomer color-white">(91)008-67-89 </p>
 
               <div>
                 <Link
-                  href="tel:+998 90 930 35 54 "
+                  href="tel: +998 91 008 67 89 "
                   className="color-white  d-inline-block tel_animatsiya text-center home-contact-fixed tel-icon   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
                 >
                   <svg
@@ -312,100 +302,17 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                     width="18"
                     height="18"
                     fill="currentColor"
-                    class="bi bi-telephone "
+                    className="bi bi-telephone "
                     viewBox="0 0 16 16"
                   >
                     <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
                   </svg>
                 </Link>
               </div>
-              {/* <div className="language-div">
-                <Link
-                  onClick={() => changeLanguage("en")}
-                  href="#"
-                  className=" color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
-                >
-                 en
-                </Link>
-
-                <div className="language-items">
-                  <Link
-                    onClick={() => changeLanguage("uz")}
-                    href="#"
-                    className="color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear "
-                  >
-                    uz
-                  </Link>
-
-                  <Link
-                    onClick={() => changeLanguage("en")}
-                    href="#"
-                    className="color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
-                  >
-                    en
-                  </Link>
-                  <Link
-                    onClick={() => changeLanguage("ru")}
-                    href="#"
-                    className="color-white text-center home-contact-fixed   d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
-                  >
-                    ru
-                  </Link>
-                </div>
-              </div> */}
-              <div className="language-div1">
-                {/* <Link
-                  onClick={() => changeLanguage("en")}
-                  href="#"
-                  className=" color-white text-center hover-lan  d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
-                >
-                 en
-                </Link> */}
-                {/* 
-                <ul className="language-items">
-                  <Link
-                    // onClick={() => changeLanguage("en")}
-                    href="#"
-                    id="en"
-                    className="color-white text-center lan d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
-                  >
-                    {lan}
-                  </Link>
-                  <li>
-                    <Link
-                      onClick={() => changeLanguage("uz")}
-                      href="#"
-                      id="uz"
-                      className="color-white text-center lan  d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear "
-                    >
-                      uz
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      onClick={() => changeLanguage("en")}
-                      href="#"
-                      id="uz"
-                      className="color-white text-center lan  d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear "
-                    >
-                      en
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      onClick={() => changeLanguage("ru")}
-                      href="#"
-                      id="ru"
-                      className="color-white text-center lan  d-sm-inline-block  wow animate__animated animate__fadeInUp  typewrite color-linear"
-                    >
-                      ru
-                    </Link>
-                  </li>
-                </ul> */}
-
-                <Space wrap>
+              <div style={{position:'relative'}} className="language-div1">
+                {/* <Space wrap >
                   <Select
-                    defaultValue="en"
+                    defaultValue={languageData.language ? languageData.language : 'en'}
                     style={{ width: 50, backgroundColor: "#000", borderRadius:'10px', position:'relative' , zIndex: '99999999999999' }}
                     onChange={handleChange}
                     options={[
@@ -415,7 +322,12 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                     ]
                   }
                   />
-                </Space>
+                </Space> */}
+                <select className="lan-select" defaultValue={languageData.language}   onChange={handleChange}>
+                  <option className="lan-select--option" selected value="en" key="en">en</option>
+                  <option value="uz" key="uz">uz</option>
+                  <option value="ru" key="ru">ru</option>
+                </select>
               </div>
             </div>
           </div>

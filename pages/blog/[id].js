@@ -23,22 +23,24 @@ const BlogDetails = () => {
 
   const languageData = useSelector((state) => state.translations.data);
 
-
   const idPortfolioData = async () => {
-    const idPortfolioPromise = await getDataRepository.getPromise(`portfolio/${id}`, `${languageData.language}`)
+    const idPortfolioPromise = await getDataRepository.getPromise(
+      `portfolio/${id}`,
+      `${languageData.language}`
+    );
     if (idPortfolioPromise) {
-      setBlogPost(idPortfolioPromise.data)
+      setBlogPost(idPortfolioPromise.data);
     }
-  }
+  };
 
   useEffect(() => {
     // setBlogPost(portfolio.find((data) => data.id == id));
-    idPortfolioData()
+    idPortfolioData();
   }, [id]);
 
   useEffect(() => {
-    idPortfolioData()
-  },[languageData.language])
+    idPortfolioData();
+  }, [languageData.language]);
 
   // console.log(blogPost);
   return (
@@ -77,7 +79,7 @@ const BlogDetails = () => {
                                 className="d-inline-block me-3 mb-2"
                                 src={`${blogPost.logo_detail}`}
                                 alt={`${blogPost.logo_detail}`}
-                                style={{maxHeight:'60px', height: '100%' }}
+                                style={{ maxHeight: "60px", height: "100%" }}
                               />
                             </Link>
                             <span className="d-inline-block">
@@ -90,21 +92,19 @@ const BlogDetails = () => {
                       </div>
                       <div className="col-lg-8 col-md-2 col-sm-6 col-6 d-flex justify-content-end align-content-center col-md-4 ">
                         <div className="bg-gray border-gray-800 d-flex justify-content-end align-content-center ">
-                        {
-                          blogPost.demo_link !== null ? 
-                          <Link
-                          className="d-inline-block mt-4"
-                          target="blank"
-                          href={`${blogPost.demo_link}`}
-                        >
-                          <h6  className="d-inline-block go-to-the-site color-gray-500  card-style-2 px-md-2 px-lg-3 py-lg-3 hover-up  hover-neon wow animate__animated animate__fadeInUp">
-                            {t("Id_Go_the")}
-                          </h6>
-                        </Link>
-                        :
-                       <>
-                       </>
-                        }
+                          {blogPost.demo_link !== null ? (
+                            <Link
+                              className="d-inline-block mt-4"
+                              target="blank"
+                              href={`${blogPost.demo_link}`}
+                            >
+                              <h6 className="d-inline-block go-to-the-site color-gray-500  card-style-2 px-md-2 px-lg-3 py-lg-3 hover-up  hover-neon wow animate__animated animate__fadeInUp">
+                                {t("Id_Go_the")}
+                              </h6>
+                            </Link>
+                          ) : (
+                            <></>
+                          )}
                         </div>
                       </div>
                       <div className="row  portfolio-technology hover-up    hover-neon wow animate__animated animate__fadeInUp">
@@ -123,7 +123,6 @@ const BlogDetails = () => {
                                   <Link href="#">
                                     <img
                                       className="d-inline-block id-logo-image "
-                
                                       src={`${item.image}`}
                                       alt="logo"
                                     />
@@ -149,20 +148,15 @@ const BlogDetails = () => {
                     </div>
                     <div className="row">
                       <div className="col-12 my-70">
-
                         <div className="row ">
                           {blogPost.image.map((item, index) => {
                             return (
                               <div className="col-3 my-2 ">
-                               
-                                <FullscreenImage
-                                  src={`${item.image}`}
-                                />
+                                <FullscreenImage src={`${item.image}`} />
                               </div>
                             );
                           })}
                         </div>
-                        
                       </div>
                     </div>
                   </div>

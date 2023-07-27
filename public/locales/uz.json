@@ -3,7 +3,7 @@
     "N_about" : "BIZ HAQIMIZDA",
     "N_services" : "XIZMATLAR",
     "N_portfolio" : "PORTFOLIO",
-    "N_vacancies" : "VAKANSIYA",
+    "N_vacancies" : "KARYERA",
     "N_blog" : "BLOG",
     "N_contact" : "ALOQA",
 
@@ -27,7 +27,7 @@
     "I_AWS_serverless" : " AWS Serverless",
     "I_AWS_serverless_desc" : "Bizning malakali mutaxassislarimiz sizning so'rovlaringiz asosida mustahkam yechim yaratishi mumkin",
     "I_portfolio" : "Portfolio",
-    "F_desc" : "Biz butun dunyo bo'ylab mijozlarimiz uchun samarali veb-ilovalar, botlar va onlayn-do'konlarni ishlab chiqamiz. Keling gaplashamiz!",
+    "F_desc" : "Biz texnologiya kelajagimiz. Biz dunyoning ishlash uslubini shakllantiruvchimiz. Keling, uni yaxshiroq joyga aylantiraylik.",
     "F_address" : "Manzil",
     "F_address_uzb" : "Uzbekistan",
     "F_address_full" : "8/1 Bunyodkor Avenue, Tashkent 100115",
@@ -54,16 +54,18 @@
     "B_title" : "Blog",
     "B_no_data" : "Ma'lumot yo'q",
 
-    "C_title" : "Biz bilan bog'lanish",
+    "C_title" : "Biz bilan qanday bog'lanish mumkin?",
     "C_contact" : "Aloqa",
     "C_desc" : "Biz AliThemes, ijodiy va bag'ishlangan shaxslar guruhimiz, ular veb-ishlab chiqishni deyarli mijozlarimizni yaxshi ko'rganimiz kabi yaxshi ko'radilar. Biz veb-dizaynda mukammallikka erishish missiyasi bilan ishtiyoqli jamoamiz. Barcha dizaynlar pikselli mukammal dizayn va mukammal kodlash sifati bilan muhabbat bilan yaratilgan. Tezlik, xavfsizlik va SEOga do'st har doim bizning ongimizda.",
-    "C_Drop_Us_a_Line" : "Bizga xabar qoldiring",
+    "C_Drop_Us_a_Line" : "Sizga qanday yordam bera olamiz? Istalgan vaqtda bizga soffhub.hr@gmail.com elektron pochta xabarini yuborishingiz mumkin yoki quyidagi aloqa formasidan foydalaning. Qanday bo'lmasin, biz sizga imkon qadar tezroq javob beramiz.",
     "C_required" : "Majburiy maydonlar belgilangan",
 
-    "C_placholder_name" : "Ismingiz*",
+    "C_placholder_name" : "Ismingiz *",
     "C_placholder_number" : "Raqamingiz *",
     "C_placholder_message" : "Xabar",
     "C_Send_Message" : "Xabar yuborish",
+    "C_Company_name" : "Kompaniya nomi *",
+
 
     "S_Services" : "Xizmatlar",
     "S_PROBLEM" : "MUAMMO BORMI?",
@@ -75,6 +77,23 @@
     "Id_Used_tools" : "Foydalanilgan vositalar",
     "Id_desc_header" : "Sizning biznesingizni boshlashingizga yordam beradigan raqamli dizayn" ,
     "Id_Home" : "Bosh sahifa",
-    "Id_Go_the" : " Saytga o'ting"
+    "Id_Go_the" : " Saytga o'ting",
+
+
+    
+    "View_more" : "Ko'proq ko'rish"   ,
+    "Ariza_topshirish" : "Ariza topshirish",
+    "b_Vakansiya_uchun" : "Vakansiya uchun ariza topshirish",
+    "b_Full_name" : "Ism",
+    "b_Phone_nuber" : "Telefon nomer",
+    "b_Vacancies" : "Vakansiya",
+    "b_Resume" : "CV",
+    "b_Send_a_file" : "Fayl tanlash",
+    "b_Submit" : "Yuborish",
+    "b_name_placholder" : "Ismingizni yozing",
+
+    "p_Projects" : "Loyihalar",
+    "p_Happy_clients" : "Mijozlar",
+    "p_Employes" : "Xodimlar"
 
 }

@@ -9,25 +9,30 @@ import HomePagePortfolio from "../components/elements/homePage-portfolio";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import getDataRepository from "../repository/getData-repository";
+import Brand from "../components/slider/Brand";
+import Progres from "../components/elements/progres";
 
 export default function Home() {
   const { t } = useTranslation();
 
-  const [servicesApi, setServicesApi] = useState([])
+  const [servicesApi, setServicesApi] = useState([]);
 
-  const select = useSelector(state => state.translations.data)
- console.log('select', select.language);
+  const select = useSelector((state) => state.translations.data);
+  //  console.log('select', select.language);
 
-const getServices = async () => {
- const servicesPromise = await getDataRepository.getPromise('service/', `${select.language}`)
- if (servicesPromise) {
-   setServicesApi(servicesPromise.data.results)
- }
-}
+  const getServices = async () => {
+    const servicesPromise = await getDataRepository.getPromise(
+      "service/",
+      `${select.language}`
+    );
+    if (servicesPromise) {
+      setServicesApi(servicesPromise.data.results);
+    }
+  };
 
-useEffect(() => {
- getServices()
-},[select.language])
+  useEffect(() => {
+    getServices();
+  }, [select.language]);
 
   return (
     <>
@@ -40,8 +45,8 @@ useEffect(() => {
             <div className="row">
               {/* <div className="col-xl-1" /> */}
               <div className="col-xl-12 col-lg-12">
-                <div className="banner mb-5">
-                  <div className="row mb-5 align-items-end">
+                <div className="banner mb-70 ">
+                  <div className="row mb-5 align-items-end ">
                     <div className="col-xl-5 col-lg-5  col-md-5 d-flex justify-content-center  col-sm-12 col-xs-12  pt-50 text-center">
                       <h3
                         style={{ maxWidth: "600px" }}
@@ -85,7 +90,7 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
-
+              
                 <div className="row text-center mt-70  mb-50">
                   {/* yo'nalishlar tillar */}
                   <div className="text-center  mt-50">
@@ -96,7 +101,7 @@ useEffect(() => {
                           data-wow-delay="0s"
                         >
                           <div className="card-image">
-                            <Link href="">
+                            <Link href="#">
                               <img
                                 src="https://cdn.icon-icons.com/icons2/2699/PNG/512/reactjs_logo_icon_168875.png"
                                 alt="Genz"
@@ -104,7 +109,7 @@ useEffect(() => {
                             </Link>
                           </div>
                           <div className="card-info">
-                            <Link className="color-gray-500" href="">
+                            <Link className="color-gray-500" href="#">
                               React.js
                             </Link>
                           </div>
@@ -116,7 +121,7 @@ useEffect(() => {
                           data-wow-delay="0s"
                         >
                           <div className="card-image">
-                            <Link href="">
+                            <Link href="#">
                               <img
                                 src="https://w7.pngwing.com/pngs/87/586/png-transparent-next-js-hd-logo.png"
                                 alt="Genz"
@@ -333,16 +338,13 @@ useEffect(() => {
                     </p>
                   </div>
                 </div> */}
-
-              
-
               </div>
             </div>
           </div>
         </div>
+        <Progres/> 
 
-     <AboutHeader/>
-
+        <AboutHeader />
 
         <div className="cover-hover1">
           <div className="container">
@@ -354,7 +356,7 @@ useEffect(() => {
                   </h2>
 
                   {/* Portfolio componenta */}
-                  <HomePagePortfolio/> 
+                  <HomePagePortfolio />
 
                   <div className="col-lg-12"></div>
                 </div>
@@ -364,31 +366,38 @@ useEffect(() => {
                     {t("I_our_services")}
                   </h2>
                   <div className="row mt-50 mb-10">
-                    {servicesApi.length > 0 &&  servicesApi.slice(0,6).map((item, i) => (
-                      <div
-                        className="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
-                        key={i}
-                      >
+                    {servicesApi.length > 0 &&
+                      servicesApi.slice(0, 6).map((item, i) => (
                         <div
-                          className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"
-                          data-wow-delay="0s"
+                          className="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
+                          key={i}
                         >
-                          <div className="service-cart__content">
-                            <h3 className="color-white mb-15 d-block">
-                              {item.title}
-                            </h3>
-                            <p className="text-base color-gray-700">
-                              {item.description}
-                            </p>
-                          </div>
-                          <div className="ms-1">
-                            <div className="item-icon bg-gray-950 ">
-                              <i class={`${item.icon}`}></i>
+                          <div
+                            className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"
+                            data-wow-delay="0s"
+                          >
+                            <div className="service-cart__content">
+                              <h3 className="color-white mb-15 d-block">
+                                {item.title}
+                              </h3>
+                              <p className="text-base color-gray-700">
+                                {item.description}
+                              </p>
+                            </div>
+                            <div className="ms-1">
+                              <div className="item-icon bg-gray-950 ">
+                                <i class={`${item.icon}`}></i>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                  </div>
+
+                  <div className="row mt-50">
+                    <div className="col">
+                      <Brand />
+                    </div>
                   </div>
                 </div>
               </div>

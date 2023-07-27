@@ -9,6 +9,9 @@ import AlertComponent from "../components/elements/alert";
 import getDataRepository from "../repository/getData-repository";
 import AlertComponentErr from "../components/elements/alert-error";
 import Cleave from "cleave.js/react";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+
 
 export default function Home() {
   const { t } = useTranslation();
@@ -35,7 +38,6 @@ export default function Home() {
 
   const handleClickPostApplication = async (e) => {
     e.preventDefault();
-    console.log("ishla");
     const promise = await PostApplication.postMassage(data, select.language);
     if (promise) {
       setMessage(promise);
@@ -45,6 +47,8 @@ export default function Home() {
     setBody("");
     setComName("");
     setService("");
+    // window.location.reload()
+    // resetFormFields()
   };
 
   const [servicesApi, setServicesApi] = useState([]);
@@ -64,39 +68,29 @@ export default function Home() {
 
   useEffect(() => {
     getServices();
-  }, []);
+  }, [number]);
 
-  console.log("message", Message.name);
-  console.log("service", servicesApi);
-  console.log("num", +a);
 
-  console.log("number", a);
   return (
     <>
       <Head>
         <title>Soff Hub | {t("C_contact")}</title>
       </Head>
       <Layout>
-        {Message.status === 201 ? (
-          <AlertComponent />
-        ) : Message.name === "AxiosError" ? (
-          <AlertComponentErr />
-        ) : (
-          <></>
-        )}
+       
         <div className="cover-home3">
           <div className="container">
             <div className="row">
               <div className="col-xl-10 col-lg-12 m-auto">
                 <div className="text-center mt-70">
-                  <h1 className="color-linear d-inline-block mb-30">
+                  <h3 className="color-linear d-inline-block mb-30">
                     {t("C_title")}
-                  </h1>
-                  <p className="text-xl color-gray-500">{t("C_desc")}</p>
+                  </h3>
+                  {/* <p className="text-xl color-gray-500">{t("C_desc")}</p> */}
                 </div>
                 <div className="text-center d-flex justify-content-center align-content-center mt-30 flex-wrap">
                   <div className="d-inline-block  text-center support text-center">
-                    <span className="d-inline-block mt-2">(90) 930-35-54</span>
+                    <span className="d-inline-block mt-2">(91) 008 67 89</span>
                   </div>
                   <div className="d-inline-block location text-start">
                     8/1 Bunyodkor Avenue,
@@ -106,7 +100,7 @@ export default function Home() {
                   <div className="d-inline-block plane text-start">
                     <span className="d-inline-block mt-2">
                       {" "}
-                      zufarbek.abdurakhmonov@gmail.com
+                      soffhub.hr@gmail.com
                     </span>
                   </div>
                 </div>
@@ -125,13 +119,18 @@ export default function Home() {
                   className="form-contact"
                 >
                   <div className="text-center">
-                    <h3 className="color-linear d-inline-block mb-10">
-                      {t("C_Drop_Us_a_Line")}
-                    </h3>
-                    <p className="text-xs color-gray-500">
+                    <h5 className="d-inline-block mb-10">
+                     <span className=" contact-email "> {t("C_Drop_Us_a_Line1")}</span>
+                    <Link target="blank" 
+                    // href='soffhub.hr@gmail.com'
+                    href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=soffhub.hr@gmail.com&su=Subject&body=Body%20Text"
+                    className="color-linear"> {t("C_Drop_Us_a_Line2")}</Link>
+                    <span className=" contact-email ">  {t("C_Drop_Us_a_Line3")}</span>
+                    </h5>
+                    {/* <p className="text-xs color-gray-500">
                       {" "}
                       {t("C_required")} *
-                    </p>
+                    </p> */}
                   </div>
 
                   <div className="row mt-50">
@@ -149,23 +148,17 @@ export default function Home() {
                     </div>
 
                     <div className="col-lg-6">
-                      <div className="form-group">
-                        <Cleave
-                        
-                          className="form-control bg-gray-850 border-gray-800 color-gray-500"
-                          placeholder={t("C_placholder_number")}
-                          options={{
-                            prefix: "+998",
-                            delimiters: [" ", "(", ") ", "-"],
-                            blocks: [4, 0, 2, 3, 2, 2],
-                          }}
-                          onChange={(event) =>
-                            setNumber(event.target.rawValue.substr(1))
-                    
-                          }
-                          value={"+998"}
-                          defaultValue={'998'}
-                        />
+                      <div className="form-group contact-number-input ">
+                   
+                       
+                         <PhoneInput
+                         className=" bg-gray-850 border-gray-800 color-gray-500" 
+                         required
+                placeholder="+998"
+                country={"uz"}
+                value={number}
+                onChange={(number) => setNumber(number)}
+              />
                       </div>
                     </div>
                     <div className="col-lg-6">
@@ -174,7 +167,7 @@ export default function Home() {
                           required
                           className="form-control bg-gray-850 border-gray-800 color-gray-500"
                           type="text"
-                          placeholder="Company name *"
+                          placeholder={t("C_Company_name")} 
                           onChange={(e) => setComName(e.target.value)}
                           value={comName}
                         />
