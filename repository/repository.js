@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const baseDomain = "https://admin.soffhub.uz/api/v1/";
+export const baseDomain = process.env.BASE_URL;
 
 
 const clinet = axios.create({
