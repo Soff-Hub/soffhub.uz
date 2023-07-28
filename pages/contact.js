@@ -12,7 +12,6 @@ import Cleave from "cleave.js/react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-
 export default function Home() {
   const { t } = useTranslation();
   const [name, setName] = useState("");
@@ -70,14 +69,12 @@ export default function Home() {
     getServices();
   }, [number]);
 
-
   return (
     <>
       <Head>
         <title>Soff Hub | {t("C_contact")}</title>
       </Head>
       <Layout>
-       
         <div className="cover-home3">
           <div className="container">
             <div className="row">
@@ -120,12 +117,23 @@ export default function Home() {
                 >
                   <div className="text-center">
                     <h5 className="d-inline-block mb-10">
-                     <span className=" contact-email "> {t("C_Drop_Us_a_Line1")}</span>
-                    <Link target="blank" 
-                    // href='soffhub.hr@gmail.com'
-                    href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=soffhub.hr@gmail.com&su=Subject&body=Body%20Text"
-                    className="color-linear"> {t("C_Drop_Us_a_Line2")}</Link>
-                    <span className=" contact-email ">  {t("C_Drop_Us_a_Line3")}</span>
+                      <span className=" contact-email ">
+                        {" "}
+                        {t("C_Drop_Us_a_Line1")}
+                      </span>
+                      <Link
+                        target="blank"
+                        // href='soffhub.hr@gmail.com'
+                        href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=soffhub.hr@gmail.com&su=Subject&body=Body%20Text"
+                        className="color-linear"
+                      >
+                        {" "}
+                        {t("C_Drop_Us_a_Line2")}
+                      </Link>
+                      <span className=" contact-email ">
+                        {" "}
+                        {t("C_Drop_Us_a_Line3")}
+                      </span>
                     </h5>
                     {/* <p className="text-xs color-gray-500">
                       {" "}
@@ -149,16 +157,14 @@ export default function Home() {
 
                     <div className="col-lg-6">
                       <div className="form-group contact-number-input ">
-                   
-                       
-                         <PhoneInput
-                         className=" bg-gray-850 border-gray-800 color-gray-500" 
-                         required
-                placeholder="+998"
-                country={"uz"}
-                value={number}
-                onChange={(number) => setNumber(number)}
-              />
+                        <PhoneInput
+                          className=" bg-gray-850 border-gray-800 color-gray-500"
+                          required
+                          placeholder="+998"
+                          country={"uz"}
+                          value={number}
+                          onChange={(number) => setNumber(number)}
+                        />
                       </div>
                     </div>
                     <div className="col-lg-6">
@@ -167,7 +173,7 @@ export default function Home() {
                           required
                           className="form-control bg-gray-850 border-gray-800 color-gray-500"
                           type="text"
-                          placeholder={t("C_Company_name")} 
+                          placeholder={t("C_Company_name")}
                           onChange={(e) => setComName(e.target.value)}
                           value={comName}
                         />
@@ -194,7 +200,6 @@ export default function Home() {
                     <div className="col-lg-12">
                       <div className="form-group">
                         <textarea
-                         
                           className="form-control bg-gray-850 border-gray-800 color-gray-500"
                           rows={5}
                           placeholder={t("C_placholder_message")}

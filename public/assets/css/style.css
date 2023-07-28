@@ -2022,6 +2022,10 @@ input {
   color: #1CC2E7 !important;
 }
 
+ .link-post img {
+  width: 100% !important;
+ }
+
 .card-style-1 .card-image .card-info {
   position: absolute;
   bottom: 0px;
@@ -8776,11 +8780,12 @@ iframe.google-map {
 
 .portfolio-image-style-item {
   border-radius: 23px;
-  height: 200px;
+  height: 250px;
+  margin: auto 0;
 }
 
 .portfolio-image-style-item--2 {
-  height: 440px;
+  height: 530px;
 }
 
 .item-content {
@@ -8791,6 +8796,10 @@ iframe.google-map {
   height: 400px !important;
 }
 
+
+.portfolio-item-div{
+  height: 250px;
+}
 
 
 /* home page portfolio5 grid style end */
@@ -9328,7 +9337,7 @@ select option {
   left: 90px;
   z-index: 0;
   top: 0;
-  opacity: .5;
+  opacity: .175;
 }
 
 .progres-name {
@@ -9473,6 +9482,37 @@ select option {
   }
 }
 
+.swiper{
+  height: 280px !important;
+
+}
+
+
+.swiper-item-title{
+ position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+left: 75px;
+opacity: 0;
+top: 160px;
+}
+
+.rasm{
+  position: relative;
+  transition: all .5s ease !important;
+}
+
+.rasm:hover{
+  filter: grayscale(100%) !important;
+}
+
+.rasm:hover ~ .swiper-item-title{
+  position: absolute;
+  opacity: 1;
+  top: 160px;
+}
 
 /* blog id new style end */
 

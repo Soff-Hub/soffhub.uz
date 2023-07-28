@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import getDataRepository from "../repository/getData-repository";
 import Brand from "../components/slider/Brand";
 import Progres from "../components/elements/progres";
+import Team from "../components/elements/team";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -90,7 +91,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-              
+
                 <div className="row text-center mt-70  mb-50">
                   {/* yo'nalishlar tillar */}
                   <div className="text-center  mt-50">
@@ -342,7 +343,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Progres/> 
+        <Progres />
 
         <AboutHeader />
 
@@ -350,6 +351,10 @@ export default function Home() {
           <div className="container">
             <div className="row">
               <div className="col-xl-12 col-lg-12">
+                <div className="row mt-70  wow animate__animated animate__fadeIn hover-up">
+                  {/* team */}
+                  <Team />
+                </div>
                 <div className="row mt-70  wow animate__animated animate__fadeIn hover-up">
                   <h2 className="color-linear d-inline-block mb-2">
                     {t("I_portfolio")}

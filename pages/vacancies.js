@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import getDataRepository from "../repository/getData-repository";
 import { useSelector } from "react-redux";
-import parse from 'html-react-parser'
+import parse from "html-react-parser";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -23,15 +23,13 @@ export default function Home() {
     }
   };
 
-
-
   useEffect(() => {
     VacansyData();
   }, []);
 
   var parse = require("html-react-parser");
 
-  console.log("vacansiy", vacansyData);
+  // console.log("vacansiy", vacansyData);
   return (
     <>
       <Head>
@@ -53,16 +51,24 @@ export default function Home() {
                           {t("V_no")}
                         </h3>
                         <div className="box-socials justify-content-start">
-                          <Link className="bg-gray-800 hover-up" href="https://www.facebook.com/people/Soff-Hub/100094700573775/">
+                          <Link
+                            className="bg-gray-800 hover-up"
+                            href="https://www.facebook.com/people/Soff-Hub/100094700573775/"
+                          >
                             <span className="fb" />
                           </Link>
-                          <Link className="bg-gray-800 hover-up" href="https://instagram.com/soffhub_uz">
+                          <Link
+                            className="bg-gray-800 hover-up"
+                            href="https://instagram.com/soffhub_uz"
+                          >
                             <span className="inst" />
                           </Link>
-                          <Link className="bg-gray-800 hover-up" href="https://www.linkedin.com/company/soffhub/">
+                          <Link
+                            className="bg-gray-800 hover-up"
+                            href="https://www.linkedin.com/company/soffhub/"
+                          >
                             <span className="snap" />
                           </Link>
-
                         </div>
                       </div>
                     </div>
@@ -74,25 +80,49 @@ export default function Home() {
                 {vacansyData &&
                   vacansyData.map((item, i) => {
                     return (
-                      <div key={i} className="col-xl-12 col-lg-12 mb-70 col-md-12">
+                      <div
+                        key={i}
+                        className="col-xl-12 col-lg-12 mb-70 col-md-12"
+                      >
                         <div className="vacansy-card p-4 card-style-1 hover-up p-3 hover-neon mt-5 wow animate__animated animate__fadeInUp">
                           <div className="vacansy-card__header">
                             <div className="row">
                               <div className="col-xl-4">
-                               <h4 className="color-linear mb-3"> {item.title}</h4>
+                                <h4 className="color-linear mb-3">
+                                  {" "}
+                                  {item.title}
+                                </h4>
                                 <div className="row">
                                   <div className="col-12 pb-2">
-                                  <i className="fa-solid fa-calendar-day fa-beat-fade"></i>   <span className="ms-2"> {item.to_day} - {item.from_day}</span>
+                                    <i className="fa-solid fa-calendar-day fa-beat-fade"></i>{" "}
+                                    <span className="ms-2">
+                                      {" "}
+                                      {item.to_day} - {item.from_day}
+                                    </span>
                                   </div>
                                   <div className="col-12">
-                                  <i className="fa-regular fa-clock fa-spin-pulse"></i>   <span className="ms-2">{item.start_time} - {item.end_time}</span>
+                                    <i className="fa-regular fa-clock fa-spin-pulse"></i>{" "}
+                                    <span className="ms-2">
+                                      {item.start_time} - {item.end_time}
+                                    </span>
                                   </div>
                                 </div>
                               </div>
                               <div className="col-xl-8 vacansy-header-right ">
-                          <div className="color-white" style={{color:'#fff'}}>  {parse(item.description)}</div>
-                                <Link className="view-more-vacansy-btn" href={`vacansy/${item.id}`}>{t("View_more")} </Link>
+                                <div
+                                  className="color-white"
+                                  style={{ color: "#fff" }}
+                                >
+                                  {" "}
+                                  {parse(item.description)}
                                 </div>
+                                <Link
+                                  className="view-more-vacansy-btn"
+                                  href={`vacansy/${item.id}`}
+                                >
+                                  {t("View_more")}{" "}
+                                </Link>
+                              </div>
                             </div>
                           </div>
                           <div className="vacansy-card__main"></div>

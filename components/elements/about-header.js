@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 
-
 export default function AboutHeader() {
-    const [text, setText] = useState(1);
-    const {t} = useTranslation()
+  const [text, setText] = useState(1);
+  const { t } = useTranslation();
   return (
     <div className="cover-home" style={{ position: "relative", top: "20px" }}>
       <video
@@ -12,14 +11,17 @@ export default function AboutHeader() {
         autoplay=""
         loop="true"
         muted="false"
-        style={{ width: "100%", height: '550px', objectFit:'cover' , backgroundImage: 'cover' , clipRule: "evenodd" }}
+        style={{
+          width: "100%",
+          height: "550px",
+          objectFit: "cover",
+          backgroundImage: "cover",
+          clipRule: "evenodd",
+        }}
         name="media"
         className="about-vedio"
       >
-        <source
-          src="/assets/imgs/page/blog/vedio1.mp4"
-          type="video/mp4"
-        />
+        <source src="/assets/imgs/page/blog/vedio1.mp4" type="video/mp4" />
       </video>
 
       {/* <img
@@ -39,14 +41,14 @@ export default function AboutHeader() {
             <div className="about-description">
               <h2 className="text-left mb-50 color-linear">{t("A_about2")}</h2>
               <h5 className=" color-white text-left d-inline-block mb-20 wow animate__animated animate__fadeInUp">
-              {t("A_desc2")}
+                {t("A_desc2")}
               </h5>
             </div>
           ) : text === 3 ? (
             <div className="about-description">
               <h2 className="text-left mb-50 color-linear">{t("A_about3")}</h2>
               <h5 className=" color-white text-left d-inline-block mb-20 wow animate__animated animate__fadeInUp">
-              {t("A_desc3")}
+                {t("A_desc3")}
               </h5>
             </div>
           ) : (
@@ -77,7 +79,7 @@ export default function AboutHeader() {
             } `}
             onClick={() => setText(3)}
           >
-           {t("A_about3")}
+            {t("A_about3")}
           </p>
         </div>
       </div>

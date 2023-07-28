@@ -4,9 +4,7 @@ import clinet, { baseDomain } from "./repository";
 
 class GetData {
   getPromise(value, language) {
- 
-    const endPoint = `${value}`;
-    const url = baseDomain + endPoint
+    const url = baseDomain+`${value}`
 // console.log('language', language);
     const headers = {
       "Accept-Language" : `${language}`

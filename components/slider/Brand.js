@@ -39,7 +39,7 @@ const Brand = () => {
         brands()
     },[])
 
-    console.log('partners', partner);
+    // console.log('partners', partner);
 
     return (
         <>

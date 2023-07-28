@@ -40,7 +40,7 @@ export default function Home() {
     };
   }, [limit]);
 
-  console.log("blog api", blog);
+  // console.log("blog api", blog);
   // console.log("limit", limit);
 
   return (
@@ -164,17 +164,20 @@ export default function Home() {
                       {blog.slice(0, 5).map((item, i) => (
                         <div className="col-xl-4 col-lg-6 col-md-6 col-sm-12 text-center">
                           <div className="blog-content ">
-                          <h5 className="blog-content--title">
+                            <h5 className="blog-content--title">
                               {item.title}
                             </h5>
-                          <div className="blog-thumbnail">
-                            <img src={`${item.image}`} alt={`${item.title}`} />
-                          </div>
+                            <div className="blog-thumbnail">
+                              <img
+                                src={`${item.image}`}
+                                alt={`${item.title}`}
+                              />
+                            </div>
 
                             <div className="blog-info position-relative">
                               <p>{item.description}</p>
                               {/* <p>{item.created_at}</p> */}
-                             
+
                               <Link
                                 className="blog-detail-link text-center d-inline-block text-aligin-center"
                                 href={`blogId/${item.id}`}
@@ -184,7 +187,6 @@ export default function Home() {
                               </Link>
 
                               <span className="blog-btn-hover"></span>
-                           
                             </div>
                           </div>
                         </div>

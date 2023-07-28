@@ -2,29 +2,32 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import { useTranslation } from "react-i18next";
-import GetData from '../repository/getData-repository'
+import GetData from "../repository/getData-repository";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function Home() {
-  const {t} = useTranslation()
-  const [servicesApi, setServicesApi] = useState([])
+  const { t } = useTranslation();
+  const [servicesApi, setServicesApi] = useState([]);
 
-     const select = useSelector(state => state.translations.data)
-    // console.log('select', select.language);
+  const select = useSelector((state) => state.translations.data);
+  // console.log('select', select.language);
 
   const getServices = async () => {
-    const servicesPromise = await GetData.getPromise('service/', `${select.language}`)
+    const servicesPromise = await GetData.getPromise(
+      "service/",
+      `${select.language}`
+    );
     if (servicesPromise) {
-      setServicesApi(servicesPromise.data.results)
+      setServicesApi(servicesPromise.data.results);
     }
-  }
+  };
 
   useEffect(() => {
-    getServices()
-  },[select.language])
+    getServices();
+  }, [select.language]);
 
-// console.log('service api' ,servicesApi);
+  // console.log('service api' ,servicesApi);
   return (
     <>
       <Head>
@@ -48,29 +51,29 @@ export default function Home() {
                 </div>
                 <div className="mt-50 mb-50">
                   <div className="row mt-50 mb-10">
-                    { servicesApi.length > 0 && 
-                     servicesApi.map((item, i) => (
-                      <div className="col-lg-6 col-md-6" key={i}>
-                        <div
-                          className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"
-                          data-wow-delay="0s"
-                        >
-                          <div className="service-cart__content">
-                            <h3 className="color-white mb-15 d-block">
-                              {item.title}
-                            </h3>
-                            <p className="text-base color-gray-700">
-                              {item.description}
-                            </p>
-                          </div>
-                          <div className="ms-1">
-                            <div className="item-icon bg-gray-950 " >
-                            <i className={`${item.icon}`}></i>
+                    {servicesApi.length > 0 &&
+                      servicesApi.map((item, i) => (
+                        <div className="col-lg-6 col-md-6" key={i}>
+                          <div
+                            className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"
+                            data-wow-delay="0s"
+                          >
+                            <div className="service-cart__content">
+                              <h3 className="color-white mb-15 d-block">
+                                {item.title}
+                              </h3>
+                              <p className="text-base color-gray-700">
+                                {item.description}
+                              </p>
+                            </div>
+                            <div className="ms-1">
+                              <div className="item-icon bg-gray-950 ">
+                                <i className={`${item.icon}`}></i>
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
                   </div>
                 </div>
                 <div className="mb-70" />

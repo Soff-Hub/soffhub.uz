@@ -71,12 +71,11 @@ const Footer = () => {
                           {t("N_portfolio")}
                         </Link>
                       </li>
-                     
                     </ul>
                   </div>
                   <div className="col-6">
-                    <ul className="menu-footer" >
-                    <li className="wow animate__animated animate__fadeInUp">
+                    <ul className="menu-footer">
+                      <li className="wow animate__animated animate__fadeInUp">
                         <Link className="color-gray-500" href="/vacancies">
                           {t("N_vacancies")}
                         </Link>
@@ -91,7 +90,6 @@ const Footer = () => {
                           {t("N_contact")}
                         </Link>
                       </li>
-
                     </ul>
                   </div>
                 </div>
@@ -128,7 +126,6 @@ const Footer = () => {
               </div> */}
             </div>
 
-
             <div className="footer-bottom border-gray-800">
               <div className="row">
                 <div className="col-lg-12 text-center text-lg-end">
@@ -146,9 +143,11 @@ const Footer = () => {
                               className={`d-felx align-content-center color-gray-500`}
                               href={`${item.url}`}
                             >
-                              <i className={`${item.icon} icon-socials color-gray-500`}></i>
-                             
-                            <p> {item.name}</p>
+                              <i
+                                className={`${item.icon} icon-socials color-gray-500`}
+                              ></i>
+
+                              <p> {item.name}</p>
                             </Link>
                           </div>
                         );

@@ -57,8 +57,8 @@ const ModalAntd = ({ title, id }) => {
     getVacanciesData();
   }, []);
 
-  console.log(vac);
-  console.log("type", vacansyId, typeof vacansyId);
+  // console.log(vac);
+  // console.log("type", vacansyId, typeof vacansyId);
   return (
     <>
       <>

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import AboutHeader from "../components/elements/about-header";
 import FullscreenImage from "../components/slider/carousel-full-screen";
+import Team from "../components/elements/team";
 
 
 export default function Home() {
@@ -60,6 +61,11 @@ export default function Home() {
 
         <div className="cover-home1 " style={{ position: "relative" }}>
           <div className="container">
+            <div className="row">
+              <div className="col-12 mt-50">
+                  <Team/>
+              </div>
+            </div>
             <div className="row">
               <div className="col-xl-1" />
               <div className="col-xl-12 col-lg-12">
