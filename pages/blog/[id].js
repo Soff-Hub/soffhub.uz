@@ -51,7 +51,7 @@ const BlogDetails = () => {
             <div className="cover-home3 portfolioId">
               <div className="container">
                 <div className="row">
-                  <div className="col-xl-1" />
+                  <div className="col-xl-1 col-sm-1 col-xs-1" />
                   <div className="col-xl-12 col-lg-12">
                     <div className="pt-30  pb-20">
                       <div className="box-breadcrumbs">
@@ -151,7 +151,7 @@ const BlogDetails = () => {
                         <div className="row ">
                           {blogPost.image.map((item, index) => {
                             return (
-                              <div className="col-3 my-2 ">
+                              <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-xs-6 my-2 p-0 ">
                                 <FullscreenImage src={`${item.image}`} />
                               </div>
                             );

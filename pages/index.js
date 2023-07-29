@@ -151,7 +151,7 @@ export default function Home() {
                           </div>
                           <div className="card-info">
                             <Link className="color-gray-500" href="">
-                              Vue/Nuxt.js
+                              Vue.js
                             </Link>
                           </div>
                         </div>

@@ -68,7 +68,7 @@ const MyCourses = () => {
           <div className="progres-div2 position-relative border-1">
             <div className="color-linear text-center progres-value">{progress1}<span className="pluss color-linear">+</span></div>
             <i class="fa-solid fa-user-tie  icon-project"></i>
-            <h5 className="color-gray-500 progres-name">{t("p_Happy_clients")}</h5>
+            <h5 className="color-gray-500 progres-name happy-clients">{t("p_Happy_clients")}</h5>
           </div>
         </div>
         <div className="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">

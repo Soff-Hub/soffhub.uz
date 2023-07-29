@@ -77,7 +77,7 @@ const HomePagePortfolio = ({ col, show }) => {
                                   <img
                                     src={`${item.gallery}`}
                                     alt="soff portfolio"
-                                    className={`portfolio-card-img-${i} portfolio-img`}
+                                    className={`portfolio-card-img-${i} portfolio-img portfolio-image-home-border`}
                                   />
                                   <div className="portfolio-info card-bg-2">
                                     <div className="portfolio-info-bottom">
@@ -108,7 +108,7 @@ const HomePagePortfolio = ({ col, show }) => {
                   href={`/blog/${item.id}`}
                   key={item.id}
                 >
-                  <div className="portfolio-item-div" data-category="web motion">
+                  <div className={`portfolio-item-div portfolio-item-div__${i}`} data-category="web motion">
                     <div className={`item-content item-content--${i}`}>
                       <div
                         className=" card-style-1 hover-up mb-30"

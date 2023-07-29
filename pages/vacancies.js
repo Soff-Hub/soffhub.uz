@@ -110,7 +110,7 @@ export default function Home() {
                               </div>
                               <div className="col-xl-8 vacansy-header-right ">
                                 <div
-                                  className="color-white"
+                                  className="color-white mt-2"
                                   style={{ color: "#fff" }}
                                 >
                                   {" "}

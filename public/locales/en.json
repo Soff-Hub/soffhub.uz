@@ -49,7 +49,7 @@
 
     "V_Hello_Everyone" : "Hello Everyone!",
     "V_no" : "We have no vacancies at the moment",
-    "V_vacancies" : "Vacancies",
+    "V_vacancies" : "Careers",
 
     "B_title" : "Blog",
     "B_no_data" : "No data",
@@ -85,7 +85,7 @@
     "b_Vakansiya_uchun" : "Submitting an application for a vacancy",
     "b_Full_name" : "Full name",
     "b_Phone_nuber" : "Phone nuber",
-    "b_Vacancies" : "Vacancies",
+    "b_Vacancies" : "Vacancy",
     "b_Resume" : "CV",
     "b_Send_a_file" : "file selection",
     "b_Submit" : "Submit",

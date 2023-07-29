@@ -91,7 +91,7 @@ const Brand = () => {
                 partner.length > 0 &&
                 partner.map((item, i) => (
                     <SwiperSlide key={i} className="swiper-slide text-center"  >
-                        <Link target="blank" style={{height: '100%', display: 'flex', alignItems: 'center'}} href={`${item.url}`}>
+                        <Link target="blank" style={{height: '100%', display: 'flex', alignItems: 'center', justifyContent:'center'}} href={`${item.url}`}>
                             <img className='text-center partners-about-img'  src={`${item.logo}`} alt="soff hub partner" />
                           
                             </Link>
