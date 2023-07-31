@@ -8,7 +8,7 @@ const handleChange = (value) => {
 const SelectLanguage = () => (
   <Space wrap>
     <Select
-      defaultValue="en"
+      value="en"
       style={{ width: 50, backgroundColor: "#000" }}
       onChange={handleChange}
       options={[

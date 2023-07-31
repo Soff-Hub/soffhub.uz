@@ -111,7 +111,7 @@ const ModalAntd = ({ title, id }) => {
                 onChange={() => setVacansyId()}
                 required
               >
-                <option value={id} key="title">
+                <option defaultValue={id} key="title">
                   {title}
                 </option>
                 {vacanies.length > 0 &&

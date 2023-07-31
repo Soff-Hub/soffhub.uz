@@ -20,7 +20,6 @@ const Footer = () => {
   }, []);
 
   // console.log("links", social_links);
-
   return (
     <>
       <footer className="footer">

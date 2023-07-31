@@ -42,7 +42,7 @@ const TrendingTopic = () => {
                     slidesPerView={4}
                     spaceBetween={30}
                     loop={true}
-                    autoplay={{
+                    autoPlay={{
                         delay: 2500,
                         disableOnInteraction: false
                     }}

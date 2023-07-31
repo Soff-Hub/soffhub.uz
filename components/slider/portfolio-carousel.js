@@ -43,7 +43,7 @@ const PortfolioCarousel = () => {
         slidesPerView={3}
         spaceBetween={50}
         loop={true}
-        autoplay={{
+        autoPlay={{
           delay: 2500,
           disableOnInteraction: true,
         }}

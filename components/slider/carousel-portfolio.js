@@ -24,7 +24,7 @@ export default function Carousel() {
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
-        autoplay={true}
+        autoPlay={true}
         centeredSlides={true}
         slidesPerView={3}
         loop={true}
