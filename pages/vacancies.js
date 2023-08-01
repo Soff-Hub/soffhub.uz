@@ -82,7 +82,7 @@ export default function Home() {
                     return (
                       <div
                         key={i}
-                        className="col-xl-12 col-lg-12 mb-70 col-md-12"
+                        className="col-xl-12 col-lg-12 mb-70 mt-5 col-md-12"
                       >
                         <div className="vacansy-card p-4 card-style-1 hover-up p-3 hover-neon mt-5 wow animate__animated animate__fadeInUp">
                           <div className="vacansy-card__header">

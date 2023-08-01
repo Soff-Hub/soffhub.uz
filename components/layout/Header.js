@@ -23,7 +23,9 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
       `${languageData.language}`
     );
     if (servicesPromise) {
+     setTimeout(() => {
       setServicesApi(servicesPromise.data.results);
+     }, 100);
     }
   };
 

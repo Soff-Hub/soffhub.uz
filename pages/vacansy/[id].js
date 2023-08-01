@@ -16,9 +16,9 @@ export default function VacansyId(){
     const languageData = useSelector((state) => state.translations.data);
 
 
-     const getVacansyIdData = async () => {
+     const getVacansyIdData = async (ID) => {
         const promise = await getDataRepository.getPromise(
-            `vacancy/${id}`,
+            `vacancy/${ID}`,
             languageData.language
         )
         if (promise) {
@@ -27,7 +27,7 @@ export default function VacansyId(){
      }
      
      useEffect(() => { 
-        getVacansyIdData()
+        getVacansyIdData(id)
      },[])
 
      var parse = require("html-react-parser");

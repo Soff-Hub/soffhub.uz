@@ -23,9 +23,9 @@ const BlogDetails = () => {
 
   const languageData = useSelector((state) => state.translations.data);
 
-  const idPortfolioData = async () => {
+  const idPortfolioData = async (ID) => {
     const idPortfolioPromise = await getDataRepository.getPromise(
-      `portfolio/${id}`,
+      `portfolio/${ID}`,
       `${languageData.language}`
     );
     if (idPortfolioPromise) {
@@ -34,15 +34,11 @@ const BlogDetails = () => {
   };
 
   useEffect(() => {
-    // setBlogPost(portfolio.find((data) => data.id == id));
-    idPortfolioData();
-  }, [id]);
+    idPortfolioData(id);
+  }, [id, languageData.language]);
 
-  useEffect(() => {
-    idPortfolioData();
-  }, [languageData.language]);
 
-  // console.log(blogPost);
+  console.log("id", id);
   return (
     <>
       <Layout>
@@ -76,7 +72,7 @@ const BlogDetails = () => {
                           <div className="d-flex aligin-content-center my-3 justify-content-start flex-column">
                             <Link target="blank" href={`${blogPost.demo_link}`}>
                               <img
-                                className="d-inline-block me-3 mb-2"
+                                className="d-inline-block me-3 mb-2 portfolio-detail-logo"
                                 src={`${blogPost.logo_detail}`}
                                 alt={`${blogPost.logo_detail}`}
                                 style={{ maxHeight: "60px", height: "100%" }}
@@ -142,11 +138,14 @@ const BlogDetails = () => {
                           alt={`${blogPost.image_detail}`}
                         />
                       </div>
+                     {
+                      blogPost.description &&
                       <h5 className="color-gray-500 my-5">
-                        {blogPost.description}
-                      </h5>
+                      {blogPost.description}
+                    </h5>
+                     }
                     </div>
-                    <div className="row">
+                    <div className={blogPost.description ? "row" : "row portfolio-detail-gallery"} >
                       <div className="col-12 my-70">
                         <div className="row ">
                           {blogPost.image.map((item, index) => {

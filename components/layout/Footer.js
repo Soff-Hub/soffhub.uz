@@ -32,6 +32,7 @@ const Footer = () => {
                   href="/"
                 >
                   <img
+                  className="footer-logo"
                     src="/assets/imgs/page/about/soffhub-removebg-preview.png"
                     width="150px"
                     alt="Soff white logo"

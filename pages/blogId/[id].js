@@ -14,9 +14,9 @@ const BlogID = () => {
 
   const languageData = useSelector((state) => state.translations.data);
 
-  const blogIdData = async () => {
+  const blogIdData = async (ID) => {
     const blogIdPromise = await getDataRepository.getPromise(
-      `blog/${id}`,
+      `blog/${ID}`,
       languageData.language
     );
     if (blogIdPromise) {
@@ -25,7 +25,7 @@ const BlogID = () => {
   };
 
   useEffect(() => {
-    blogIdData();
+    blogIdData(id);
   }, []);
 
   console.log("blog id data", blogId);

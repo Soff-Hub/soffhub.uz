@@ -47,11 +47,11 @@ export default function Home() {
               {/* <div className="col-xl-1" /> */}
               <div className="col-xl-12 col-lg-12">
                 <div className="banner mb-70 ">
-                  <div className="row mb-5 align-items-end ">
-                    <div className="col-xl-5 col-lg-5  col-md-5 d-flex justify-content-center  col-sm-12 col-xs-12  pt-50 text-center">
+                  <div className="row mb-5 " style={{minHeight:'300px'}}>
+                    <div className="col-xl-5 col-lg-5  col-md-5 d-flex justify-content-center  col-sm-12 col-xs-12  pt-50 text-center align-content-center">
                       <h3
-                        style={{ maxWidth: "600px" }}
-                        className=" text-center header--title  color-gray-50  color-linear mt-20 mb-20 wow animate__animated animate__fadeInUp"
+                        // style={{ maxWidth: "600px" }}
+                        className=" text-center header--title  color-gray-50  color-linear  wow animate__animated animate__fadeInUp"
                       >
                         {t("H_title")}
                       </h3>
@@ -59,32 +59,33 @@ export default function Home() {
                     <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12 text-center mb-5">
                       <div className="banner-img position-relative wow animate__animated animate__fadeIn">
                         <img
-                          src="/assets/imgs/page/about/soffhub-removebg-preview.png"
+                          src="/assets/imgs/page/about/home-image2.png"
                           alt="soff banner image"
                           className="mb-70 mt-sm-5 soff-img-header"
+                          // width={{width:'500px'}}
                         />
                         <div className="pattern-1">
                           <img
                             src="assets/imgs/page/home/soff study logo.png"
-                            alt="Genz"
+                            alt="soffhub image"
                           />
                         </div>
                         <div className="pattern-2">
                           <img
                             src="assets/imgs/template/pattern-2.svg"
-                            alt="Genz"
+                            alt="soffhub image"
                           />
                         </div>
                         <div className="pattern-3">
                           <img
                             src="assets/imgs/template/pattern-3.svg"
-                            alt="Genz"
+                            alt="soffhub image"
                           />
                         </div>
                         <div className="pattern-4">
                           <img
                             src="assets/imgs/template/pattern-4.svg"
-                            alt="Genz"
+                            alt="soffhub image"
                           />
                         </div>
                       </div>
