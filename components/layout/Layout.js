@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {loading ? (
+      { loading ? (
         <LoaderSoffHub />
       ) : (
         <>

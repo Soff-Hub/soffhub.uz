@@ -115,7 +115,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
   // console.log("header services", servicesApi);
   // console.log("lannnnn", languageData.language);
   return (
-    <div className="position-relative">
+    <div className={scroll ? "position-relative body-top" : "position-relative"}>
       <header
         className={
           scroll

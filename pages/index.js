@@ -367,11 +367,11 @@ export default function Home() {
                   <div className="col-lg-12"></div>
                 </div>
                 {/* sevices */}
-                <div className="row mt-70 mb-50 border-gray-800  ">
+                <div className="row mt-70 mb-50 border-gray-800 index-service ">
                   <h2 className="typewrite color-linear mb-50">
                     {t("I_our_services")}
                   </h2>
-                  <div className="row mt-50 mb-10">
+                  <div className="row mt-50 mb-10 ">
                     {servicesApi.length > 0 &&
                       servicesApi.slice(0, 6).map((item, i) => (
                         <div
@@ -401,6 +401,9 @@ export default function Home() {
                   </div>
 
                   <div className="row mt-50">
+                  <h2 className=" color-linear mb-50">
+                    {t("A_partners")}
+                  </h2>
                     <div className="col">
                       <Brand />
                     </div>
