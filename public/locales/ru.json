@@ -67,6 +67,7 @@
     "C_placholder_message" : "Сообщение",
     "C_Send_Message" : "Отправить сообщение",
     "C_Company_name" : "Название компании *",
+    "C_vacansy_alert_success" : "Заявка отправлена ​​успешно",
 
 
     "S_Services" : "Услуги",
@@ -88,14 +89,17 @@
     "b_Full_name" : "Имя",
     "b_Phone_nuber" : "Номер телефона",
     "b_Vacancies" : "Вакансия",
-    "b_Resume" : "CВ",
+    "b_Resume" : "CВ (пдф)",
     "b_Send_a_file" : "Выбор файла",
     "b_Submit" : "Отправка",
     "b_name_placholder" : "Введите ваше имя",
 
     "p_Projects" : "Проекты",
     "p_Happy_clients" : "Счастливые клиенты",
-    "p_Employes" : "Работает"
+    "p_Employes" : "Работает",
+
+    
+    "Error_alert" : "Введена неверная информация"
 
 
 }

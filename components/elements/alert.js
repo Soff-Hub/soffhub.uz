@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert, Button, Space } from 'antd';
+import { t } from 'i18next';
 const AlertComponent = () => (
   <Space
     direction="vertical"
@@ -13,7 +14,7 @@ const AlertComponent = () => (
     }}
   >
     <Alert
-      message="Information was sent successfully"
+      message={t("C_vacansy_alert_success")}
       type="success"
       showIcon
      

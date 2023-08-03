@@ -62,9 +62,9 @@ const ModalAntd = ({ title, id }) => {
   return (
     <>
       <>
-        {vac && vac.status === 201 ? (
+        {vac && ( vac.status === 201 || vac.status === 200 ) ? (
           <AlertComponent />
-        ) : vac && vac.name === "AxiosError" ? (
+        ) : vac ? (
           <AlertComponentErr />
         ) : (
           <></>
@@ -126,7 +126,7 @@ const ModalAntd = ({ title, id }) => {
             </div>
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <label className="label">
-                {t("b_Resume")} *
+                {t("b_Resume")} * 
                 <span className="file-name">{t("b_Send_a_file")}</span>
                 <input
                   required

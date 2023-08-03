@@ -67,6 +67,7 @@
     "C_placholder_message" : "Message ",
     "C_Send_Message" : "Send Message",
     "C_Company_name" : "Company name *",
+    "C_vacansy_alert_success" : "Information was sent successfully",
 
     "S_Services" : "Services",
     "S_PROBLEM" : "IS THERE A PROBLEM?",
@@ -86,14 +87,16 @@
     "b_Full_name" : "Full name",
     "b_Phone_nuber" : "Phone nuber",
     "b_Vacancies" : "Vacancy",
-    "b_Resume" : "CV",
+    "b_Resume" : "CV (pdf)",
     "b_Send_a_file" : "file selection",
     "b_Submit" : "Submit",
     "b_name_placholder" : "Enter your name",
 
     "p_Projects" : "Projects",
     "p_Happy_clients" : "Happy clients",
-    "p_Employes" : "Employes"
+    "p_Employes" : "Employes",
+
+    "Error_alert" : "Incorrect information entered"
 
 
 

@@ -19,7 +19,7 @@ export default function Home() {
   const [comName, setComName] = useState("");
   const [service, setService] = useState("");
   const [body, setBody] = useState("");
-  const [Message, setMessage] = useState([]);
+  const [Message, setMessage] = useState(null);
 
   const select = useSelector((state) => state.translations.data);
 
@@ -68,15 +68,25 @@ export default function Home() {
   useEffect(() => {
     getServices();
   }, [number]);
-
+console.log("Message", Message);
   return (
     <>
+     <>
+        {Message && ( Message.status === 201 || Message.status === 200 ) ? (
+          <AlertComponent />
+        ) : Message ? (
+          <AlertComponentErr />
+        ) : (
+          <></>
+        )}
+      </>
       <Head>
         <title>Soff Hub | {t("C_contact")}</title>
       </Head>
       <Layout>
         <div className="cover-home3">
           <div className="container">
+
             <div className="row">
               <div className="col-xl-10 col-lg-12 m-auto">
                 <div className="text-center mt-70">
@@ -118,7 +128,6 @@ export default function Home() {
                   <div className="text-center">
                     <h5 className="d-inline-block mb-10">
                       <span className=" contact-email ">
-                        {" "}
                         {t("C_Drop_Us_a_Line1")}
                       </span>
                       <Link
@@ -127,11 +136,9 @@ export default function Home() {
                         href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=soffhub.hr@gmail.com&su=Subject&body=Body%20Text"
                         className="color-linear"
                       >
-                        {" "}
                         {t("C_Drop_Us_a_Line2")}
                       </Link>
                       <span className=" contact-email ">
-                        {" "}
                         {t("C_Drop_Us_a_Line3")}
                       </span>
                     </h5>
@@ -189,7 +196,7 @@ export default function Home() {
                           {servicesApi &&
                             servicesApi.map((item, i) => {
                               return (
-                                <option value={item.id} key={i}>
+                                <option selected defaultValue={item.id} value={item.id} key={i}>
                                   {item.title}
                                 </option>
                               );

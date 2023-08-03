@@ -65,6 +65,7 @@
     "C_placholder_message" : "Xabar",
     "C_Send_Message" : "Xabar yuborish",
     "C_Company_name" : "Kompaniya nomi *",
+    "C_vacansy_alert_success" : "Ariza muvaffaqqiyatli topshirildi",
 
 
     "S_Services" : "Xizmatlar",
@@ -87,13 +88,16 @@
     "b_Full_name" : "Ism",
     "b_Phone_nuber" : "Telefon nomer",
     "b_Vacancies" : "Vakansiya",
-    "b_Resume" : "CV",
+    "b_Resume" : "CV (pdf) ",
     "b_Send_a_file" : "Fayl tanlash",
     "b_Submit" : "Yuborish",
     "b_name_placholder" : "Ismingizni yozing",
 
     "p_Projects" : "Loyihalar",
     "p_Happy_clients" : "Mijozlar",
-    "p_Employes" : "Xodimlar"
+    "p_Employes" : "Xodimlar",
+
+
+    "Error_alert" : "Noto'g'ri ma'lumotlar kirildi"
 
 }

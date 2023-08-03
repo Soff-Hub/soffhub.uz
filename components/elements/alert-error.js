@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alert, Button, Space } from 'antd';
+import { t } from 'i18next';
 const AlertComponentErr = () => (
   <Space
     direction="vertical"
@@ -16,7 +17,7 @@ const AlertComponentErr = () => (
    <Alert
     
       showIcon
-      message="Incorrect information entered "
+      message={t("Error_alert")}
       type="error"
       closable
     />
