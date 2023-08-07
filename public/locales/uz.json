@@ -1,5 +1,5 @@
 {
-    "H_title" : "Biz barcha turdagi biznesga yordam berish uchun keng ko'lamli raqamli echimlarni taklif qilamiz.",
+    "H_title" : "Biz barcha turdagi biznesga yordam berish uchun keng ko'lamli raqamli yechimlarni taklif qilamiz.",
     "N_about" : "BIZ HAQIMIZDA",
     "N_services" : "XIZMATLAR",
     "N_portfolio" : "PORTFOLIO",
@@ -66,6 +66,10 @@
     "C_Send_Message" : "Xabar yuborish",
     "C_Company_name" : "Kompaniya nomi *",
     "C_vacansy_alert_success" : "Ariza muvaffaqqiyatli topshirildi",
+
+    "C_Drop_Us_a_Line1" : "Sizga qanday yordam bera olamiz? Xohlagan vaqtda bizga",
+    "C_Drop_Us_a_Line2": " soffhub.hr@gmail.com",
+    "C_Drop_Us_a_Line3" : " elektron pochta xabarini yuborishingiz mumkin yoki quyidagi aloqa formasidan foydalaning. Qanday bo'lmasin, biz sizga imkon qadar tezroq javob beramiz.",
 
 
     "S_Services" : "Xizmatlar",
