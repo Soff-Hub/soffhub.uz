@@ -58,7 +58,7 @@ export default function VacansyId() {
                 <i className="fa-solid fa-money-check-dollar fa-beat-fade ms-0  me-2 "></i>
                 <span>{data.salary}</span>
               </div>
-              <div className="col-6 mt-10 pl-30"> {parse(data.body)}</div>
+              <div className="col-12 mt-10 pl-30"> {parse(data.body)}</div>
               <div className="col-12 my-2  d-flex justify-content-end">
                 <div
                   style={{ cursor: "pointer" }}
