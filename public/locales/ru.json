@@ -98,9 +98,9 @@
     "b_Submit" : "Отправка",
     "b_name_placholder" : "Введите ваше имя",
 
-    "p_Projects" : "Проекты",
-    "p_Happy_clients" : "Счастливые клиенты",
-    "p_Employes" : "Работает",
+    "p_Projects" : "Проектов",
+    "p_Happy_clients" : "Счастливых клиентов",
+    "p_Employes" : "Сотрудников",
 
     
     "Error_alert" : "Введена неверная информация"

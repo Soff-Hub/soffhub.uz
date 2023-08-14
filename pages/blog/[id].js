@@ -34,9 +34,10 @@ const BlogDetails = () => {
   };
 
   useEffect(() => {
-    idPortfolioData(id);
+    if (id) {
+      idPortfolioData(id);
+    }
   }, [id, languageData.language]);
-
 
   console.log("id", id);
   return (
@@ -138,14 +139,19 @@ const BlogDetails = () => {
                           alt={`${blogPost.image_detail}`}
                         />
                       </div>
-                     {
-                      blogPost.description &&
-                      <h5 className="color-gray-500 my-5">
-                      {blogPost.description}
-                    </h5>
-                     }
+                      {blogPost.description && (
+                        <h5 className="color-gray-500 my-5">
+                          {blogPost.description}
+                        </h5>
+                      )}
                     </div>
-                    <div className={blogPost.description ? "row" : "row portfolio-detail-gallery"} >
+                    <div
+                      className={
+                        blogPost.description
+                          ? "row"
+                          : "row portfolio-detail-gallery"
+                      }
+                    >
                       <div className="col-12 my-70">
                         <div className="row ">
                           {blogPost.image.map((item, index) => {

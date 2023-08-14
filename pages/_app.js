@@ -21,22 +21,24 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                {/* <meta
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        {/* <link rel="icon" href="../public/favicon.ico" /> */}
+
+        {/* <meta
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
                 /> */}
-                <meta name="format-detection" content="telephone=no" />
-                <meta name="apple-mobile-web-app-capable" content="yes" />
-                <meta name="author" content="nouthemes" />
-                <meta
-                    name="keywords"
-                    content="Soff hub, Soffhub, IT companiya, soff, IT company"
-                />
-                <meta
-                    name="description"
-                    content="IT company that prepares orders in a high-quality and fast manner"
-                />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="author" content="nouthemes" />
+        <meta
+          name="keywords"
+          content="Soff hub, Soffhub, IT companiya, soff, IT company"
+        />
+        <meta
+          name="description"
+          content="IT company that prepares orders in a high-quality and fast manner"
+        />
       </Head>
       <Provider store={store}>
         <I18nextProvider i18n={i18n}>
