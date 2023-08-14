@@ -15,18 +15,18 @@ const MyCourses = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((prevProgress) =>
-        prevProgress >= 30 ? 30 : prevProgress + 1
+        prevProgress >= 120 ? 120 : prevProgress + 1
       );
-    }, 100); // Change the time (in milliseconds) as per your requirement.
+    }, 15); // Change the time (in milliseconds) as per your requirement.
 
     return () => clearInterval(interval);
   }, []);
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress1((prevProgress) =>
-        prevProgress >= 20 ? 20 : prevProgress + 1
+        prevProgress >= 100 ? 100 : prevProgress + 1
       );
-    }, 170); // Change the time (in milliseconds) as per your requirement.
+    }, 20); // Change the time (in milliseconds) as per your requirement.
 
     return () => clearInterval(interval);
   }, []);
@@ -34,9 +34,9 @@ const MyCourses = () => {
   useEffect(() => {
     const interval1 = setInterval(() => {
       setProgress2((prevProgress) =>
-        prevProgress >= 10 ? 10 : prevProgress + 1
+        prevProgress >= 12 ? 12 : prevProgress + 1
       );
-    }, 300); // Change the time (in milliseconds) as per your requirement.
+    }, 200); // Change the time (in milliseconds) as per your requirement.
 
     return () => clearInterval(interval1);
   }, []);
