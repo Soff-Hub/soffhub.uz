@@ -97,7 +97,7 @@ export default function Home() {
                                     <i className="fa-solid fa-calendar-day fa-beat-fade"></i>{" "}
                                     <span className="ms-2">
                                       {" "}
-                                      {item.to_day} - {item.from_day}
+                                      {item.from_day} - {item.to_day}
                                     </span>
                                   </div>
                                   <div className="col-12">
