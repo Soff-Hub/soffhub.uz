@@ -131,7 +131,7 @@ const BlogDetails = () => {
                       </div>
                     </div>
                     <div className="row mt-70 portfolio-image-detaile">
-                      <div className="col-xl-12  card-style-1 hover-up p-3 hover-neon mt-5 wow animate__animated animate__fadeInUp">
+                      <div className="col-xl-12 portfolio-asosiy-rasm  card-style-1 hover-up p-3 hover-neon mt-5 wow animate__animated animate__fadeInUp">
                         <img
                           className="border-radius-5"
                           src={`${blogPost.image_detail}`}

@@ -182,7 +182,7 @@ export default function Home() {
                                 className="blog-detail-link text-center d-inline-block text-aligin-center"
                                 href={`blogId/${item.id}`}
                               >
-                                Ko'proq
+                               {t('more')}
                                 <i class="fa-solid fa-angles-right fa-fade ms-2"></i>
                               </Link>
 

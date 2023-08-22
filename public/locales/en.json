@@ -28,7 +28,7 @@
     "I_AWS_serverless" : " AWS Serverless",
     "I_AWS_serverless_desc" : "Our qualified specialists can create a solid solution based on your requests",
     "I_portfolio" : "Portfolio",
-    "F_desc" : "We are the future of technology. We are the ones who will shape the way the world works. Let's make it a better place.",
+    "F_desc" : "We are a team of passionate and talented individuals who are dedicated to making a difference in the world. We are the IT company that is changing the world.",
     "F_address" : "Address",
     "F_address_uzb" : "Uzbekistan",
     "F_address_full" : "8/1 Bunyodkor Avenue, Tashkent 100115",
@@ -96,8 +96,8 @@
     "p_Happy_clients" : "Happy clients",
     "p_Employes" : "Employes",
 
-    "Error_alert" : "Incorrect information entered"
+    "Error_alert" : "Incorrect information entered",
 
-
+    "more": "More"
 
 }

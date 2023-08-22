@@ -9128,6 +9128,7 @@ select option {
   /* width: 100% !important; */
   width: 720px !important;
   left: -90px;
+  z-index: 999;
 }
 
 .ant-modal-header .ant-modal-title {
@@ -9534,7 +9535,7 @@ select option {
   margin-top: 20px !important;
 }
 
-.index-service{
+.index-service {
   justify-content: center;
 }
 
@@ -9594,7 +9595,7 @@ select option {
 } */
 
 /* @media only screen and (max-width: 1439px){ */
-  /* @keyframes left {
+/* @keyframes left {
     0% {
       left: 500px;
     }
@@ -9616,7 +9617,7 @@ select option {
 /* } */
 
 /* @media  screen and (max-width: 1336px){ */
-  /* @keyframes left {
+/* @keyframes left {
     0% {
       left: 400px;
     }
@@ -9670,11 +9671,11 @@ select option {
     position: relative;
   }
 
-  .lan-select{
+  .lan-select {
     padding: 5px 10px !important;
   }
 
-  .language-div1{
+  .language-div1 {
     margin-left: 13px;
   }
 
@@ -9703,17 +9704,17 @@ select option {
     0% {
       left: 33%;
     }
-  
+
     100% {
       left: 43%;
     }
   }
-  
+
   @keyframes right {
     0% {
       left: 65%;
     }
-  
+
     100% {
       left: 55%;
     }
@@ -9826,12 +9827,13 @@ select option {
     border-radius: 5px !important;
   }
 
-   .body-top {
+  .body-top {
     padding-top: 70px;
   }
-.body-top {
-  padding-top: 85px;
-}
+
+  .body-top {
+    padding-top: 85px;
+  }
 
 
 }
@@ -9966,6 +9968,7 @@ select option {
     width: 600px !important;
     left: -30px;
     top: 80px;
+    z-index: 9999;
   }
 
   .file-name {
@@ -10209,20 +10212,24 @@ select option {
     0% {
       left: 29%;
     }
-  
+
     100% {
       left: 39%;
     }
   }
-  
+
   @keyframes right {
     0% {
       left: 68%;
     }
-  
+
     100% {
       left: 58%;
     }
+  }
+
+  .portfolio-asosiy-rasm {
+    margin-top: 50px !important;
   }
 
 }
@@ -10240,7 +10247,7 @@ select option {
     width: 344px !important;
     top: 190px !important;
   }
-  
+
 }
 
 @media screen and (max-width: 745px) {
@@ -10283,8 +10290,9 @@ select option {
 @media screen and (max-width: 635px) {
   .ant-modal .ant-modal-content {
     width: 500px !important;
-    left: 0;
+    left: 13px;
     top: 80px;
+    z-index: 99999999;
   }
 
   .img-v {
@@ -10294,10 +10302,10 @@ select option {
   .body-top {
     padding-top: 80px;
   }
-  
+
 }
 
-@media screen and (max-width: 610px){
+@media screen and (max-width: 610px) {
   .body-top {
     padding-top: 75px;
   }
@@ -10550,7 +10558,7 @@ select option {
     /* left: 156px !important; */
     top: 100% !important;
     left: 50% !important;
-    transform: translate(-60%, 150%) !important;
+    transform: translate(-53%, 150%) !important;
   }
 
   .fullscreen-overlay {
@@ -10610,7 +10618,7 @@ select option {
   }
 
   .portfolio-image-detaile {
-    margin-top: 85px !important;
+    margin-top: 95px !important;
   }
 
   .header--title {
@@ -10626,11 +10634,11 @@ select option {
     top: 190px !important;
   }
 
-  .header .main-header{
+  .header .main-header {
     padding: 10px 0 !important;
   }
 
-  .body-top{
+  .body-top {
     padding-top: 56px;
   }
 
@@ -10661,7 +10669,14 @@ select option {
     /* left: 156px !important; */
     top: 100% !important;
     left: 50% !important;
-    transform: translate(-60%, 150%) !important;
+    transform: translate(-55%, 150%) !important;
+  }
+
+  .ant-modal .ant-modal-content {
+    width: 500px !important;
+    left: 7px;
+    top: 80px;
+    z-index: 99999999;
   }
 
 }
@@ -10679,7 +10694,7 @@ select option {
     position: absolute;
     top: 100% !important;
     left: 50% !important;
-    transform: translate(-60%, 150%) !important;
+    transform: translate(-55%, 150%) !important;
   }
 }
 
@@ -10725,9 +10740,12 @@ select option {
 
   .ant-modal .ant-modal-content {
     width: 400px !important;
-    left: 20px;
-    top: 80px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 20%);
+    z-index: 9999999;
   }
+
 
   .img-v {
     width: 350px !important;
@@ -10782,22 +10800,22 @@ select option {
 }
 
 @media screen and (max-width: 500px) {
-  
+
   @keyframes left {
     0% {
       left: 29%;
     }
-  
+
     100% {
       left: 39%;
     }
   }
-  
+
   @keyframes right {
     0% {
       left: 68%;
     }
-  
+
     100% {
       left: 58%;
     }
@@ -10850,7 +10868,7 @@ select option {
     left: -4px;
     top: 6px;
     transform: rotate(56deg);
-  } 
+  }
 
   .home-contact-fixed {
     position: relative;
@@ -10898,7 +10916,7 @@ select option {
   }
 
 
-  .language-div1{
+  .language-div1 {
     margin-left: 13px;
   }
 
@@ -10931,6 +10949,13 @@ select option {
   .soff-img-header {
     width: 310px !important;
     top: 160px !important;
+  }
+
+  .happy-clients {
+    position: absolute;
+    bottom: -20%;
+    left: 50% !important;
+    transform: translate(-60%, 150%) !important;
   }
 
 }
@@ -10966,11 +10991,11 @@ select option {
   }
 
   .ant-modal .ant-modal-content {
-    width: 350px !important;
-    right: auto;
-    left: auto;
-    top: 85px;
-    z-index: 99999999999999;
+    width: 400px !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 20%);
+    z-index: 9999999;
   }
 
   .img-v {
@@ -11049,7 +11074,8 @@ select option {
     left: 50% !important;
     transform: translate(-60%, 150%) !important;
   }
-  .header--title{
+
+  .header--title {
     margin-left: 0 !important;
   }
 
@@ -11057,17 +11083,17 @@ select option {
     0% {
       left: 27%;
     }
-  
+
     100% {
       left: 37%;
     }
   }
-  
+
   @keyframes right {
     0% {
       left: 69%;
     }
-  
+
     100% {
       left: 59%;
     }
@@ -11094,7 +11120,7 @@ select option {
 
   .happy-clients {
     position: absolute;
-    top: 100% !important;
+    bottom: -20%;
     left: 50% !important;
     transform: translate(-60%, 150%) !important;
   }
@@ -11116,16 +11142,22 @@ select option {
     font-size: 20px;
   }
 
-  .header .main-header .header-right{
+  .header .main-header .header-right {
     max-width: 190px !important;
   }
 
-  .body-top{
+  .body-top {
     padding-top: 55px;
   }
 
-  
- 
+  .ant-modal .ant-modal-content {
+    width: 350px !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 20%);
+    z-index: 999999999;
+  }
+
 
 
 }
@@ -11138,7 +11170,7 @@ select option {
   .header-right {
     right: -13px;
   }
-  
+
   .header .main-header .header-right {
     max-width: 220px !important;
   }
@@ -11218,26 +11250,26 @@ select option {
     left: 0;
   }
 
-  .body-top{
+  .body-top {
     padding-top: 60px;
   }
 
-   
+
   @keyframes left {
     0% {
       left: 29%;
     }
-  
+
     100% {
       left: 39%;
     }
   }
-  
+
   @keyframes right {
     0% {
       left: 68%;
     }
-  
+
     100% {
       left: 58%;
     }
@@ -11290,7 +11322,7 @@ select option {
     left: -4px;
     top: 6px;
     transform: rotate(56deg);
-  } 
+  }
 
 
 }
@@ -11302,16 +11334,17 @@ select option {
     margin-top: 10px !important;
   }
 
+
   .ant-modal .ant-modal-content {
     width: 310px !important;
-    right: auto;
-    left: auto;
-    top: 80px;
-    z-index: 99999999999999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 20%);
+    z-index: 999999999;
   }
 
   .file-name {
-    top: 392px;
+    top: 373px;
   }
 
   .progres-name {
@@ -11347,29 +11380,29 @@ select option {
     left: 11px;
   }
 
-  .language-div1{
+  .language-div1 {
     margin-left: 19px !important;
   }
 
 }
 
 @media screen and (max-width: 360px) {
-     
+
   @keyframes left {
     0% {
       left: 29%;
     }
-  
+
     100% {
       left: 39%;
     }
   }
-  
+
   @keyframes right {
     0% {
       left: 68%;
     }
-  
+
     100% {
       left: 58%;
     }
@@ -11377,9 +11410,13 @@ select option {
 
 
   .box-socials {
-    gap: 0 !important;
+    /* gap: 0 !important; */
     /* flex-wrap: wrap; */
-    display: block;
+    /* display: block; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
   }
 
   .progres-name {
@@ -11393,7 +11430,7 @@ select option {
     position: absolute;
     top: 100% !important;
     left: 50% !important;
-    transform: translate(-60%, 150%) !important;
+    transform: translate(-52%, 150%) !important;
   }
 
   .portfolio-info-bottom h4 {
@@ -11417,7 +11454,7 @@ select option {
     left: 0;
   }
 
-  .box-socials{
+  .box-socials {
     justify-content: center !important;
   }
 
@@ -11480,14 +11517,14 @@ select option {
 
   .ant-modal .ant-modal-content {
     width: 280px !important;
-    right: auto;
-    left: auto;
-    top: 80px;
-    z-index: 99999999999999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, 20%);
+    z-index: 9999999999999;
   }
 
   .file-name {
-    top: 393px;
+    top: 369px;
     left: 27px;
   }
 
