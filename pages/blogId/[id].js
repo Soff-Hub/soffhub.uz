@@ -25,8 +25,10 @@ const BlogID = () => {
   };
 
   useEffect(() => {
-    blogIdData(id);
-  }, []);
+    if (id) {
+      blogIdData(id);
+    }
+  }, [id]);
 
   console.log("blog id data", blogId);
 
@@ -34,8 +36,8 @@ const BlogID = () => {
     <>
       <Layout>
         <div className="cover-home3 mb-70 mt-70">
-          <div className="container" >
-            <div className="row " >
+          <div className="container">
+            <div className="row ">
               <div className="col-lg-12 mb-20 mt-50 text-start text-lg-start">
                 <div className="box-breadcrumbs wow animate__animated animate__fadeIn">
                   <ul className="breadcrumb">
@@ -48,18 +50,14 @@ const BlogID = () => {
                       <Link href="/blog">{t("B_title")}</Link>
                     </li>
                     <li>
-                      <span>{
-                        blogId &&
-                        
-                        blogId.title
-                        }</span>
+                      <span>{blogId && blogId.title}</span>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
 
-          {/* {
+            {/* {
             blogId && 
             <div className="row text-start mt-50">
             <div className="col-lg-12">
@@ -94,21 +92,21 @@ const BlogID = () => {
           </div>
 
           } */}
-          <div className="row">
-          <div className="col-lg-12">
-            <div className="image-card">
-              <img src={blogId.image} alt="blog image" />
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="image-card">
+                  <img src={blogId?.image} alt="blog image" />
+                </div>
+              </div>
+              <div className="row mt-50">
+                <div className="col-lg-1"></div>
+                <div className="col-lg-10">
+                  <h3 className="color-linear">{blogId?.title}</h3>
+                  <p className="color-gray-500 my-2">{blogId?.body}</p>
+                  <h6 className="color-white">{blogId?.created_at}</h6>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="row mt-50">
-            <div className="col-lg-1"></div>
-            <div className="col-lg-10">
-              <h3 className="color-linear">{blogId.title}</h3>
-              <p className="color-gray-500 my-2">{blogId.body}</p>
-              <h6 className="color-white">{blogId.created_at}</h6>
-            </div>
-          </div>
-          </div>
           </div>
         </div>
       </Layout>
