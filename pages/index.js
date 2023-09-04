@@ -59,7 +59,9 @@ export default function Home() {
                     <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12 text-center mb-5">
                       <div className="banner-img position-relative wow animate__animated animate__fadeIn">
                         <img
-                          src="/assets/imgs/page/about/home-image2.png"
+                          // src="/assets/imgs/page/about/home-image2.png"
+                          // src="/assets/imgs/page/about/home-page-upg.png"
+                          src="/assets/imgs/page/about/home-page-upg.webp"
                           alt="soff banner image"
                           className="mb-70 mt-sm-5 soff-img-header"
                           // width={{width:'500px'}}
