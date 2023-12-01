@@ -282,66 +282,7 @@ export default function Home() {
                     </ul>
                   </div>
                 </div>
-                {/* about */}
-                {/* <div className="row align-items-end">
-                  <div className="col-lg-6 text-center ">
-                    <div className="banner-img position-relative wow animate__animated animate__fadeIn">
-                      <div className="row mb-70">
-                        <div className="col-xl-6 col-lg-6 col-sm-12 col-md-12 ">
-                          <img
-                            className="about-img hover-up  wow animate__animated animate__fadeIn "
-                            src="assets/imgs/page/about/soff - japan - 1.png"
-                            alt="soff"
-                          />
-                          <p className="color-white soffhub-text text-base mt-50 text-start">
-                            Soff hub
-                          </p>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-sm-12 col-md-12 ">
-                          <img
-                            className="about-img hover-up mt-70  wow animate__animated animate__fadeIn"
-                            src="assets/imgs/page/about/soff - japan - 2.png"
-                            alt="soff"
-                          />
-                        </div>
-                      </div>
-                      <div className="pattern-1">
-                        <img
-                          src="assets/imgs/template/pattern-1.svg"
-                          alt="Genz"
-                        />
-                      </div>
-                      <div className="pattern-2">
-                        <img
-                          src="assets/imgs/template/pattern-2.svg"
-                          alt="Genz"
-                        />
-                      </div>
-                      <div className="pattern-3">
-                        <img
-                          src="assets/imgs/template/pattern-3.svg"
-                          alt="Genz"
-                        />
-                      </div>
-                      <div className="pattern-4">
-                        <img
-                          src="assets/imgs/template/pattern-4.svg"
-                          alt="Genz"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6 mb-100 text-center">
-                    <h3 className="text-center mb-50 color-linear">{t("A_about")}</h3>
-                    <p
-                      style={{ maxWidth: "400px" }}
-                      className="text-base color-white text-center d-inline-block mb-20 wow animate__animated animate__fadeInUp"
-                    >
-                      {" "}
-                      {t("A_desc")}
-                    </p>
-                  </div>
-                </div> */}
+               
               </div>
             </div>
           </div>

@@ -1,171 +1,97 @@
-import React, { useEffect, useRef, useState } from 'react';
-import SwiperCore, { Autoplay, Navigation , Virtual } from "swiper";
+import React, { useEffect, useRef, useState } from "react";
+import SwiperCore, { Autoplay, Navigation, Virtual } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // import { Pagination } from 'swiper';
-import getDataRepository from '../../repository/getData-repository';
-import Link from 'next/link';
+import getDataRepository from "../../repository/getData-repository";
+import Link from "next/link";
 
-
-// import 'swiper/css';
-// import 'swiper/css/effect-coverflow';
-// import 'swiper/css/pagination';
-
-import { EffectCoverflow, Pagination } from 'swiper';
-import teamRepo from '../../repository/team-repo';
+import { EffectCoverflow, Pagination } from "swiper";
+import teamRepo from "../../repository/team-repo";
 
 SwiperCore.use([Virtual, Navigation, Pagination]);
 const Team = () => {
-    const [team, setTeam] = useState([])
+  const [team, setTeam] = useState([]);
 
-    const data = [
-        {
-            img: "Zufarbek Abdurahmonov Image 2.png",
-        },
-        {
-            img: "Zufarbek Abdurahmonov Image 2.png",
-        },
-        {
-            img: "Zufarbek Abdurahmonov Image 2.png",
-        },
-        {
-            img: "Zufarbek Abdurahmonov Image 2.png",
-        },
-        {
-            img: "Zufarbek Abdurahmonov Image 2.png",
-        },
-        {
-            img: "Zufarbek Abdurahmonov Image 2.png",
-        },
-        {
-            img: "Zufarbek Abdurahmonov Image 2.png",
-        },
-        {
-            img: "Zufarbek Abdurahmonov Image 2.png",
-        },
-
-    ];
-
-
-    const brands = async () => {
-        const brandPromise = await teamRepo.getTeamData()
-        if (brandPromise) {
-            setTeam(brandPromise.data.results)
-        }
+  const Team = async () => {
+    const brandPromise = await teamRepo.getTeamData();
+    if (brandPromise) {
+      setTeam(brandPromise.data.results);
     }
+  };
 
-    useEffect(() => {
-        brands()
-    },[])
+  useEffect(() => {
+    Team();
+  }, []);
 
-
-
-    const [swiperRef, setSwiperRef] = useState(null);
-    const appendNumber = useRef(500);
-    const prependNumber = useRef(1);
-    // Create array with 500 slides
-    const [slides, setSlides] = useState(
-        // data
-    //   Array.map((_, index) => `Slide ${index + 1}`)
-    );
-  
-    const prepend = () => {
-      setSlides([
-        `Slide ${prependNumber.current - 2}`,
-        `Slide ${prependNumber.current - 1}`,
-        ...slides,
-      ]);
-      prependNumber.current = prependNumber.current - 2;
-      swiperRef.slideTo(swiperRef.activeIndex + 2, 0);
-    };
-
-    // prepend()
-  
-    const append = () => {
-      setSlides([...slides, 'Slide ' + ++appendNumber.current]);
-    };
-  
-    const slideTo = (index) => {
-      swiperRef.slideTo(index - 1, 0);
-    };
-// console.log(team);
-    return (
-        <>
-        <h2 className={`${team.length > 0 ? 'color-linear mb-70 ' : "d-none"}`} >Team</h2>
-            <Swiper
-                // slidesPerView={5}
-                // spaceBetween={30}
-                // loop={true}
-                // pagination={{
-                //     clickable: true
-                // }}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false
-                }}
-                // navigation={{
-                //     prevEl: ".swiper-button-prev-style-3",
-                //     nextEl: ".swiper-button-next-style-3",
-                // }}
-                // breakpoints={{
-                //     320: {
-                //         slidesPerView: 2,
-                //         spaceBetween: 30,
-                //     },
-                //     575: {
-                //         slidesPerView: 1,
-                //         spaceBetween: 30,
-                //     },
-                //     767: {
-                //         slidesPerView: 3,
-                //         spaceBetween: 30,
-                //     },
-                //     991: {
-                //         slidesPerView: 4,
-                //         spaceBetween: 30,
-                //     },
-                //     1199: {
-                //         slidesPerView: 4,
-                //         spaceBetween: 30,
-                //     },
-                //     1350: {
-                //         slidesPerView: 5,
-                //         spaceBetween: 30,
-                //     },
-                // }}
-                // modules={[Pagination]}
-                // className="swiper-wrapper pt-5 text-center"
-
-                onSwiper={setSwiperRef}
-                slidesPerView={3}
-                centeredSlides={true}
-                spaceBetween={30}
-                // pagination={true}
-                navigation={true}
-                virtual
-                className={`${team.length > 0 ? '' : "d-none"}`}
+  console.log(team);
+  return (
+    <>
+      <h2 className={`${team.length > 0 ? "color-linear mb-70 " : "d-none"}`}>
+        Team
+      </h2>
+      <div className="row ">
+        {team.length > 0 ? (
+          team.map((item) => (
+            <div
+              key={item.id}
+              className="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 team-div"
             >
-                { 
-                team.length > 0 ?
-                team.map((item, i) => (
-                    <SwiperSlide key={i}  >
-                            <img className='rasm' style={{border: "1px solid #fff", borderRadius:"50%", width:'250px', height:'250px', display:"inline-block"}}   src={`${item.image}`} alt="soff hub partner" />
-                         <div className='swiper-item-title '>
-                         <h4 className='color-linear my-2' >{item.full_name}</h4>
-                         <p className='team-pozitsiya color-white fs-5'>{item.position}</p>
-                         </div>
-                    </SwiperSlide>
-                )):
-                <div className='d-none'>
+              <div className="team-div-border">
+                <div className="team-image-back">
+                <div className="team-card-blur" ></div>
+                  <img
+                    className="rasm"
+                    style={{
+                      position: "absolute",
+                      zIndex: "11",
+                      borderRadius: "50%",
+                      width: "180px",
+                      maxHeight:'180px',
+                      padding:'10px',
+                      display: "inline-block",
+                      objectFit: "cover",
+                      position:'center',
+                      objectPosition:'top'
+                    }}
+                    src={`${item.image}`}
+                    alt="soff hub partner"
+                  />
                 </div>
-            } 
-                
-            </Swiper>
-
-
-
-        </>
-    );
+                <div className="team-desc">
+                  
+                  <div className="team-desc-parent">
+                    <h4 className="color-linear my-2">{item.full_name}</h4>
+                    <p className="team-pozitsiya color-white fs-5">
+                      {item.position}
+                    </p>
+                  </div>
+                  <ul>
+                    <li>
+                        <Link href="#">
+                        <i class="fa-brands fa-github"></i>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="#">
+                        <i class="fa-brands fa-linkedin"></i>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href="#">
+                        <i class="fa-brands fa-instagram"></i>
+                        </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className="d-none"></div>
+        )}
+      </div>
+    </>
+  );
 };
 
 export default Team;
-
