@@ -43,11 +43,9 @@ export default function Home() {
             <div className="row">
               <div className="col-xl-12 col-lg-12">
                 <div className="banner mb-70 ">
-                  <div className="row mb-5 " style={{minHeight:'300px'}}>
+                  <div className="row mb-5 " style={{ minHeight: "300px" }}>
                     <div className="col-xl-5 col-lg-5  col-md-5 d-flex justify-content-center  col-sm-12 col-xs-12  pt-50 text-center align-content-center">
-                      <h3
-                        className=" text-center header--title  color-gray-50  color-linear  wow animate__animated animate__fadeInUp"
-                      >
+                      <h3 className=" text-center header--title  color-gray-50  color-linear  wow animate__animated animate__fadeInUp">
                         {t("H_title")}
                       </h3>
                     </div>
@@ -274,7 +272,6 @@ export default function Home() {
                     </ul>
                   </div>
                 </div>
-               
               </div>
             </div>
           </div>
@@ -336,9 +333,7 @@ export default function Home() {
                   </div>
 
                   <div className="row mt-50">
-                  <h2 className=" color-linear mb-50">
-                    {t("A_partners")}
-                  </h2>
+                    <h2 className=" color-linear mb-50">{t("A_partners")}</h2>
                     <div className="col">
                       <Brand />
                     </div>

@@ -6,8 +6,6 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          {/* <link rel="icon" href="%PUBLIC_URL%/favicon.ico" /> */}
-
           <link
             href="https://fonts.bunny.net/css?family=noto-sans:400,500,700,800"
             rel="stylesheet"

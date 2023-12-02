@@ -184,46 +184,6 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                                     </div>
                                   );
                                 })}
-                              {/* <div className="col-4">
-                                <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
-                                  {t("N_Frontend_Development")}
-                                </h5>
-                              </div>
-                              <div className="col-4">
-                                <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
-                                  {t("N_Backend_Web_Development")}
-                                </h5>
-                              </div>
-                              <div className="col-4">
-                                <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
-                                  {t("N_CRM_Systems")}
-                                </h5>
-                              </div>
-                              <div className="col-4">
-                                <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
-                                  {t("N_design")}
-                                </h5>
-                              </div>
-                              <div className="col-4">
-                                <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
-                                  {t("N_AWS_Serverless")}
-                                </h5>
-                              </div>
-                              <div className="col-4">
-                                <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
-                                  {t("N_Mobile_apps")}
-                                </h5>
-                              </div>
-                              <div className="col-4">
-                                <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
-                                  {t("N_Cybersecurity")}
-                                </h5>
-                              </div>
-                              <div className="col-4">
-                                <h5 className=" color-white py-3 text-base wow animate__animated animate__fadeIn">
-                                  {t("N_Branding")}
-                                </h5>
-                              </div> */}
                             </div>
                           </div>
                         </div>
