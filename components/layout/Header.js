@@ -312,23 +312,10 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
                 </Link>
               </div>
               <div style={{position:'relative'}} className="language-div1">
-                {/* <Space wrap >
-                  <Select
-                    defaultValue={languageData.language ? languageData.language : 'en'}
-                    style={{ width: 50, backgroundColor: "#000", borderRadius:'10px', position:'relative' , zIndex: '99999999999999' }}
-                    onChange={handleChange}
-                    options={[
-                      { value: "en", label: "en", style:{color: '#b5b4b4' , backgroundColor:"#0F172A", boxShadow:' 1px 1px 3px rgb(91, 238, 130,.2)' , position:'relative' , zIndex: '999999 !important' } },
-                      { value: "uz", label: "uz" , style:{color: '#b5b4b4' , backgroundColor:"#0F172A", marginTop: '3px', marginBottom: '3px',  boxShadow:' 1px 1px 3px rgb(91, 238, 130, .2)'  , position:'relative' , zIndex: '999999'  }  },
-                      { value: "ru", label: "ru" , style:{color: '#b5b4b4' , backgroundColor:"#0F172A",  boxShadow:' 1px 1px 3px rgb(91, 238, 130)'  , position:'relative' , zIndex: '999999' }  },
-                    ]
-                  }
-                  />
-                </Space> */}
                 <select className="lan-select" defaultValue={languageData.language}   onChange={handleChange}>
-                  <option className="lan-select--option" selected value="en" key="en">en</option>
+                  <option className="lan-select--option" selected value="ru" key="ru">ru</option>
+                  <option value="en" key="en">en</option>
                   <option value="uz" key="uz">uz</option>
-                  <option value="ru" key="ru">ru</option>
                 </select>
               </div>
             </div>

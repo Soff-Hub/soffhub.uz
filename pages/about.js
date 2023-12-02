@@ -2,11 +2,10 @@ import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import Brand from "../components/slider/Brand";
 import { useTranslation } from "react-i18next";
-import { useEffect, useState } from "react";
+import {useState } from "react";
 import AboutHeader from "../components/elements/about-header";
 import FullscreenImage from "../components/slider/carousel-full-screen";
 import Team from "../components/elements/team";
-
 
 export default function Home() {
   const { t } = useTranslation();
@@ -14,63 +13,35 @@ export default function Home() {
 
   const data = [
     {
-      image : 'assets/imgs/page/about/soff - japan - 4.png'
+      image: "assets/imgs/page/about/soff - japan - 4.png",
     },
     {
-      image : 'assets/imgs/page/about/soff - japan - 5.png'
+      image: "assets/imgs/page/about/soff - japan - 5.png",
     },
     {
-      image : 'assets/imgs/page/about/soff - japan - 2.png'
+      image: "assets/imgs/page/about/soff - japan - 2.png",
     },
-  ]
-
-  // const getGallery = async () => {
-  //   const galleryPromise = await GetData.gallery("gallery/");
-  //   if (galleryPromise) {
-  //     setGalley(galleryPromise.data);
-  //   }
-  // };
-
-
-  // useEffect(() => {
-  //   getGallery();
-  // }, []);
-
-  
-
-  // console.log('gallery', gallery);
+  ];
 
   return (
     <>
-      {/* <Typewriter
-        options={{
-          wrapperClassName: "typewrite color-linear",
-          strings: ["Brian Clark", "Designer", "Creator"],
-          autoStart: true,
-          loop: true,
-        }}
-      /> */}
       <Head>
         <title>Soff Hub | {t("A_about")}</title>
       </Head>
       <Layout>
-
-     
-
-<AboutHeader/>
+        <AboutHeader />
 
         <div className="cover-home1 " style={{ position: "relative" }}>
           <div className="container">
             <div className="row">
               <div className="col-12 mt-50">
-                  <Team/>
+                <Team />
               </div>
             </div>
             <div className="row">
               <div className="col-xl-1" />
               <div className="col-xl-12 col-lg-12">
                 <div className="banner">
-                 
                   <div className="row mt-100">
                     {gallery &&
                       data.map((item, i) => {
@@ -79,19 +50,14 @@ export default function Home() {
                             key={i}
                             className="col-xl-4 col-lg-4 col-md-12 col-sm-12 text-center my-2"
                           >
-                           
-                            <FullscreenImage  src={item.image} />
+                            <FullscreenImage src={item.image} />
                           </div>
                         );
                       })}
-
-                 
-                    
                   </div>
                 </div>
 
-                <div className="text-center mt-70 ">
-                </div>
+                <div className="text-center mt-70 "></div>
 
                 <div className="row align-items-end mt-30">
                   <div className="col-lg-9 wow animate__animated animate__fadeIn">

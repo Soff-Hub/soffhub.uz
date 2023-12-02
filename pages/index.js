@@ -2,7 +2,6 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import { useTranslation } from "react-i18next";
-import data from "../util/blogData";
 import PortfolioFilter from "../components/elements/PortfolioFilter";
 import AboutHeader from "../components/elements/about-header";
 import HomePagePortfolio from "../components/elements/homePage-portfolio";
@@ -17,9 +16,7 @@ export default function Home() {
   const { t } = useTranslation();
 
   const [servicesApi, setServicesApi] = useState([]);
-
   const select = useSelector((state) => state.translations.data);
-  //  console.log('select', select.language);
 
   const getServices = async () => {
     const servicesPromise = await getDataRepository.getPromise(
@@ -44,13 +41,11 @@ export default function Home() {
         <div className="cover-home1">
           <div className="container">
             <div className="row">
-              {/* <div className="col-xl-1" /> */}
               <div className="col-xl-12 col-lg-12">
                 <div className="banner mb-70 ">
                   <div className="row mb-5 " style={{minHeight:'300px'}}>
                     <div className="col-xl-5 col-lg-5  col-md-5 d-flex justify-content-center  col-sm-12 col-xs-12  pt-50 text-center align-content-center">
                       <h3
-                        // style={{ maxWidth: "600px" }}
                         className=" text-center header--title  color-gray-50  color-linear  wow animate__animated animate__fadeInUp"
                       >
                         {t("H_title")}
@@ -59,12 +54,9 @@ export default function Home() {
                     <div className="col-xl-7 col-lg-7 col-md-7 col-sm-12 text-center mb-5">
                       <div className="banner-img position-relative wow animate__animated animate__fadeIn">
                         <img
-                          // src="/assets/imgs/page/about/home-image2.png"
-                          // src="/assets/imgs/page/about/home-page-upg.png"
                           src="/assets/imgs/page/about/home-page-upg.webp"
                           alt="soff banner image"
                           className="mb-70 mt-sm-5 soff-img-header"
-                          // width={{width:'500px'}}
                         />
                         <div className="pattern-1">
                           <img

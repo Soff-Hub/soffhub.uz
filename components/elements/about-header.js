@@ -21,7 +21,7 @@ export default function AboutHeader() {
         name="media"
         className="about-vedio"
       >
-        <source src="/assets/imgs/page/blog/vedio1.mp4" type="video/mp4" />
+        <source src="/assets/vedio.mp4" type="video/mp4" />
       </video>
 
       {/* <img
