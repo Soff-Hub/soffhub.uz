@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { EffectCoverflow, Pagination } from "swiper";
 import teamRepo from "../../repository/team-repo";
+import { t } from "i18next";
 
 SwiperCore.use([Virtual, Navigation, Pagination]);
 const Team = () => {
@@ -23,11 +24,10 @@ const Team = () => {
     Team();
   }, []);
 
-  console.log(team);
   return (
     <>
-      <h2 className={`${team.length > 0 ? "color-linear mb-70 " : "d-none"}`}>
-        Team
+      <h2 className={`${team.length > 0 ? "color-linear mb-20 " : "d-none"}`}>
+      {t("Team")}
       </h2>
       <div className="row ">
         {team.length > 0 ? (
@@ -66,21 +66,16 @@ const Team = () => {
                     </p>
                   </div>
                   <ul>
-                    <li>
-                        <Link href="#">
-                        <i class="fa-brands fa-github"></i>
+                    {
+                      item?.social_links?.map((el) => (
+                        <li>
+                        <Link href={el.url} target="_blank" >
+                        <i class={el.icon}></i>
                         </Link>
                     </li>
-                    <li>
-                        <Link href="#">
-                        <i class="fa-brands fa-linkedin"></i>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link href="#">
-                        <i class="fa-brands fa-instagram"></i>
-                        </Link>
-                    </li>
+                      ))
+                    }
+                   
                   </ul>
                 </div>
               </div>

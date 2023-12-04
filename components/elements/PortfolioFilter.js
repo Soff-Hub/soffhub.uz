@@ -3,28 +3,28 @@ import React, { useState, useEffect } from "react";
 import portfolio from "../../util/portfolio";
 import getDataRepository from "../../repository/getData-repository";
 import { useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
-const PortfolioFilter = ({ col, show }) => {
+const PortfolioFilter = () => {
   const [scroll, setScroll] = useState(0);
   const [portfolioData, setPortfolioData] = useState([]);
   const [offset, setOffset] = useState(0);
   const [limit, setLimit] = useState(3);
   const languageData = useSelector((state) => state.translations.data);
 
+  const Router = useRouter()
+  const {filter} = Router.query
+
   const handleScroll = () => {
     const { scrollHeight, scrollTop, clientHeight, scrollY } =
       document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 680) {
-      // if (window.scrollY > 350)
-      // setTimeout(() => {
       setLimit((limit) => limit + 3);
-      // },5000)
     }
   };
 
   const getPortfoliosData = async () => {
     const portfolioPromise = await getDataRepository.getPromise(
-      // `portfolio/`,
       `portfolio/?limit=${limit}&offset=${offset}`,
       `${languageData.language}`
     );
@@ -33,50 +33,45 @@ const PortfolioFilter = ({ col, show }) => {
     }
   };
 
+  const filterPortfolio = async (id) => {
+    const portfolioPromise = await getDataRepository.getPromise(
+      `portfolio/?service__id=${id}`,
+      `${languageData.language}`
+    );
+    if (portfolioPromise) {
+      setPortfolioData(portfolioPromise?.data?.results);
+    }
+  }
+
+
   useEffect(() => {
-    getPortfoliosData();
+    if (filter) {
+      
+    }else {
+      getPortfoliosData();
+    }
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [limit]);
 
+
+  useEffect(() => {
+    if (filter) {
+      filterPortfolio(filter)
+    }
+  }, [filter])
+
+
   const newArray = [];
-  for (let i = 0; i < portfolioData.length; i += 3) {
-    newArray.push(portfolioData.slice(i, i + 3));
+  for (let i = 0; i < portfolioData?.length; i += 3) {
+    newArray.push(portfolioData?.slice(i, i + 3));
   }
 
-  // console.log("new", newArray);
-  // console.log("portfolios", portfolioData);
-  // console.log("offset", offset);
-  // console.log("limit", limit);
+
   return (
     <>
-      {/* portfilo select */}
-      {/* <div className="row text-center filter-nav">
-                <div className="col-lg-12">
-                    <span className="wow animate__animated animate__fadeInUp" data-wow-delay=".0s">
-                        <span className={`btn btn-border-linear btn-filter hover-up ${filter === "all" && "active"}`} active={filter === "all" ? 1 : 0} onClick={() => setFilter("all")}>All Projects</span>
-                    </span>
-                    <span className="wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
-                        <span className={`btn btn-border-linear btn-filter hover-up ${filter === "web" && "active"}`}
-                            onClick={() => setFilter("web")}>Web Development</span>
-                    </span>
-                    <span className="wow animate__animated animate__fadeInUp" data-wow-delay=".2s">
-                        <span className={`btn btn-border-linear btn-filter hover-up ${filter === "mobile" && "active"}`}
-                            onClick={() => setFilter("mobile")}>Mobile App</span>
-                    </span>
-                    <span className="wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
-                        <span className={`btn btn-border-linear btn-filter hover-up ${filter === "motion" && "active"}`}
-                            onClick={() => setFilter("motion")}>Motion</span>
-                    </span>
-                    <span className="wow animate__animated animate__fadeInUp" data-wow-delay=".4s">
-                        <span className={`btn btn-border-linear btn-filter hover-up ${filter === "graphic" && "active"}`}
-                            onClick={() => setFilter("graphic")}>Graphic Design</span>
-                    </span>
-                </div>
-            </div> */}
-
       <div className="mt-70 mb-50">
         <div className="">
           {newArray.length > 0 &&

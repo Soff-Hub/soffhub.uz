@@ -5,13 +5,13 @@ import { useTranslation } from "react-i18next";
 import GetData from "../repository/getData-repository";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import Router from "next/router";
 
 export default function Home() {
   const { t } = useTranslation();
   const [servicesApi, setServicesApi] = useState([]);
-
+ 
   const select = useSelector((state) => state.translations.data);
-  // console.log('select', select.language);
 
   const getServices = async () => {
     const servicesPromise = await GetData.getPromise(
@@ -22,6 +22,10 @@ export default function Home() {
       setServicesApi(servicesPromise.data.results);
     }
   };
+
+  function handliClickService(id){
+    Router.push(`/portfolio?filter=${id}`)
+  }
 
   useEffect(() => {
     getServices();
@@ -53,7 +57,7 @@ export default function Home() {
                   <div className="row mt-50 mb-10">
                     {servicesApi.length > 0 &&
                       servicesApi.map((item, i) => (
-                        <div className="col-lg-6 col-md-6" key={i}>
+                        <div style={{cursor: "pointer"}} className="col-lg-6 col-md-6" onClick={() => handliClickService(item.id)} key={i}>
                           <div
                             className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"
                             data-wow-delay="0s"

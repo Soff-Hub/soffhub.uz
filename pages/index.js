@@ -2,7 +2,6 @@ import Link from "next/link";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import { useTranslation } from "react-i18next";
-import PortfolioFilter from "../components/elements/PortfolioFilter";
 import AboutHeader from "../components/elements/about-header";
 import HomePagePortfolio from "../components/elements/homePage-portfolio";
 import { useEffect, useState } from "react";
@@ -11,6 +10,7 @@ import getDataRepository from "../repository/getData-repository";
 import Brand from "../components/slider/Brand";
 import Progres from "../components/elements/progres";
 import Team from "../components/elements/team";
+import Router from "next/router";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -27,6 +27,10 @@ export default function Home() {
       setServicesApi(servicesPromise.data.results);
     }
   };
+
+  function handliClickService(id){
+    Router.push(`/portfolio?filter=${id}`)
+  }
 
   useEffect(() => {
     getServices();
@@ -303,12 +307,14 @@ export default function Home() {
                   <h2 className="typewrite color-linear mb-50">
                     {t("I_our_services")}
                   </h2>
-                  <div className="row mt-50 mb-10 ">
+                  <div className="row mb-10 ">
                     {servicesApi.length > 0 &&
                       servicesApi.slice(0, 6).map((item, i) => (
                         <div
                           className="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
                           key={i}
+                          style={{cursor: "pointer"}}
+                          onClick={() => handliClickService(item.id)}
                         >
                           <div
                             className="services-card card-style-2 d-flex justify-content-between px-3 hover-up hover-neon wow animate__animated animate__fadeInUp"

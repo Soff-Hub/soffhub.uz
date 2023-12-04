@@ -21,12 +21,9 @@ export default function AboutHeader() {
         name="media"
         className="about-vedio"
       >
-        <source src="/assets/vedio.mp4" type="video/mp4" />
+        <source src="/assets/vedio(9.3mb).mp4" type="video/mp4" />
       </video>
 
-      {/* <img
-      style={{ width: "100%"}}
-      src="/assets/imgs/page/blog/vedio3.gif" alt="giff soff hub team work" /> */}
 
       <div className="about-header">
         <div className="about-text-group">
@@ -84,7 +81,7 @@ export default function AboutHeader() {
         </div>
       </div>
 
-      {/* <iframe width="100%" height="365" src={vedio} title="Occupational Video - Computer Programmer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> */}
+            <div className="black-background" ></div>
     </div>
   );
 }

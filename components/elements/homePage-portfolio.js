@@ -43,7 +43,7 @@ const HomePagePortfolio = ({ col, show }) => {
   const newArray = portfolioData;
   return (
     <>
-      <div className="mt-70 mb-50">
+      <div className="mt-20 mb-50">
         <div>
           <div className={"portfolio-grid-container grid-left-true"}>
             {newArray.map((item, i) =>
@@ -88,41 +88,6 @@ const HomePagePortfolio = ({ col, show }) => {
           <div className="home-portfolio-grid">
             {portfolioData5.length > 0 &&
               portfolioData5.map((item, i) => (
-                // <Link
-                //   className={`home-portfolio-grid__item_${i} d-inline-block`}
-                //   href={`/blog/${item.id}`}
-                //   key={item.id}
-                // >
-                //   <div
-                //     className={`portfolio-item-div portfolio-item-div__${i}`}
-                //     data-category="web motion"
-                //   >
-                //     <div className={`item-content item-content--${i}`}>
-                //       <div
-                //         className=" card-style-1 hover-up mb-30"
-                //         data-wow-delay=".0s"
-                //       >
-                //         <div className={` portfolio-image-style my-2`}>
-                //           <Link className="link-post" href={`/blog/${item.id}`}>
-                //             <img
-                //               src={`${item.gallery}`}
-                //               alt="soff portfolio"
-                //               className={`portfolio-image-style-item portfolio-image-style-item--${i}`}
-                //             />
-                //             <div className="portfolio-info card-bg-2">
-                //               <div className="portfolio-info-bottom">
-                //                 <h4 className="color-white ">{item.title}</h4>
-                //                 <p className="color-gray-500 text-sm">
-                //                   {item.category}
-                //                 </p>
-                //               </div>
-                //             </div>
-                //           </Link>
-                //         </div>
-                //       </div>
-                //     </div>
-                //   </div>
-                // </Link>
                 <div
                   onClick={() => handleItemPortfolio(item.id)}
                   className={`home-portfolio-grid_item-${i}  home-portfolio-grid_item `}
