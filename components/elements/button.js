@@ -17,6 +17,7 @@ const ModalAntd = ({ title, id }) => {
   const [vacansyId, setVacansyId] = useState(id);
   const [file, setFile] = useState(null);
   const [vac, setPostVac] = useState(null);
+  const [blobFile, setBlobFile] = useState(null)
 
   const languageData = useSelector((state) => state.translations.data);
 
@@ -32,6 +33,7 @@ const ModalAntd = ({ title, id }) => {
 
   const handleChangeFile = (e) => {
     setFile(e.target.files[0]);
+    setBlobFile(e.target.files[0]?.name)
   };
 
   const data = new FormData();
@@ -127,15 +129,17 @@ const ModalAntd = ({ title, id }) => {
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
               <label className="label">
                 {t("b_Resume")} *
+               <div className="label_input" >
                 <span className="file-name" style={{ cursor: "pointer" }}>
-                  {t("b_Send_a_file")}
+                  { blobFile ? blobFile : t("b_Send_a_file")}
                 </span>
-                <input
+               <input
                   required
                   className="vacansy-input img-v "
                   type="file"
                   onChange={handleChangeFile}
                 />
+               </div>
               </label>
             </div>
           </div>

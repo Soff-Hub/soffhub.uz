@@ -9177,22 +9177,6 @@ select option {
 
 }
 
-.label {
-  color: #B8CDEB !important;
-  font-size: 17px;
-  font-weight: 500;
-}
-
-.vacansy-input {
-  background: #0F172A;
-  color: #B8CDEB;
-  border: 1px solid #b5b4b4 !important;
-  border-radius: 5px;
-  padding: 7px 0 7px 5px;
-  margin: 10px 0;
-  width: 100%;
-}
-
 .vacansy-input:focus {
   outline: none;
 }
@@ -9244,8 +9228,34 @@ select option {
 }
 
 .img-v {
-  position: relative !important;
+  opacity: 0;  
 }
+
+
+
+.label {
+  color: #B8CDEB !important;
+  font-size: 17px;
+  font-weight: 500;
+  width: 100%;
+}
+
+.label_input{
+  position: relative;
+  top: 7px;
+  width: 100%;
+}
+
+.vacansy-input {
+  background: #0F172A;
+  color: #B8CDEB;
+  border: 1px solid #b5b4b4 !important;
+  border-radius: 5px;
+  padding: 7px 0 7px 5px;
+  margin: 10px 0;
+  width: 100% !important;
+}
+
 
 
 .file-name {
@@ -9253,15 +9263,20 @@ select option {
   background: #0F172A !important;
   color: #B8CDEB;
   border-radius: 5px;
-  top: 209px;
-  left: 375px;
+  top: 1%;
+  left: 0;
+  bottom: 0;
+  right: 0;
   font-size: 16px;
   z-index: 1;
   margin: 0;
-  padding: 0 10px;
-  width: 200px;
+  height: 60%;
   font-weight: 500;
   color: #C9DAF5;
+  border: 1px solid #C9DAF5;
+  padding-left: 7px;
+  width: 100% !important;
+  overflow: hidden;
 }
 
 [type="file"]::-webkit-file-upload-button {
@@ -10217,10 +10232,6 @@ select option {
     z-index: 9999;
   }
 
-  .file-name {
-    top: 209px;
-    left: 315px;
-  }
 }
 
 
@@ -10411,11 +10422,6 @@ select option {
 
   .progres-value {
     left: 78px;
-  }
-
-  .file-name {
-    top: 370px;
-    left: 27px;
   }
 
   .img-v {
@@ -11877,10 +11883,6 @@ select option {
     z-index: 999999999;
   }
 
-  .file-name {
-    top: 373px;
-  }
-
   .progres-name {
     position: absolute;
     top: 100% !important;
@@ -12079,10 +12081,6 @@ select option {
     z-index: 9999999999999;
   }
 
-  .file-name {
-    top: 369px;
-    left: 27px;
-  }
 
   .img-v {
     width: 100% !important;

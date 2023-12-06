@@ -30,8 +30,7 @@ export default function VacansyId() {
   }, [id]);
 
   var parse = require("html-react-parser");
-  //   console.log(data);
-  console.log(id);
+  
   return (
     <>
       <Layout>
