@@ -45,11 +45,9 @@ const PortfolioFilter = () => {
 
 
   useEffect(() => {
-    if (filter) {
-      
-    }else {
-      getPortfoliosData();
-    }
+      if (!filter) {
+        getPortfoliosData();
+      }
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -69,6 +67,7 @@ const PortfolioFilter = () => {
     newArray.push(portfolioData?.slice(i, i + 3));
   }
 
+  
 
   return (
     <>
