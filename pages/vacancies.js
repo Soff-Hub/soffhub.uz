@@ -28,6 +28,7 @@ export default function Home() {
   }, []);
 
   var parse = require("html-react-parser");
+console.log('vacan', vacansyData);
 
   return (
     <>
@@ -113,7 +114,7 @@ export default function Home() {
                                   style={{ color: "#fff" }}
                                 >
                                   {" "}
-                                  {parse(item?.description)}
+                                  {item?.description ? parse(item?.description) : ""}
                                 </div>
                                 <Link
                                   className="view-more-vacansy-btn"
