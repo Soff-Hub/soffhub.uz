@@ -62,7 +62,7 @@ export default function Home() {
                         />
                         <div className="pattern-1">
                           <img
-                            src="assets/imgs/page/home/soff study logo.png"
+                            src="assets/imgs/page/home/soff study logo-min.png"
                             alt="soffhub image"
                           />
                         </div>
