@@ -11,6 +11,7 @@ import Brand from "../components/slider/Brand";
 import Progres from "../components/elements/progres";
 import Team from "../components/elements/team";
 import Router from "next/router";
+import PortfolioFilter from "../components/elements/PortfolioFilter";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -298,7 +299,8 @@ export default function Home() {
                   </h2>
 
                   {/* Portfolio componenta */}
-                  <HomePagePortfolio />
+                  {/* <HomePagePortfolio /> */}
+                  <PortfolioFilter  col={6} show={6} />
 
                   <div className="col-lg-12"></div>
                 </div>
