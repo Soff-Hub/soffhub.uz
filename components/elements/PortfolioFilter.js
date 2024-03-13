@@ -82,7 +82,7 @@ const PortfolioFilter = () => {
                   {el.map((item, i) =>
                     true ? (
                       <Link
-                        href={`/blog/${item.id}`}
+                        href={`/blog/${item.slug}`}
                         // className={"portfolio-card" + i}
                         key={i}
                         style={{ objectFit: "cover" }}

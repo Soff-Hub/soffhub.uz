@@ -29,8 +29,8 @@ export default function Home() {
     }
   };
 
-  function handliClickService(id){
-    Router.push(`/portfolio?filter=${id}`)
+  function handliClickService(id) {
+    Router.push(`/portfolio?filter=${id}`);
   }
 
   useEffect(() => {
@@ -297,11 +297,9 @@ export default function Home() {
                   <h2 className="color-linear d-inline-block mb-2">
                     {t("I_portfolio")}
                   </h2>
-
                   {/* Portfolio componenta */}
                   {/* <HomePagePortfolio /> */}
-                  <PortfolioFilter  col={6} show={6} />
-
+                  <PortfolioFilter col={6} show={6} />
                   <div className="col-lg-12"></div>
                 </div>
                 {/* sevices */}
@@ -315,7 +313,7 @@ export default function Home() {
                         <div
                           className="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
                           key={i}
-                          style={{cursor: "pointer"}}
+                          style={{ cursor: "pointer" }}
                           onClick={() => handliClickService(item.id)}
                         >
                           <div

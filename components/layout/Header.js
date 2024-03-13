@@ -24,7 +24,7 @@ const Header = ({ handleOpen, handleRemove, openClass }) => {
     );
     if (servicesPromise) {
      setTimeout(() => {
-      setServicesApi(servicesPromise.data.results);
+      setServicesApi(servicesPromise?.data?.results);
      }, 100);
     }
   };
