@@ -2,7 +2,7 @@ import Head from "next/head";
 import Layout from "../components/layout/Layout";
 import Brand from "../components/slider/Brand";
 import { useTranslation } from "react-i18next";
-import {useState } from "react";
+import { useState } from "react";
 import AboutHeader from "../components/elements/about-header";
 import FullscreenImage from "../components/slider/carousel-full-screen";
 import Team from "../components/elements/team";
@@ -13,13 +13,13 @@ export default function Home() {
 
   const data = [
     {
-      image: "assets/imgs/page/about/soff - japan - 4.png",
+      image: "/assets/imgs/page/about/soff - japan - 4-min.png",
     },
     {
-      image: "assets/imgs/page/about/soff - japan - 5.png",
+      image: "/assets/imgs/page/about/soff - japan - 5-min.png",
     },
     {
-      image: "assets/imgs/page/about/soff - japan - 2.png",
+      image: "/assets/imgs/page/about/soff - japan - 2-min.png",
     },
   ];
 

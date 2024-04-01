@@ -29,7 +29,7 @@ const PortfolioFilter = () => {
     );
     if (portfolioPromise) {
       console.log('portfolio', portfolioPromise);
-      setPortfolioData(portfolioPromise.data.results);
+      setPortfolioData(portfolioPromise?.data?.results);
     }
   };
 
