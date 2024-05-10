@@ -11,6 +11,7 @@ import Brand from "../components/slider/Brand";
 import Progres from "../components/elements/progres";
 import Team from "../components/elements/team";
 import Router from "next/router";
+import Clients from "../components/slider/Clients";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -28,7 +29,7 @@ export default function Home() {
     }
   };
 
-  function handliClickService(id){
+  function handliClickService(id) {
     Router.push(`/portfolio?filter=${id}`)
   }
 
@@ -281,7 +282,6 @@ export default function Home() {
           </div>
         </div>
         <Progres />
-
         <AboutHeader />
 
         <div className="cover-hover1">
@@ -313,7 +313,7 @@ export default function Home() {
                         <div
                           className="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
                           key={i}
-                          style={{cursor: "pointer"}}
+                          style={{ cursor: "pointer" }}
                           onClick={() => handliClickService(item.id)}
                         >
                           <div
@@ -342,6 +342,13 @@ export default function Home() {
                     <h2 className=" color-linear mb-50">{t("A_partners")}</h2>
                     <div className="col">
                       <Brand />
+                    </div>
+                  </div>
+
+                  <div className="row mt-50">
+                    <h2 className=" color-linear mb-50">{t("Mijozlarning fikrlari")}</h2>
+                    <div className="col">
+                      <Clients />
                     </div>
                   </div>
                 </div>
