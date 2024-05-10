@@ -118,7 +118,7 @@ console.log('vacan', vacansyData);
                                 </div>
                                 <Link
                                   className="view-more-vacansy-btn"
-                                  href={`vacansy/${item.id}`}
+                                  href={`vacansy/${item.slug}`}
                                 >
                                   {t("View_more")}{" "}
                                 </Link>

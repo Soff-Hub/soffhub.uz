@@ -49,7 +49,7 @@ const HomePagePortfolio = ({ col, show }) => {
             {newArray.map((item, i) =>
               true ? (
                 <Link
-                  href={`/blog/${item.id}`}
+                  href={`/blog/${item.slug}`}
                   className={"portfolio-card" + i}
                   key={item.id}
                   style={{ objectFit: "cover" }}
@@ -61,7 +61,7 @@ const HomePagePortfolio = ({ col, show }) => {
                         data-wow-delay=".0s"
                       >
                         <div className={` portfolio-image-style my-2`}>
-                          <Link className="link-post" href={`/blog/${item.id}`}>
+                          <Link className="link-post" href={`/blog/${item.slug}`}>
                             <img
                               src={`${item.gallery}`}
                               alt="soff portfolio"

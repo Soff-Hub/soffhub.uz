@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import portfolio from "../../util/portfolio";
 import getDataRepository from "../../repository/getData-repository";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/router";
@@ -29,7 +28,8 @@ const PortfolioFilter = () => {
       `${languageData.language}`
     );
     if (portfolioPromise) {
-      setPortfolioData(portfolioPromise.data.results);
+      console.log('portfolio', portfolioPromise);
+      setPortfolioData(portfolioPromise?.data?.results);
     }
   };
 
@@ -82,7 +82,7 @@ const PortfolioFilter = () => {
                   {el.map((item, i) =>
                     true ? (
                       <Link
-                        href={`/blog/${item.id}`}
+                        href={`/blog/${item.slug}`}
                         // className={"portfolio-card" + i}
                         key={i}
                         style={{ objectFit: "cover" }}

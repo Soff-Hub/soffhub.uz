@@ -11,6 +11,7 @@ import Brand from "../components/slider/Brand";
 import Progres from "../components/elements/progres";
 import Team from "../components/elements/team";
 import Router from "next/router";
+import PortfolioFilter from "../components/elements/PortfolioFilter";
 import Clients from "../components/slider/Clients";
 
 export default function Home() {
@@ -29,8 +30,8 @@ export default function Home() {
     }
   };
 
-  function handliClickService(id) {
-    Router.push(`/portfolio?filter=${id}`)
+  function handliClickService(id)  {
+    Router.push(`/portfolio?filter=${id}`);
   }
 
   useEffect(() => {
@@ -296,10 +297,9 @@ export default function Home() {
                   <h2 className="color-linear d-inline-block mb-2">
                     {t("I_portfolio")}
                   </h2>
-
                   {/* Portfolio componenta */}
-                  <HomePagePortfolio />
-
+                  {/* <HomePagePortfolio /> */}
+                  <PortfolioFilter col={6} show={6} />
                   <div className="col-lg-12"></div>
                 </div>
                 {/* sevices */}
@@ -313,6 +313,7 @@ export default function Home() {
                         <div
                           className="col-lg-6 col-md-6 col-sm-12 col-xs-12 "
                           key={i}
+                          style={{ cursor: "pointer" }}
                           style={{ cursor: "pointer" }}
                           onClick={() => handliClickService(item.id)}
                         >
