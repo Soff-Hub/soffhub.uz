@@ -9,17 +9,17 @@ const PortfolioFilter = () => {
   const [scroll, setScroll] = useState(0);
   const [portfolioData, setPortfolioData] = useState([]);
   const [offset, setOffset] = useState(0);
-  const [limit, setLimit] = useState(3);
+  const [limit, setLimit] = useState(4);
   const languageData = useSelector((state) => state.translations.data);
 
   const Router = useRouter()
-  const {filter} = Router.query
+  const { filter } = Router.query
 
   const handleScroll = () => {
     const { scrollHeight, scrollTop, clientHeight, scrollY } =
       document.documentElement;
     if (scrollTop + clientHeight >= scrollHeight - 680) {
-      setLimit((limit) => limit + 3);
+      setLimit((limit) => limit + 4);
     }
   };
 
@@ -45,9 +45,9 @@ const PortfolioFilter = () => {
 
 
   useEffect(() => {
-      if (!filter) {
-        getPortfoliosData();
-      }
+    if (!filter) {
+      getPortfoliosData();
+    }
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -63,11 +63,11 @@ const PortfolioFilter = () => {
 
 
   const newArray = [];
-  for (let i = 0; i < portfolioData?.length; i += 3) {
-    newArray.push(portfolioData?.slice(i, i + 3));
+  for (let i = 0; i < portfolioData?.length; i += 4) {
+    newArray.push(portfolioData?.slice(i, i + 4));
   }
 
-  
+
 
   return (
     <>
@@ -78,21 +78,16 @@ const PortfolioFilter = () => {
               return (
                 <div
                   key={i}
-                  className={
-                    (i + 2) % 2 === 0
-                      ? "portfolio-grid-container grid-left-true"
-                      : "portfolio-grid-container grid-left-false"
-                  }
-                >
+                  className="card-portfolios-wrapper">
                   {el.map((item, i) =>
                     true ? (
                       <Link
                         href={`/blog/${item.id}`}
-                        className={"portfolio-card" + i}
+                        // className={"portfolio-card" + i}
                         key={i}
                         style={{ objectFit: "cover" }}
                       >
-                        <div className="project " data-category="web motion">
+                        {/* <div className="project " data-category="web motion">
                           <div className="item-content">
                             <div
                               className=" card-style-1 hover-up mb-30"
@@ -121,6 +116,16 @@ const PortfolioFilter = () => {
                                 </Link>
                               </div>
                             </div>
+                          </div>
+                        </div> */}
+                        <div class="card-grid-space">
+                          <div class="card-portfolio" style={{ "--bg-img": `url(${item.gallery})` }}>
+                            <div className="card-contect-ovelay">
+                              <h1>{item.category}</h1>
+                              <p>{item.title}</p>
+                              {/* <div class="date">6 Oct 2017</div> */}
+                            </div>
+                            <span className="card-overlay"></span>
                           </div>
                         </div>
                       </Link>
